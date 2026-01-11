@@ -1,7 +1,8 @@
-## Interface: 11404
+## Interface: 11504
 ## Version: 1.0
 ## Title: Automated-Consumables
 ## Author: Hase
 ## Notes: Automatically updates macros for food and drinks (Classic Era)
 
+FoodDrinkDB.lua
 Automated-Consumables.lua
