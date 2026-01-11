@@ -5,3 +5,5 @@
 
 ## Coming Up
 
+- TODO Options Menu
+- TODO Explaination of how to use
