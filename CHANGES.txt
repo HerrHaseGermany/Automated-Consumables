@@ -1,0 +1,13 @@
+lightweight tag 2e37b7e9dea321b7dce3a350016fe403e7d99fc6 v2.0.0
+Author:	AyJayCoding <97369376+AyJayCoding@users.noreply.github.com>
+Date:	Sat Jun 3 22:51:09 2023 +0200
+
+commit 2e37b7e9dea321b7dce3a350016fe403e7d99fc6
+Author: AyJayCoding <97369376+AyJayCoding@users.noreply.github.com>
+Date:   Sat Jun 3 22:51:09 2023 +0200
+
+    Update for 10.1.0
+    
+    Updated TOC
+    Rewrote AddOn from ground up using descriptive function and increased partitioning
+
