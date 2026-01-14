@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.1.1
+- corrected interface version
+
 # 1.1
 - Add Database for Health Potions, Mana Potions and Bandages
 - Add macros for Health Potions, Mana Potions and Bandages

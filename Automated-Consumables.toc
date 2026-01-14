@@ -1,8 +1,8 @@
-## Interface: 11504
-## Version: 1.0
+## Interface: 11508
+## Version: 1.1.1
 ## Title: Automated-Consumables
 ## Author: Hase
-## Notes: Automatically updates macros for food and drinks (Classic Era)
+## Notes: Automatically updates macros for food, drinks and Potions.
 ## SavedVariables: ACSettings
 FoodDrinkDB.lua
 PotionBandageDB.lua
