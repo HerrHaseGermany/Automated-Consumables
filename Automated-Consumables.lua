@@ -1,8 +1,30 @@
-do
-	local BAG_ID_BACKPACK = 0
-	local BAG_ID_LAST = 4
+	do
+		local BAG_ID_BACKPACK = 0
+		local BAG_ID_LAST = 4
+	
+		local basicMacroButtonName = "ACbutton";
 
-	local basicMacroButtonName = "ACbutton";
+		if type(ACSettings) ~= "table" then
+			ACSettings = {}
+		end
+		if ACSettings.showMinimapButton == nil then
+			ACSettings.showMinimapButton = true
+		end
+
+		local macroButtonNames = {
+			"ACFood", -- food
+			"ACDrink", -- drink
+			"ACBuff", -- buff food
+			"ACHealthPotion",
+			"ACManaPotion",
+			"ACBandage",
+		}
+
+		local legacyFoodDrinkMacroNames = {
+			[1] = "ACbutton1",
+			[2] = "ACbutton2",
+			[3] = "ACbutton3",
+		}
 	
 	local tableOfAddOnMacroButtonContentStrings;
 	local tableOfAddOnMacroButtonExistanceStatus;
@@ -19,7 +41,7 @@ do
 	local updateMacroNow = false;
 
 	local function getNumberOfMacroButtons()
-		return 3;
+		return 6;
 	end
 
 	local function getContainerNumSlots(bagId)
@@ -276,43 +298,218 @@ do
 		return bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID, bestFoodAndDrinkItemID, bestAnyUsableFoodOrDrinkItemID
 	end
 
-	local function buildMacroStringForButton(macroButtonNumber)
-		local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID, bestFoodAndDrinkItemID, bestAnyUsableFoodOrDrinkItemID = scanBagsForBestConsumables()
-
-		if not (bestSimpleFoodItemID or bestDrinkItemID or bestBuffFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID) then
-			if AC_DEBUG then
-				print(string.format("%sNo usable Food & Drink found in bags for ACbutton%d", ACADDON_CHAT_TITLE, macroButtonNumber))
+	local function buildSortedItemIDListFromSet(setTable)
+		if type(setTable) ~= "table" then
+			return {}
+		end
+		local list = {}
+		for itemID in pairs(setTable) do
+			if type(itemID) == "number" then
+				list[#list + 1] = itemID
 			end
+		end
+		table.sort(list)
+		return list
+	end
+
+	local healthPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_HEALTH_POTION_ITEM_IDS)
+	local healthstoneItemIDs = buildSortedItemIDListFromSet(_G.AC_HEALTHSTONE_ITEM_IDS)
+	local manaPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_MANA_POTION_ITEM_IDS)
+	local bandageItemIDs = buildSortedItemIDListFromSet(_G.AC_BANDAGE_ITEM_IDS)
+
+	local function findBestUsableItemIDFromSortedList(sortedItemIDs)
+		for i = #sortedItemIDs, 1, -1 do
+			local itemID = sortedItemIDs[i]
+			local count = GetItemCount(itemID)
+			if count and count > 0 then
+				if not IsUsableItem or IsUsableItem(itemID) then
+					return itemID
+				end
+			end
+		end
+		return nil
+	end
+
+	local function findBestUsableItemIDInBagsByNameNeedle(nameNeedleLower)
+		if not nameNeedleLower or nameNeedleLower == "" then
+			return nil
+		end
+
+		local bestItemID = nil
+		for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
+			local numSlots = getContainerNumSlots(bagId) or 0
+			for slotIndex = 1, numSlots do
+				local itemID = getContainerItemID(bagId, slotIndex) or getContainerItemIDFallback(bagId, slotIndex)
+				if itemID then
+					local itemName = GetItemInfo(itemID)
+					if itemName and itemName ~= "" then
+						if itemName:lower():find(nameNeedleLower, 1, true) then
+							if not IsUsableItem or IsUsableItem(itemID) then
+								if not bestItemID or itemID > bestItemID then
+									bestItemID = itemID
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+		return bestItemID
+	end
+
+	local function findBestHealthstoneItemID()
+		return findBestUsableItemIDFromSortedList(healthstoneItemIDs)
+			or findBestUsableItemIDInBagsByNameNeedle("healthstone")
+	end
+
+	local function buildUseItemMacro(itemID, targetPlayer)
+		if not itemID then
+			return initialAddOnMacroString .. "\n"
+		end
+		if targetPlayer then
+			return string.format("#showtooltip item:%d\n/use [@player] item:%d\n", itemID, itemID)
+		end
+		return string.format("#showtooltip item:%d\n/use item:%d\n", itemID, itemID)
+	end
+
+	local function getContainerItemCooldown(bagId, slotIndex)
+		if C_Container and C_Container.GetContainerItemCooldown then
+			return C_Container.GetContainerItemCooldown(bagId, slotIndex)
+		end
+		if GetContainerItemCooldown then
+			return GetContainerItemCooldown(bagId, slotIndex)
+		end
+		return nil, nil, nil
+	end
+
+	local function getCooldownForItemIDFromBags(itemID)
+		if not itemID then
+			return nil, nil, nil
+		end
+		for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
+			local numSlots = getContainerNumSlots(bagId) or 0
+			for slotIndex = 1, numSlots do
+				local slotItemID = getContainerItemID(bagId, slotIndex) or getContainerItemIDFallback(bagId, slotIndex)
+				if slotItemID == itemID then
+					return getContainerItemCooldown(bagId, slotIndex)
+				end
+			end
+		end
+		return nil, nil, nil
+	end
+
+	local function itemIsOnCooldown(itemID)
+		if not itemID or not GetItemCooldown then
+			return false
+		end
+		local startTime, duration, enable = GetItemCooldown(itemID)
+		if (not startTime) or (not duration) then
+			startTime, duration, enable = getCooldownForItemIDFromBags(itemID)
+		end
+
+		if not startTime or enable == 0 then
+			return false
+		end
+		if startTime <= 0 then
+			return false
+		end
+		if not duration or duration <= 0 then
+			return true
+		end
+		return (startTime + duration - GetTime()) > 0
+	end
+
+	local function buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
+		if not healthstoneItemID and not healthPotionItemID then
 			return initialAddOnMacroString .. "\n"
 		end
 
-		if AC_DEBUG then
-			print(string.format(
-				"%sACbutton%d best: food=%s drink=%s bufffood=%s both=%s fallback=%s",
-				ACADDON_CHAT_TITLE,
-				macroButtonNumber,
-				tostring(bestSimpleFoodItemID),
-				tostring(bestDrinkItemID),
-				tostring(bestBuffFoodItemID),
-				tostring(bestFoodAndDrinkItemID),
-				tostring(bestAnyUsableFoodOrDrinkItemID)
-			))
+		local stoneOnCooldown = itemIsOnCooldown(healthstoneItemID)
+		local potionOnCooldown = itemIsOnCooldown(healthPotionItemID)
+
+		local firstItemID = nil
+		local secondItemID = nil
+
+		if healthstoneItemID and not stoneOnCooldown then
+			firstItemID = healthstoneItemID
+			secondItemID = healthPotionItemID
+		elseif healthPotionItemID and not potionOnCooldown then
+			firstItemID = healthPotionItemID
+			secondItemID = healthstoneItemID
+		else
+			firstItemID = healthstoneItemID or healthPotionItemID
+			secondItemID = (firstItemID == healthstoneItemID) and healthPotionItemID or healthstoneItemID
 		end
 
-		if macroButtonNumber == 1 then
-			local itemID = bestSimpleFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
-			return initialAddOnMacroString .. string.format("item:%d\n", itemID)
+		if secondItemID then
+			return string.format(
+				"#showtooltip item:%d\n/use item:%d\n/use item:%d\n",
+				firstItemID,
+				firstItemID,
+				secondItemID
+			)
 		end
 
-		if macroButtonNumber == 2 then
-			local itemID = bestDrinkItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
-			return initialAddOnMacroString .. string.format("item:%d\n", itemID)
+		return buildUseItemMacro(firstItemID, false)
+	end
+
+		local function buildMacroStringForButton(macroButtonNumber)
+			if macroButtonNumber <= 3 then
+				local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID, bestFoodAndDrinkItemID, bestAnyUsableFoodOrDrinkItemID = scanBagsForBestConsumables()
+
+				if not (bestSimpleFoodItemID or bestDrinkItemID or bestBuffFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID) then
+					if AC_DEBUG then
+						local macroName = macroButtonNames[macroButtonNumber] or (basicMacroButtonName .. macroButtonNumber)
+						print(string.format("%sNo usable Food & Drink found in bags for %s", ACADDON_CHAT_TITLE, macroName))
+					end
+					return initialAddOnMacroString .. "\n"
+				end
+
+				if AC_DEBUG then
+					print(string.format(
+						"%s%s best: food=%s drink=%s bufffood=%s both=%s fallback=%s",
+						ACADDON_CHAT_TITLE,
+						(macroButtonNames[macroButtonNumber] or (basicMacroButtonName .. macroButtonNumber)),
+						tostring(bestSimpleFoodItemID),
+						tostring(bestDrinkItemID),
+						tostring(bestBuffFoodItemID),
+						tostring(bestFoodAndDrinkItemID),
+						tostring(bestAnyUsableFoodOrDrinkItemID)
+				))
+			end
+
+			if macroButtonNumber == 1 then
+				local itemID = bestSimpleFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
+				return initialAddOnMacroString .. string.format("item:%d\n", itemID)
+			end
+
+			if macroButtonNumber == 2 then
+				local itemID = bestDrinkItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
+				return initialAddOnMacroString .. string.format("item:%d\n", itemID)
+			end
+
+			if macroButtonNumber == 3 then
+				local itemID = bestBuffFoodItemID or bestSimpleFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
+				return initialAddOnMacroString .. string.format("item:%d\n", itemID)
+			end
+
+			return initialAddOnMacroString .. "\n"
 		end
 
-		if macroButtonNumber == 3 then
-			local itemID = bestBuffFoodItemID or bestSimpleFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
-			return initialAddOnMacroString .. string.format("item:%d\n", itemID)
+		if macroButtonNumber == 4 then
+			local healthstoneItemID = findBestHealthstoneItemID()
+			local healthPotionItemID = findBestUsableItemIDFromSortedList(healthPotionItemIDs)
+			return buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
 		end
+
+		if macroButtonNumber == 5 then
+			return buildUseItemMacro(findBestUsableItemIDFromSortedList(manaPotionItemIDs), false)
+		end
+
+		if macroButtonNumber == 6 then
+			return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs), true)
+		end
+
 		return initialAddOnMacroString .. "\n"
 	end
 
@@ -329,9 +526,504 @@ do
 			print(string.format("%sLoaded.", ACADDON_CHAT_TITLE))
 		end
 	end
+
+		local uiInitialized = false
+		local acMacroPanel = nil
+		local acMacroPanelButtons = {}
+		local getMacroIndexByNameSafe
+		local acMinimapButton = nil
+		local acOptionsPanel = nil
+		local createMinimapButton
+
+	local function parseFirstItemIDFromMacroBody(body)
+		if not body or body == "" then
+			return nil
+		end
+		local itemIDText = body:match("item:(%d+)")
+		return itemIDText and tonumber(itemIDText) or nil
+	end
+
+	local function getBestIconForMacro(macroIndex)
+		if not macroIndex or macroIndex <= 0 then
+			return "Interface\\Icons\\INV_Misc_QuestionMark"
+		end
+
+		local _, iconTexture, body = GetMacroInfo(macroIndex)
+		local itemID = parseFirstItemIDFromMacroBody(body)
+		if itemID and GetItemIcon then
+			local itemIcon = GetItemIcon(itemID)
+			if itemIcon then
+				return itemIcon
+			end
+		end
+
+		return iconTexture or "Interface\\Icons\\INV_Misc_QuestionMark"
+	end
+
+		local function refreshMacroPanelButtons()
+			if not acMacroPanel then
+				return
+			end
+
+			for _, button in ipairs(acMacroPanelButtons) do
+				local macroIndex = getMacroIndexByNameSafe(button.macroName) or 0
+				if button.icon then
+					button.icon:SetTexture(getBestIconForMacro(macroIndex))
+				end
+				button:SetEnabled(macroIndex > 0)
+			end
+		end
+
+		local function refreshOptionsMacroButtons(optionsPanel)
+			if not optionsPanel then
+				return
+			end
+			for _, child in ipairs({ optionsPanel:GetChildren() }) do
+				if child and child.macroName and child.icon then
+					local macroIndex = getMacroIndexByNameSafe(child.macroName) or 0
+					child.icon:SetTexture(getBestIconForMacro(macroIndex))
+					child:SetEnabled(macroIndex > 0)
+				end
+			end
+		end
+
+	local function pickupMacroByName(macroName)
+		local macroIndex = getMacroIndexByNameSafe(macroName) or 0
+		if macroIndex > 0 then
+			PickupMacro(macroIndex)
+			return true
+		end
+		return false
+	end
+
+	local function toggleMacroPanel()
+		if not acMacroPanel then
+			return
+		end
+		if acMacroPanel:IsShown() then
+			acMacroPanel:Hide()
+		else
+			acMacroPanel:SetFrameStrata("DIALOG")
+			acMacroPanel:SetFrameLevel(100)
+			refreshMacroPanelButtons()
+			acMacroPanel:Show()
+		end
+	end
+
+		local function updateMinimapButtonVisibility()
+			if ACSettings.showMinimapButton then
+				if not acMinimapButton then
+					createMinimapButton()
+				end
+				if acMinimapButton then
+					acMinimapButton:Show()
+				end
+			else
+				if acMinimapButton then
+					acMinimapButton:Hide()
+				end
+			end
+		end
+
+		local function getMacroDefs()
+			return {
+				{ macroName = "ACFood", label = "Food", tooltip = "Food", choices = "Uses the best food available. Fallback: if no food is found, uses food+drink items; if still none, uses any usable food/drink (including drink)." },
+				{ macroName = "ACDrink", label = "Drink", tooltip = "Drink", choices = "Uses the best drink available. Fallback: if no drink is found, uses food+drink items; if still none, uses any usable food/drink (including food)." },
+				{ macroName = "ACBuff", label = "Buff", tooltip = "Buff Food", choices = "Uses the best buff food (Well Fed) available. Fallback: if none, uses normal food; then food+drink; then any usable food/drink." },
+				{ macroName = "ACHealthPotion", label = "Health", tooltip = "Healthstone / Healing Potion", choices = "Prefers Healthstone (incl. improved variants). Falls back to the best healing potion available." },
+				{ macroName = "ACManaPotion", label = "Mana", tooltip = "Mana Potion", choices = "Uses the best mana potion available." },
+				{ macroName = "ACBandage", label = "Bandage", tooltip = "Bandage (self)", choices = "Uses the best bandage available on yourself." },
+			}
+		end
+
+		createMinimapButton = function()
+			if acMinimapButton or not Minimap then
+				return
+			end
+
+			local button = CreateFrame("Button", "ACMinimapButton", Minimap)
+			button:SetSize(32, 32)
+			button:SetFrameStrata("MEDIUM")
+			button:SetFrameLevel((Minimap:GetFrameLevel() or 0) + 1)
+			button:SetClampedToScreen(true)
+			button:EnableMouse(true)
+			button:RegisterForClicks("LeftButtonUp")
+			button:SetPoint("TOP", Minimap, "BOTTOM", 0, -4)
+
+			local background = button:CreateTexture(nil, "BACKGROUND")
+			background:SetTexture("Interface\\Minimap\\UI-Minimap-Background")
+			background:SetPoint("TOPLEFT", button, "TOPLEFT", 5, -5)
+			background:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -5, 5)
+
+			local border = button:CreateTexture(nil, "OVERLAY")
+			border:SetTexture("Interface\\Minimap\\MiniMap-TrackingBorder")
+			border:SetSize(54, 54)
+			border:SetPoint("TOPLEFT", button, "TOPLEFT", 0, 0)
+
+			local icon = button:CreateTexture(nil, "ARTWORK")
+			icon:SetTexture("Interface\\Icons\\INV_Potion_27")
+			icon:SetPoint("TOPLEFT", button, "TOPLEFT", 6, -6)
+			icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -6, 6)
+			icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+			button.icon = icon
+
+			button:SetHighlightTexture("Interface\\Minimap\\UI-Minimap-ZoomButton-Highlight", "ADD")
+			local highlight = button:GetHighlightTexture()
+			if highlight then
+				highlight:SetSize(54, 54)
+				highlight:SetPoint("CENTER", button, "CENTER", 0, 0)
+			end
+
+			button:SetScript("OnClick", function()
+				toggleMacroPanel()
+			end)
+
+			button:SetScript("OnMouseDown", function(self)
+				if self.icon then
+					self.icon:ClearAllPoints()
+					self.icon:SetPoint("TOPLEFT", self, "TOPLEFT", 7, -7)
+					self.icon:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -5, 5)
+				end
+			end)
+
+			button:SetScript("OnMouseUp", function(self)
+				if self.icon then
+					self.icon:ClearAllPoints()
+					self.icon:SetPoint("TOPLEFT", self, "TOPLEFT", 6, -6)
+					self.icon:SetPoint("BOTTOMRIGHT", self, "BOTTOMRIGHT", -6, 6)
+				end
+			end)
+
+			button:SetScript("OnEnter", function(self)
+				GameTooltip:SetOwner(self, "ANCHOR_LEFT")
+				GameTooltip:SetText("Automated-Consumables")
+				GameTooltip:AddLine("Click: show/hide macro panel", 1, 1, 1)
+				GameTooltip:Show()
+			end)
+
+			button:SetScript("OnLeave", function()
+				GameTooltip:Hide()
+			end)
+
+			acMinimapButton = button
+		end
+
+		local function createOptionsPanel()
+			if acOptionsPanel then
+				return
+			end
+
+			local panel = CreateFrame("Frame", "ACOptionsPanel", UIParent)
+			panel.name = "Automated-Consumables"
+
+			local title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+			title:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, -16)
+			title:SetText("Automated-Consumables")
+
+			local minimapCheckbox = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
+			minimapCheckbox:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -12)
+			minimapCheckbox.Text:SetText("Show minimap button")
+			minimapCheckbox:SetChecked(ACSettings.showMinimapButton and true or false)
+			minimapCheckbox:SetScript("OnClick", function(self)
+				ACSettings.showMinimapButton = self:GetChecked() and true or false
+				updateMinimapButtonVisibility()
+			end)
+
+			local help = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+			help:SetPoint("TOPLEFT", minimapCheckbox, "BOTTOMLEFT", 0, -16)
+			help:SetText("Drag and drop Macro to Bar")
+
+				local macroDefs = getMacroDefs()
+				local buttonSize = 96
+				local padding = 16
+				local cols = 3
+				local rows = 2
+				local labelPad = 12
+				local rowSpacing = buttonSize + padding + labelPad
+				local gridWidth = cols * buttonSize + (cols - 1) * padding
+				local gridHeight = rows * buttonSize + (rows - 1) * padding + rows * labelPad
+
+				local gridFrame = CreateFrame("Frame", nil, panel)
+				gridFrame:SetSize(gridWidth, gridHeight)
+				gridFrame:SetPoint("TOPLEFT", help, "BOTTOMLEFT", 0, -8)
+
+				for i = 1, #macroDefs do
+						local def = macroDefs[i]
+						local button = CreateFrame("Button", "ACOptionsMacroButton" .. i, panel)
+						button:SetSize(buttonSize, buttonSize)
+						button.macroName = def.macroName
+
+					local col = (i - 1) % cols
+					local row = math.floor((i - 1) / cols)
+					button:SetPoint("TOPLEFT", gridFrame, "TOPLEFT", col * (buttonSize + padding), -row * rowSpacing)
+
+				button:SetNormalTexture("Interface\\Buttons\\UI-Quickslot2")
+				button:SetPushedTexture("Interface\\Buttons\\UI-Quickslot-Depress")
+				button:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
+
+					local iconBorder = button:CreateTexture(nil, "OVERLAY")
+					iconBorder:SetTexture("Interface\\Buttons\\UI-Quickslot2")
+					iconBorder:SetAllPoints(button)
+					button.iconBorder = iconBorder
+
+						local icon = button:CreateTexture(nil, "ARTWORK")
+						icon:SetSize(56, 56)
+						icon:SetPoint("CENTER", button, "CENTER", 0, 0)
+						icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+						icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
+						button.icon = icon
+
+						local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+						label:SetPoint("TOP", button, "BOTTOM", 0, -2)
+						label:SetText(def.label)
+
+					button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+					button:RegisterForDrag("LeftButton")
+
+				button:SetScript("OnClick", function()
+					pickupMacroByName(def.macroName)
+				end)
+
+				button:SetScript("OnDragStart", function()
+					pickupMacroByName(def.macroName)
+				end)
+
+				button:SetScript("OnEnter", function(self)
+					GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+					local macroIndex = getMacroIndexByNameSafe(def.macroName) or 0
+					if macroIndex > 0 then
+						local macroName = GetMacroInfo(macroIndex)
+						GameTooltip:SetText(def.tooltip)
+						if def.choices then
+							GameTooltip:AddLine(def.choices, 0.9, 0.9, 0.9, true)
+						end
+						GameTooltip:AddLine(macroName or def.macroName, 0.8, 0.8, 0.8)
+						GameTooltip:AddLine("Drag to your action bar", 1, 1, 1)
+					else
+						GameTooltip:SetText(def.tooltip)
+						if def.choices then
+							GameTooltip:AddLine(def.choices, 0.9, 0.9, 0.9, true)
+						end
+						GameTooltip:AddLine(def.macroName, 0.8, 0.8, 0.8)
+						GameTooltip:AddLine("Macro not found yet. Run /acupdate.", 1, 0.2, 0.2)
+					end
+					GameTooltip:Show()
+				end)
+
+					button:SetScript("OnLeave", function()
+						GameTooltip:Hide()
+					end)
+				end
+
+			panel:SetScript("OnShow", function()
+				minimapCheckbox:SetChecked(ACSettings.showMinimapButton and true or false)
+				refreshOptionsMacroButtons(panel)
+			end)
+
+			if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
+				local category = Settings.RegisterCanvasLayoutCategory(panel, panel.name)
+				Settings.RegisterAddOnCategory(category)
+			elseif InterfaceOptions_AddCategory then
+				InterfaceOptions_AddCategory(panel)
+			end
+
+			acOptionsPanel = panel
+		end
+
+	local function createMacroPanel()
+		if acMacroPanel then
+			return
+		end
+
+			local panel = CreateFrame("Frame", "ACMacroPanel", UIParent, "BasicFrameTemplateWithInset")
+			panel:SetSize(200, 190)
+			panel:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
+			panel:SetClampedToScreen(true)
+			panel:SetMovable(true)
+			panel:EnableMouse(true)
+			panel:SetFrameStrata("DIALOG")
+			panel:SetFrameLevel(100)
+			panel:Hide()
+			panel.TitleText:SetText("Automated-Consumables")
+
+			local function applyBackgroundAlpha(frame, alpha)
+				if not frame or not frame.GetRegions then
+					return
+				end
+				local regions = { frame:GetRegions() }
+				for i = 1, #regions do
+					local region = regions[i]
+					if region and region.GetObjectType and region:GetObjectType() == "Texture" then
+						local layer = region.GetDrawLayer and region:GetDrawLayer()
+						if layer == "BACKGROUND" then
+							region:SetAlpha(alpha)
+						end
+					end
+				end
+			end
+
+			local panelBackgroundAlpha = 0.7
+			applyBackgroundAlpha(panel, panelBackgroundAlpha)
+			if panel.Inset then
+				applyBackgroundAlpha(panel.Inset, panelBackgroundAlpha)
+			end
+			if panel.Inset and panel.Inset.Bg then
+				panel.Inset.Bg:SetAlpha(panelBackgroundAlpha)
+			end
+			if panel.Bg then
+				panel.Bg:SetAlpha(panelBackgroundAlpha)
+			end
+
+			local hintText = panel:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
+			hintText:SetPoint("TOP", panel, "TOP", 0, -24)
+			hintText:SetText("Drag and drop Macro to Bar")
+			panel.ACHintText = hintText
+
+			if UISpecialFrames then
+				local panelName = panel:GetName()
+				if panelName then
+					local alreadySpecial = false
+					for i = 1, #UISpecialFrames do
+						if UISpecialFrames[i] == panelName then
+							alreadySpecial = true
+							break
+						end
+					end
+					if not alreadySpecial then
+						tinsert(UISpecialFrames, panelName)
+					end
+				end
+			end
+
+			panel:RegisterEvent("PLAYER_REGEN_DISABLED")
+			panel:SetScript("OnEvent", function(self, event)
+				if event == "PLAYER_REGEN_DISABLED" then
+					self:Hide()
+				end
+			end)
+
+			panel:SetScript("OnHide", function(self)
+				self:StopMovingOrSizing()
+			end)
+
+			local dragFrame = CreateFrame("Frame", nil, panel)
+			dragFrame:SetPoint("TOPLEFT", panel, "TOPLEFT", 0, 0)
+			dragFrame:SetPoint("TOPRIGHT", panel, "TOPRIGHT", 0, 0)
+			dragFrame:SetHeight(26)
+			dragFrame:EnableMouse(true)
+			dragFrame:RegisterForDrag("LeftButton")
+			dragFrame:SetScript("OnDragStart", function()
+				panel:StartMoving()
+			end)
+			dragFrame:SetScript("OnDragStop", function()
+				panel:StopMovingOrSizing()
+			end)
+
+			local macroDefs = getMacroDefs()
+
+			local buttonSize = 52
+			local padding = 12
+			local cols = 3
+			local rows = 2
+			local gridWidth = cols * buttonSize + (cols - 1) * padding
+			local labelPad = 12
+			local gridHeight = rows * buttonSize + (rows - 1) * padding + labelPad
+
+			local contentFrame = panel.Inset or panel
+			local gridFrame = CreateFrame("Frame", nil, contentFrame)
+			gridFrame:SetSize(gridWidth, gridHeight)
+			gridFrame:SetPoint("CENTER", contentFrame, "CENTER", 0, -(labelPad / 2))
+
+			for i = 1, #macroDefs do
+				local def = macroDefs[i]
+				local button = CreateFrame("Button", "ACMacroPanelButton" .. i, panel)
+				button:SetSize(buttonSize, buttonSize)
+
+				local col = (i - 1) % cols
+				local row = math.floor((i - 1) / cols)
+				button:SetPoint("TOPLEFT", gridFrame, "TOPLEFT", col * (buttonSize + padding), -row * (buttonSize + padding))
+
+				button.macroName = def.macroName
+
+				button:SetNormalTexture("Interface\\Buttons\\UI-Quickslot2")
+				button:SetPushedTexture("Interface\\Buttons\\UI-Quickslot-Depress")
+				button:SetHighlightTexture("Interface\\Buttons\\ButtonHilight-Square", "ADD")
+
+				local iconBorder = button:CreateTexture(nil, "OVERLAY")
+				iconBorder:SetTexture("Interface\\Buttons\\UI-Quickslot2")
+				iconBorder:SetAllPoints(button)
+				button.iconBorder = iconBorder
+
+				local icon = button:CreateTexture(nil, "ARTWORK")
+				icon:SetSize(32, 32)
+				icon:SetPoint("CENTER", button, "CENTER", 0, 0)
+				icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
+				icon:SetTexture("Interface\\Icons\\INV_Misc_QuestionMark")
+				button.icon = icon
+
+				button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
+				button:RegisterForDrag("LeftButton")
+
+				button:SetScript("OnClick", function()
+					pickupMacroByName(def.macroName)
+				end)
+
+				button:SetScript("OnDragStart", function()
+					pickupMacroByName(def.macroName)
+				end)
+
+				button:SetScript("OnEnter", function(self)
+					GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+					local macroIndex = getMacroIndexByNameSafe(def.macroName) or 0
+					if macroIndex > 0 then
+						local macroName = GetMacroInfo(macroIndex)
+						GameTooltip:SetText(def.tooltip)
+						if def.choices then
+							GameTooltip:AddLine(def.choices, 0.9, 0.9, 0.9, true)
+						end
+						GameTooltip:AddLine(macroName or def.macroName, 0.8, 0.8, 0.8)
+						GameTooltip:AddLine("Drag to your action bar", 1, 1, 1)
+					else
+						GameTooltip:SetText(def.tooltip)
+						if def.choices then
+							GameTooltip:AddLine(def.choices, 0.9, 0.9, 0.9, true)
+						end
+						GameTooltip:AddLine(def.macroName, 0.8, 0.8, 0.8)
+						GameTooltip:AddLine("Macro not found yet. Run /acupdate.", 1, 0.2, 0.2)
+					end
+					GameTooltip:Show()
+				end)
+
+				button:SetScript("OnLeave", function()
+					GameTooltip:Hide()
+				end)
+
+				table.insert(acMacroPanelButtons, button)
+
+				local label = button:CreateFontString(nil, "OVERLAY", "GameFontNormalSmall")
+				label:SetPoint("TOP", button, "BOTTOM", 0, -2)
+				label:SetText(def.label)
+			end
+
+		acMacroPanel = panel
+	end
+
+		local function initUIOnce()
+			if uiInitialized then
+				return
+			end
+			uiInitialized = true
+			createMacroPanel()
+			createOptionsPanel()
+			updateMinimapButtonVisibility()
+		end
 	
 	local function bagContentChanged(event)
 		return event == "BAG_UPDATE";
+	end
+
+	local function bagCooldownChanged(event)
+		return event == "BAG_UPDATE_COOLDOWN";
 	end
 	
 	local function playerLeftCombat(event)
@@ -339,7 +1031,7 @@ do
 	end
 
 	local function macroNeedsUpdating(event)
-		return playerLoggedIn(event) or bagContentChanged(event) or forcedUpdate(event);
+		return playerLoggedIn(event) or bagContentChanged(event) or bagCooldownChanged(event) or forcedUpdate(event);
 	end
 	
 	local function playerIsInCombat()
@@ -388,7 +1080,7 @@ do
 	end
 
 	local function getAddOnMacroButtonName(macroButtonNumber)
-		return basicMacroButtonName..macroButtonNumber;
+		return macroButtonNames[macroButtonNumber] or (basicMacroButtonName .. macroButtonNumber);
 	end
 
 	local function createNewTablesForAddOnMacroButtons()
@@ -422,7 +1114,7 @@ do
 		return nil
 	end
 
-	local function getMacroIndexByNameSafe(macroName)
+	getMacroIndexByNameSafe = function(macroName)
 		if GetMacroIndexByName then
 			return GetMacroIndexByName(macroName)
 		end
@@ -490,6 +1182,49 @@ do
 		end
 	end
 
+		local function updateOrCreateSingleMacro(macroButtonNumber)
+			local macroButtonName = getAddOnMacroButtonName(macroButtonNumber)
+			local macroBody = buildMacroStringForButton(macroButtonNumber)
+
+			local macroIndex = getMacroIndexByNameSafe(macroButtonName)
+			if macroIndex and macroIndex > 0 then
+				EditMacro(macroIndex, macroButtonName, nil, macroBody, nil)
+				return
+			end
+
+			local legacyName = legacyFoodDrinkMacroNames[macroButtonNumber]
+			if legacyName then
+				local legacyIndex = getMacroIndexByNameSafe(legacyName)
+				if legacyIndex and legacyIndex > 0 then
+					EditMacro(legacyIndex, macroButtonName, nil, macroBody, nil)
+					return
+				end
+			end
+
+			if getTotalNumberOfMacros() < MAX_ACCOUNT_MACROS then
+				CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", macroBody, nil)
+			else
+				print(string.format("%sCould not create macro %s. Macro limit reached.", ACADDON_CHAT_TITLE, macroButtonName))
+			end
+		end
+
+		local function migrateLegacyMacroNames()
+			for macroButtonNumber = 1, 3 do
+				local newName = getAddOnMacroButtonName(macroButtonNumber)
+				local legacyName = legacyFoodDrinkMacroNames[macroButtonNumber]
+				if legacyName and newName ~= legacyName then
+					local newIndex = getMacroIndexByNameSafe(newName) or 0
+					if newIndex <= 0 then
+						local legacyIndex = getMacroIndexByNameSafe(legacyName) or 0
+						if legacyIndex > 0 then
+							local legacyBody = getMacroBodyByNameSafe(legacyName) or ""
+							EditMacro(legacyIndex, newName, nil, legacyBody, nil)
+						end
+					end
+				end
+			end
+		end
+
 	local function updateMacrosInGame()
 		local macrosCreated = 0;
 
@@ -509,16 +1244,28 @@ do
 	end
 
 	local function eventHandlerForAutomatedFoodDrinkMacroScript(self, event, ...)
+		if event == "PLAYER_LOGIN" then
+			initUIOnce()
+		end
+
 		onLogin(event)
 		determineIfMacroNeedsToBeUpdatedNowOrLater(event);
 		
 		if macroWasMarkedForUpdateNow() then
 --				print(string.format("%sUpdating macro", ACADDON_CHAT_TITLE));
-			
-			checkIfMacroButtonsAlreadyExist();
-			updateAllMacroStrings();
-			
-			updateMacrosInGame();
+
+			if bagCooldownChanged(event) then
+				updateOrCreateSingleMacro(4)
+				else
+					migrateLegacyMacroNames()
+					checkIfMacroButtonsAlreadyExist();
+					updateAllMacroStrings();
+					updateMacrosInGame();
+					refreshMacroPanelButtons()
+					if acOptionsPanel then
+						refreshOptionsMacroButtons(acOptionsPanel)
+					end
+				end
 
 			removeMarkForUpdatingMacroLater();
 		end
@@ -531,6 +1278,7 @@ do
 	local function registerEventsNeededForAddon()
 		AutomatedConsumablesFrame:RegisterEvent("PLAYER_LOGIN");
 		AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE");
+		AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE_COOLDOWN");
 		AutomatedConsumablesFrame:RegisterEvent("PLAYER_REGEN_ENABLED");
 	end
 
@@ -566,6 +1314,12 @@ do
 		print(string.format("%sForcing macro update...", ACADDON_CHAT_TITLE))
 		markMacroForUpdateNow()
 		eventHandlerForAutomatedFoodDrinkMacroScript(nil, "AC_FORCE_UPDATE")
+	end
+
+	SLASH_ACPANEL1 = "/acpanel"
+	SlashCmdList["ACPANEL"] = function()
+		initUIOnce()
+		toggleMacroPanel()
 	end
 
 	SLASH_ACSCAN1 = "/acscan"

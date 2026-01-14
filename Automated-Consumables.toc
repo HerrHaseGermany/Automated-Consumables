@@ -3,6 +3,7 @@
 ## Title: Automated-Consumables
 ## Author: Hase
 ## Notes: Automatically updates macros for food and drinks (Classic Era)
-
+## SavedVariables: ACSettings
 FoodDrinkDB.lua
+PotionBandageDB.lua
 Automated-Consumables.lua
