@@ -1,5 +1,12 @@
 ## Change log
 
+# 1.1.2
+- Removed Fallback
+- Add option to prefer a specific stat bufffood
+- minor fixes
+- Refresh macros when hovering macro buttons in the addon UI (throttled)
+- Refresh macros on every successful cast while out of combat (throttled)
+
 # 1.1.1
 - corrected interface version
 
@@ -19,7 +26,6 @@
 
 ## Coming Up
 
-# TODO Options Menu
 
 
 ## Issues

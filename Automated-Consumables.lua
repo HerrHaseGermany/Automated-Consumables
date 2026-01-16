@@ -1,4 +1,4 @@
-	do
+	
 		local BAG_ID_BACKPACK = 0
 		local BAG_ID_LAST = 4
 	
@@ -9,6 +9,18 @@
 		end
 		if ACSettings.showMinimapButton == nil then
 			ACSettings.showMinimapButton = true
+		end
+		if ACSettings.buffFoodPreferenceMode == nil then
+			ACSettings.buffFoodPreferenceMode = "restore"
+		end
+		if ACSettings.buffFoodPreferredStat1 == nil then
+			ACSettings.buffFoodPreferredStat1 = ACSettings.buffFoodPreferredStat or "Stamina"
+		end
+		if ACSettings.buffFoodPreferredStat2 == nil then
+			ACSettings.buffFoodPreferredStat2 = "Spirit"
+		end
+		if ACSettings.buffFoodPreferredStat3 == nil then
+			ACSettings.buffFoodPreferredStat3 = "None"
 		end
 
 		local macroButtonNames = {
@@ -78,15 +90,75 @@
 	local itemScanTooltip = CreateFrame("GameTooltip", "AutomatedConsumablesScanTooltip", UIParent, "GameTooltipTemplate")
 	itemScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 
-	local function parseRestoreAmountsFromTooltip(bagId, slotIndex)
-		itemScanTooltip:ClearLines()
-		itemScanTooltip:SetBagItem(bagId, slotIndex)
+		local function parseRestoreAmountsFromTooltip(bagId, slotIndex, wantBuffStats)
+			itemScanTooltip:ClearLines()
+			itemScanTooltip:SetBagItem(bagId, slotIndex)
 
 		local restoresHealth = 0
 		local restoresMana = 0
 		local requiresSeated = false
 		local isWellFed = false
+		local mentionsHealth = false
+		local mentionsMana = false
+		local buffStats = wantBuffStats and {} or nil
 		local tooltipLines = itemScanTooltip:NumLines() or 0
+
+		local function parseLocalizedNumber(numText)
+			if not numText then
+				return nil
+			end
+			local cleaned = numText:gsub("%.", ""):gsub(",", "")
+			return tonumber(cleaned)
+		end
+
+		local function maybeRecordBuffStat(statKey, amount)
+			if not buffStats or not statKey or not amount or amount <= 0 then
+				return
+			end
+			local prev = buffStats[statKey] or 0
+			if amount > prev then
+				buffStats[statKey] = amount
+			end
+		end
+
+			local function parseBuffStatsFromText(lowerText)
+				if not buffStats or not lowerText or lowerText == "" then
+					return
+				end
+
+			local function tryStat(statKey, needleLower)
+				local numText = lowerText:match("([%d%.,]+)%s+" .. needleLower)
+				local amount = parseLocalizedNumber(numText)
+				if not amount then
+					numText = lowerText:match(needleLower .. ".-by%s+([%d%.,]+)")
+					amount = parseLocalizedNumber(numText)
+				end
+				if not amount then
+					numText = lowerText:match(needleLower .. ".-um%s+([%d%.,]+)")
+					amount = parseLocalizedNumber(numText)
+				end
+				maybeRecordBuffStat(statKey, amount)
+				return amount
+			end
+
+				local staminaAmount = tryStat("Stamina", "stamina") or tryStat("Stamina", "ausdauer")
+				local spiritAmount = tryStat("Spirit", "spirit") or tryStat("Spirit", "willenskraft")
+				local ignored = tryStat("Strength", "strength") or tryStat("Strength", "stärke")
+				ignored = tryStat("Agility", "agility") or tryStat("Agility", "beweglichkeit")
+				ignored = tryStat("Intellect", "intellect") or tryStat("Intellect", "intelligenz")
+
+				if staminaAmount and (not spiritAmount or spiritAmount <= 0) then
+					local hasSpiritWord = lowerText:find("spirit", 1, true) or lowerText:find("willenskraft", 1, true)
+					local hasSpiritNumber = lowerText:match("([%d%.,]+)%s+spirit") or lowerText:match("([%d%.,]+)%s+willenskraft")
+					if hasSpiritWord and not hasSpiritNumber then
+						maybeRecordBuffStat("Spirit", staminaAmount)
+					end
+				end
+
+				if isWellFed == false and next(buffStats) ~= nil then
+					isWellFed = true
+				end
+			end
 
 		local function applyTooltipText(text)
 			if not text or text == "" then
@@ -115,22 +187,26 @@
 			if lowerText:find("bien nourri", 1, true) then
 				isWellFed = true
 			end
+			if wantBuffStats then
+				parseBuffStatsFromText(lowerText)
+			end
 
-			local hasHealthWord = _G.HEALTH and text:find(_G.HEALTH, 1, true)
-			local hasManaWord = _G.MANA and text:find(_G.MANA, 1, true)
+			local healthNeedleLower = _G.HEALTH and _G.HEALTH:lower() or nil
+			local manaNeedleLower = _G.MANA and _G.MANA:lower() or nil
+			local hasHealthWord = healthNeedleLower and lowerText:find(healthNeedleLower, 1, true)
+			local hasManaWord = manaNeedleLower and lowerText:find(manaNeedleLower, 1, true)
 
 			if hasHealthWord or hasManaWord then
+				if hasHealthWord then
+					mentionsHealth = true
+				end
+				if hasManaWord then
+					mentionsMana = true
+				end
+
 				local numbers = {}
 				for num in text:gmatch("([%d%.,]+)") do
 					table.insert(numbers, num)
-				end
-
-				local function parseLocalizedNumber(numText)
-					if not numText then
-						return nil
-					end
-					local cleaned = numText:gsub("%.", ""):gsub(",", "")
-					return tonumber(cleaned)
 				end
 
 				if hasHealthWord and hasManaWord and #numbers >= 2 then
@@ -151,7 +227,7 @@
 			applyTooltipText(rightLine and rightLine:GetText() or nil)
 		end
 
-		return restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines
+		return restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats
 	end
 
 	local function itemIsConsumable(itemID)
@@ -215,42 +291,75 @@
 		return itemType == "Consumable" and itemSubType == "Food & Drink"
 	end
 
-	local function scanBagsForBestConsumables()
-		local bestSimpleFoodItemID = nil
-		local bestDrinkItemID = nil
-		local bestBuffFoodItemID = nil
-		local bestFoodAndDrinkItemID = nil
-		local bestAnyUsableFoodOrDrinkItemID = nil
-		local bestSimpleFoodScore = -1
-		local bestDrinkScore = -1
-		local bestBuffFoodScore = -1
-		local bestFoodAndDrinkScore = -1
+		local function scanBagsForBestConsumables()
+			local bestSimpleFoodItemID = nil
+			local bestDrinkItemID = nil
+			local bestBuffFoodItemID = nil
+			local bestPreferredBuffFoodItemID = nil
+			local bestFoodAndDrinkItemID = nil
+			local bestAnyUsableFoodOrDrinkItemID = nil
+			local bestAnyUsableFoodItemID = nil
+			local bestAnyUsableDrinkItemID = nil
+			local bestSimpleFoodScore = -1
+			local bestDrinkScore = -1
+			local bestBuffFoodScore = -1
+			local bestPreferredBuffFoodStatAmount = -1
+			local bestPreferredBuffFoodRestoreScore = -1
+			local bestPreferredBuffFoodStatAmount2 = -1
+			local bestPreferredBuffFoodStatAmount3 = -1
+			local bestFoodAndDrinkScore = -1
 
-		local debugCandidatesPrinted = 0
-		for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
-			local numSlots = getContainerNumSlots(bagId) or 0
-			for slotIndex = 1, numSlots do
+			local buffFoodPreferenceMode = ACSettings and ACSettings.buffFoodPreferenceMode or "restore"
+			local preferredStat1 = ACSettings and ACSettings.buffFoodPreferredStat1 or nil
+			local preferredStat2 = ACSettings and ACSettings.buffFoodPreferredStat2 or nil
+			local preferredStat3 = ACSettings and ACSettings.buffFoodPreferredStat3 or nil
+
+			local function normalizeStat(stat)
+				if not stat or stat == "" or stat == "None" then
+					return nil
+				end
+				return stat
+			end
+
+			preferredStat1 = normalizeStat(preferredStat1)
+			preferredStat2 = normalizeStat(preferredStat2)
+			preferredStat3 = normalizeStat(preferredStat3)
+			if preferredStat2 == preferredStat1 then
+				preferredStat2 = nil
+			end
+			if preferredStat3 == preferredStat1 or preferredStat3 == preferredStat2 then
+				preferredStat3 = nil
+			end
+
+			local wantBuffStats = buffFoodPreferenceMode == "stat" and preferredStat1 ~= nil
+
+			local debugCandidatesPrinted = 0
+			for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
+				local numSlots = getContainerNumSlots(bagId) or 0
+				for slotIndex = 1, numSlots do
 				local itemID = getContainerItemID(bagId, slotIndex)
 				if not itemID then
 					itemID = getContainerItemIDFallback(bagId, slotIndex)
-				end
-				if itemID then
-					local restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
-					local classID, subClassID = getItemClassInfo(itemID)
-					local isFoodOrDrink = itemIsFoodOrDrink(itemID)
-						or ((classID == 0 and subClassID == 0) and requiresSeated)
+					end
+					if itemID then
+						local restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats = parseRestoreAmountsFromTooltip(bagId, slotIndex, wantBuffStats)
+						local classID, subClassID = getItemClassInfo(itemID)
+						local isFoodOrDrink = itemIsFoodOrDrink(itemID)
+							or ((classID == 0 and subClassID == 0) and requiresSeated)
 
 					if isFoodOrDrink then
 						if AC_DEBUG and debugCandidatesPrinted < 10 then
 							local itemName = GetItemInfo(itemID)
 							print(string.format(
-								"%sCandidate: %s (item:%d) seated=%s hp=%d mana=%d lines=%d",
+								"%sCandidate: %s (item:%d) seated=%s hp=%d mana=%d mH=%s mM=%s lines=%d",
 								ACADDON_CHAT_TITLE,
 								tostring(itemName),
 								itemID,
 								tostring(requiresSeated),
 								restoresHealth,
 								restoresMana,
+								tostring(mentionsHealth),
+								tostring(mentionsMana),
 								tooltipLines
 							))
 							debugCandidatesPrinted = debugCandidatesPrinted + 1
@@ -268,21 +377,48 @@
 
 							local forcedDrink = type(_G.AC_DRINK_ITEM_IDS) == "table" and _G.AC_DRINK_ITEM_IDS[itemID]
 							local forcedFood = type(_G.AC_FOOD_ITEM_IDS) == "table" and _G.AC_FOOD_ITEM_IDS[itemID]
-							local forcedBuffFood = type(_G.AC_BUFFFOOD_ITEM_IDS) == "table" and _G.AC_BUFFFOOD_ITEM_IDS[itemID]
+								local forcedBuffFood = type(_G.AC_BUFFFOOD_ITEM_IDS) == "table" and _G.AC_BUFFFOOD_ITEM_IDS[itemID]
+								local isBuffFood = forcedBuffFood or isWellFed or (wantBuffStats and buffStats and next(buffStats) ~= nil)
+								local treatAsDrink = forcedDrink or (restoresMana > 0 and restoresHealth == 0)
+								local treatAsSimpleFood = forcedFood or (restoresHealth > 0 and restoresMana == 0 and not isBuffFood)
+								local treatAsAnyDrink = treatAsDrink or (mentionsMana and not mentionsHealth and not forcedFood)
+								local treatAsAnyFood = treatAsSimpleFood or (mentionsHealth and not mentionsMana and not forcedDrink)
 
-							local isBuffFood = forcedBuffFood or isWellFed
-							local treatAsDrink = forcedDrink or (restoresMana > 0 and restoresHealth == 0)
-							local treatAsSimpleFood = forcedFood or (restoresHealth > 0 and restoresMana == 0 and not isBuffFood)
+							if treatAsAnyDrink and not bestAnyUsableDrinkItemID then
+								bestAnyUsableDrinkItemID = itemID
+							end
+							if treatAsAnyFood and not bestAnyUsableFoodItemID then
+								bestAnyUsableFoodItemID = itemID
+							end
 
-							local score = restoresHealth + restoresMana
+								local score = restoresHealth + restoresMana
 
-							if isBuffFood and score > 0 and score > bestBuffFoodScore then
-								bestBuffFoodScore = score
-								bestBuffFoodItemID = itemID
-							elseif restoresHealth > 0 and restoresMana > 0 and score > bestFoodAndDrinkScore then
-								bestFoodAndDrinkScore = score
-								bestFoodAndDrinkItemID = itemID
-							elseif treatAsSimpleFood and restoresHealth > bestSimpleFoodScore then
+								if isBuffFood and score > 0 and score > bestBuffFoodScore then
+									bestBuffFoodScore = score
+									bestBuffFoodItemID = itemID
+								end
+
+								if wantBuffStats and isBuffFood and score > 0 then
+									local a1 = (buffStats and preferredStat1) and (buffStats[preferredStat1] or 0) or 0
+									local a2 = (buffStats and preferredStat2) and (buffStats[preferredStat2] or 0) or 0
+									local a3 = (buffStats and preferredStat3) and (buffStats[preferredStat3] or 0) or 0
+									if a1 > 0 or a2 > 0 or a3 > 0 then
+										if a1 > bestPreferredBuffFoodStatAmount
+											or (a1 == bestPreferredBuffFoodStatAmount and a2 > bestPreferredBuffFoodStatAmount2)
+											or (a1 == bestPreferredBuffFoodStatAmount and a2 == bestPreferredBuffFoodStatAmount2 and a3 > bestPreferredBuffFoodStatAmount3)
+											or (a1 == bestPreferredBuffFoodStatAmount and a2 == bestPreferredBuffFoodStatAmount2 and a3 == bestPreferredBuffFoodStatAmount3 and score > bestPreferredBuffFoodRestoreScore)
+										then
+											bestPreferredBuffFoodStatAmount = a1
+											bestPreferredBuffFoodStatAmount2 = a2
+											bestPreferredBuffFoodStatAmount3 = a3
+											bestPreferredBuffFoodRestoreScore = score
+											bestPreferredBuffFoodItemID = itemID
+										end
+									end
+								elseif restoresHealth > 0 and restoresMana > 0 and score > bestFoodAndDrinkScore then
+									bestFoodAndDrinkScore = score
+									bestFoodAndDrinkItemID = itemID
+								elseif treatAsSimpleFood and restoresHealth > bestSimpleFoodScore then
 								bestSimpleFoodScore = restoresHealth
 								bestSimpleFoodItemID = itemID
 							elseif treatAsDrink and restoresMana > bestDrinkScore then
@@ -291,12 +427,16 @@
 							end
 						end
 					end
+					end
 				end
 			end
-		end
 
-		return bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID, bestFoodAndDrinkItemID, bestAnyUsableFoodOrDrinkItemID
-	end
+			if bestPreferredBuffFoodItemID then
+				bestBuffFoodItemID = bestPreferredBuffFoodItemID
+			end
+
+			return bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID, bestFoodAndDrinkItemID, bestAnyUsableFoodOrDrinkItemID, bestAnyUsableFoodItemID, bestAnyUsableDrinkItemID
+		end
 
 	local function buildSortedItemIDListFromSet(setTable)
 		if type(setTable) ~= "table" then
@@ -453,73 +593,77 @@
 		return buildUseItemMacro(firstItemID, false)
 	end
 
-		local function buildMacroStringForButton(macroButtonNumber)
-			if macroButtonNumber <= 3 then
-				local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID, bestFoodAndDrinkItemID, bestAnyUsableFoodOrDrinkItemID = scanBagsForBestConsumables()
+			local function buildMacroStringForButton(macroButtonNumber)
+				if macroButtonNumber <= 3 then
+					local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID = scanBagsForBestConsumables()
 
-				if not (bestSimpleFoodItemID or bestDrinkItemID or bestBuffFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID) then
-					if AC_DEBUG then
-						local macroName = macroButtonNames[macroButtonNumber] or (basicMacroButtonName .. macroButtonNumber)
-						print(string.format("%sNo usable Food & Drink found in bags for %s", ACADDON_CHAT_TITLE, macroName))
+					local itemID = nil
+					local kind = nil
+
+					if macroButtonNumber == 1 then
+						itemID = bestSimpleFoodItemID
+						kind = "Food"
+					elseif macroButtonNumber == 2 then
+						itemID = bestDrinkItemID
+						kind = "Drink"
+					elseif macroButtonNumber == 3 then
+						itemID = bestBuffFoodItemID
+						kind = "Buff Food"
 					end
-					return initialAddOnMacroString .. "\n"
+
+					if not itemID then
+						if AC_DEBUG then
+							local macroName = macroButtonNames[macroButtonNumber] or (basicMacroButtonName .. macroButtonNumber)
+							print(string.format("%sNo usable %s found in bags for %s", ACADDON_CHAT_TITLE, kind or "item", macroName))
+						end
+						return initialAddOnMacroString .. "\n"
+					end
+
+					return initialAddOnMacroString .. string.format("item:%d\n", itemID)
 				end
 
-				if AC_DEBUG then
-					print(string.format(
-						"%s%s best: food=%s drink=%s bufffood=%s both=%s fallback=%s",
-						ACADDON_CHAT_TITLE,
-						(macroButtonNames[macroButtonNumber] or (basicMacroButtonName .. macroButtonNumber)),
-						tostring(bestSimpleFoodItemID),
-						tostring(bestDrinkItemID),
-						tostring(bestBuffFoodItemID),
-						tostring(bestFoodAndDrinkItemID),
-						tostring(bestAnyUsableFoodOrDrinkItemID)
-				))
+				if macroButtonNumber == 4 then
+					local healthstoneItemID = findBestHealthstoneItemID()
+					local healthPotionItemID = findBestUsableItemIDFromSortedList(healthPotionItemIDs)
+					return buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
+				end
+
+				if macroButtonNumber == 5 then
+					return buildUseItemMacro(findBestUsableItemIDFromSortedList(manaPotionItemIDs), false)
+				end
+
+				if macroButtonNumber == 6 then
+					return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs), true)
+				end
+
+				return initialAddOnMacroString .. "\n"
 			end
-
-			if macroButtonNumber == 1 then
-				local itemID = bestSimpleFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
-				return initialAddOnMacroString .. string.format("item:%d\n", itemID)
-			end
-
-			if macroButtonNumber == 2 then
-				local itemID = bestDrinkItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
-				return initialAddOnMacroString .. string.format("item:%d\n", itemID)
-			end
-
-			if macroButtonNumber == 3 then
-				local itemID = bestBuffFoodItemID or bestSimpleFoodItemID or bestFoodAndDrinkItemID or bestAnyUsableFoodOrDrinkItemID
-				return initialAddOnMacroString .. string.format("item:%d\n", itemID)
-			end
-
-			return initialAddOnMacroString .. "\n"
-		end
-
-		if macroButtonNumber == 4 then
-			local healthstoneItemID = findBestHealthstoneItemID()
-			local healthPotionItemID = findBestUsableItemIDFromSortedList(healthPotionItemIDs)
-			return buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
-		end
-
-		if macroButtonNumber == 5 then
-			return buildUseItemMacro(findBestUsableItemIDFromSortedList(manaPotionItemIDs), false)
-		end
-
-		if macroButtonNumber == 6 then
-			return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs), true)
-		end
-
-		return initialAddOnMacroString .. "\n"
-	end
 
 	local function playerLoggedIn(event)
 		return event == "PLAYER_LOGIN";
 	end
 
-	local function forcedUpdate(event)
-		return event == "AC_FORCE_UPDATE"
-	end
+		local function forcedUpdate(event)
+			return event == "AC_FORCE_UPDATE" or event == "AC_HOVER_UPDATE" or event == "AC_CAST_UPDATE"
+		end
+
+		local lastCastMacroRefreshAt = 0
+		local castMacroRefreshCooldownSeconds = 2
+
+		local function shouldRefreshMacrosOnCast()
+			if not GetTime then
+				return false
+			end
+			if InCombatLockdown and InCombatLockdown() then
+				return false
+			end
+			local now = GetTime()
+			if (now - lastCastMacroRefreshAt) < castMacroRefreshCooldownSeconds then
+				return false
+			end
+			lastCastMacroRefreshAt = now
+			return true
+		end
 
 	local function onLogin(event)
 		if event == "PLAYER_LOGIN" then
@@ -527,13 +671,34 @@
 		end
 	end
 
-		local uiInitialized = false
-		local acMacroPanel = nil
-		local acMacroPanelButtons = {}
-		local getMacroIndexByNameSafe
-		local acMinimapButton = nil
-		local acOptionsPanel = nil
-		local createMinimapButton
+			local uiInitialized = false
+			local acMacroPanel = nil
+			local acMacroPanelButtons = {}
+			local getMacroIndexByNameSafe
+			local acMinimapButton = nil
+			local acOptionsPanel = nil
+			local acOptionsCategoryID = nil
+				local createMinimapButton
+					local lastHoverMacroRefreshAt = 0
+					local hoverMacroRefreshCooldownSeconds = 2
+
+					local function requestHoverMacroRefresh()
+					if not GetTime then
+						return
+					end
+					local now = GetTime()
+				if (now - lastHoverMacroRefreshAt) < hoverMacroRefreshCooldownSeconds then
+					return
+				end
+				lastHoverMacroRefreshAt = now
+
+				if AutomatedConsumablesFrame and AutomatedConsumablesFrame.GetScript then
+					local handler = AutomatedConsumablesFrame:GetScript("OnEvent")
+					if handler then
+						handler(AutomatedConsumablesFrame, "AC_HOVER_UPDATE")
+					end
+				end
+			end
 
 	local function parseFirstItemIDFromMacroBody(body)
 		if not body or body == "" then
@@ -596,10 +761,10 @@
 		return false
 	end
 
-	local function toggleMacroPanel()
-		if not acMacroPanel then
-			return
-		end
+		local function toggleMacroPanel()
+			if not acMacroPanel then
+				return
+			end
 		if acMacroPanel:IsShown() then
 			acMacroPanel:Hide()
 		else
@@ -608,7 +773,23 @@
 			refreshMacroPanelButtons()
 			acMacroPanel:Show()
 		end
-	end
+		end
+
+		local function openOptionsPanel()
+			if not acOptionsPanel then
+				return
+			end
+
+			if Settings and Settings.OpenToCategory and acOptionsCategoryID then
+				Settings.OpenToCategory(acOptionsCategoryID)
+				return
+			end
+
+			if InterfaceOptionsFrame_OpenToCategory then
+				InterfaceOptionsFrame_OpenToCategory(acOptionsPanel)
+				InterfaceOptionsFrame_OpenToCategory(acOptionsPanel)
+			end
+		end
 
 		local function updateMinimapButtonVisibility()
 			if ACSettings.showMinimapButton then
@@ -627,9 +808,9 @@
 
 		local function getMacroDefs()
 			return {
-				{ macroName = "ACFood", label = "Food", tooltip = "Food", choices = "Uses the best food available. Fallback: if no food is found, uses food+drink items; if still none, uses any usable food/drink (including drink)." },
-				{ macroName = "ACDrink", label = "Drink", tooltip = "Drink", choices = "Uses the best drink available. Fallback: if no drink is found, uses food+drink items; if still none, uses any usable food/drink (including food)." },
-				{ macroName = "ACBuff", label = "Buff", tooltip = "Buff Food", choices = "Uses the best buff food (Well Fed) available. Fallback: if none, uses normal food; then food+drink; then any usable food/drink." },
+				{ macroName = "ACFood", label = "Food", tooltip = "Food", choices = "Uses the best food available." },
+				{ macroName = "ACDrink", label = "Drink", tooltip = "Drink", choices = "Uses the best drink available." },
+				{ macroName = "ACBuff", label = "Buff", tooltip = "Buff Food", choices = "Uses the best buff food available. If Buff food selection is set to Prefer stat, prefers the chosen stat buff. Fallback: if none, uses normal food; then food+drink; then any usable food/drink." },
 				{ macroName = "ACHealthPotion", label = "Health", tooltip = "Healthstone / Healing Potion", choices = "Prefers Healthstone (incl. improved variants). Falls back to the best healing potion available." },
 				{ macroName = "ACManaPotion", label = "Mana", tooltip = "Mana Potion", choices = "Uses the best mana potion available." },
 				{ macroName = "ACBandage", label = "Bandage", tooltip = "Bandage (self)", choices = "Uses the best bandage available on yourself." },
@@ -647,7 +828,7 @@
 			button:SetFrameLevel((Minimap:GetFrameLevel() or 0) + 1)
 			button:SetClampedToScreen(true)
 			button:EnableMouse(true)
-			button:RegisterForClicks("LeftButtonUp")
+			button:RegisterForClicks("LeftButtonUp", "RightButtonUp")
 			button:SetPoint("TOP", Minimap, "BOTTOM", 0, -4)
 
 			local background = button:CreateTexture(nil, "BACKGROUND")
@@ -674,7 +855,14 @@
 				highlight:SetPoint("CENTER", button, "CENTER", 0, 0)
 			end
 
-			button:SetScript("OnClick", function()
+			button:SetScript("OnClick", function(_, mouseButton)
+				if mouseButton == "RightButton" then
+					if not uiInitialized then
+						initUIOnce()
+					end
+					openOptionsPanel()
+					return
+				end
 				toggleMacroPanel()
 			end)
 
@@ -698,6 +886,7 @@
 				GameTooltip:SetOwner(self, "ANCHOR_LEFT")
 				GameTooltip:SetText("Automated-Consumables")
 				GameTooltip:AddLine("Click: show/hide macro panel", 1, 1, 1)
+				GameTooltip:AddLine("Right-click: open options", 1, 1, 1)
 				GameTooltip:Show()
 			end)
 
@@ -708,33 +897,42 @@
 			acMinimapButton = button
 		end
 
-		local function createOptionsPanel()
-			if acOptionsPanel then
-				return
-			end
+			local function createOptionsPanel()
+				if acOptionsPanel then
+					return
+				end
 
-			local panel = CreateFrame("Frame", "ACOptionsPanel", UIParent)
-			panel.name = "Automated-Consumables"
+				local panel = CreateFrame("Frame", "ACOptionsPanel", UIParent)
+				panel.name = "Automated-Consumables"
 
-			local title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
-			title:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, -16)
-			title:SetText("Automated-Consumables")
+				local title = panel:CreateFontString(nil, "ARTWORK", "GameFontNormalLarge")
+				title:SetPoint("TOPLEFT", panel, "TOPLEFT", 16, -16)
+				title:SetText("Automated-Consumables")
 
-			local minimapCheckbox = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
-			minimapCheckbox:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -12)
-			minimapCheckbox.Text:SetText("Show minimap button")
-			minimapCheckbox:SetChecked(ACSettings.showMinimapButton and true or false)
-			minimapCheckbox:SetScript("OnClick", function(self)
-				ACSettings.showMinimapButton = self:GetChecked() and true or false
-				updateMinimapButtonVisibility()
-			end)
+				local function forceMacroUpdate()
+					if AutomatedConsumablesFrame and AutomatedConsumablesFrame.GetScript then
+						local handler = AutomatedConsumablesFrame:GetScript("OnEvent")
+						if handler then
+							handler(AutomatedConsumablesFrame, "AC_FORCE_UPDATE")
+						end
+					end
+				end
 
-			local help = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-			help:SetPoint("TOPLEFT", minimapCheckbox, "BOTTOMLEFT", 0, -16)
-			help:SetText("Drag and drop Macro to Bar")
+				local minimapCheckbox = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
+				minimapCheckbox:SetPoint("TOPLEFT", title, "BOTTOMLEFT", 0, -12)
+				minimapCheckbox.Text:SetText("Show minimap button")
+				minimapCheckbox:SetChecked(ACSettings.showMinimapButton and true or false)
+				minimapCheckbox:SetScript("OnClick", function(self)
+					ACSettings.showMinimapButton = self:GetChecked() and true or false
+					updateMinimapButtonVisibility()
+				end)
 
-				local macroDefs = getMacroDefs()
-				local buttonSize = 96
+				local help = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
+				help:SetPoint("TOPLEFT", minimapCheckbox, "BOTTOMLEFT", 0, -16)
+				help:SetText("Drag and drop Macro to Bar")
+
+					local macroDefs = getMacroDefs()
+					local buttonSize = 96
 				local padding = 16
 				local cols = 3
 				local rows = 2
@@ -788,12 +986,13 @@
 					pickupMacroByName(def.macroName)
 				end)
 
-				button:SetScript("OnEnter", function(self)
-					GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-					local macroIndex = getMacroIndexByNameSafe(def.macroName) or 0
-					if macroIndex > 0 then
-						local macroName = GetMacroInfo(macroIndex)
-						GameTooltip:SetText(def.tooltip)
+					button:SetScript("OnEnter", function(self)
+						requestHoverMacroRefresh()
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+						local macroIndex = getMacroIndexByNameSafe(def.macroName) or 0
+						if macroIndex > 0 then
+							local macroName = GetMacroInfo(macroIndex)
+							GameTooltip:SetText(def.tooltip)
 						if def.choices then
 							GameTooltip:AddLine(def.choices, 0.9, 0.9, 0.9, true)
 						end
@@ -810,19 +1009,134 @@
 					GameTooltip:Show()
 				end)
 
-					button:SetScript("OnLeave", function()
-						GameTooltip:Hide()
+						button:SetScript("OnLeave", function()
+							GameTooltip:Hide()
+						end)
+					end
+
+				local buffPrefLabel = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+				buffPrefLabel:SetPoint("TOPLEFT", gridFrame, "BOTTOMLEFT", 0, -16)
+				buffPrefLabel:SetText("Buff food selection")
+
+				local buffPrefDropdown = CreateFrame("Frame", nil, panel, "UIDropDownMenuTemplate")
+				buffPrefDropdown:SetPoint("TOPLEFT", buffPrefLabel, "BOTTOMLEFT", -16, -4)
+				UIDropDownMenu_SetWidth(buffPrefDropdown, 220)
+
+				local statLabel = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
+				statLabel:SetPoint("TOPLEFT", buffPrefDropdown, "BOTTOMLEFT", 16, -10)
+				statLabel:SetText("Preferred stats (priority)")
+
+				local statDropdown1 = CreateFrame("Frame", nil, panel, "UIDropDownMenuTemplate")
+				statDropdown1:SetPoint("TOPLEFT", statLabel, "BOTTOMLEFT", -16, -4)
+				UIDropDownMenu_SetWidth(statDropdown1, 220)
+
+				local statDropdown2 = CreateFrame("Frame", nil, panel, "UIDropDownMenuTemplate")
+				statDropdown2:SetPoint("TOPLEFT", statDropdown1, "BOTTOMLEFT", 0, -2)
+				UIDropDownMenu_SetWidth(statDropdown2, 220)
+
+				local statDropdown3 = CreateFrame("Frame", nil, panel, "UIDropDownMenuTemplate")
+				statDropdown3:SetPoint("TOPLEFT", statDropdown2, "BOTTOMLEFT", 0, -2)
+				UIDropDownMenu_SetWidth(statDropdown3, 220)
+
+				local function refreshBuffPrefUI()
+					local mode = ACSettings and ACSettings.buffFoodPreferenceMode or "restore"
+					local preferStat = mode == "stat"
+					if statLabel then
+						statLabel:SetShown(preferStat)
+					end
+					if statDropdown1 then
+						statDropdown1:SetShown(preferStat)
+					end
+					if statDropdown2 then
+						statDropdown2:SetShown(preferStat)
+					end
+					if statDropdown3 then
+						statDropdown3:SetShown(preferStat)
+					end
+				end
+
+				local function applyBuffPrefDropdownText()
+					local mode = ACSettings and ACSettings.buffFoodPreferenceMode or "restore"
+					local text = (mode == "stat") and "Prefer stat" or "Best restore (default)"
+					UIDropDownMenu_SetSelectedValue(buffPrefDropdown, mode)
+					UIDropDownMenu_SetText(buffPrefDropdown, text)
+				end
+
+				local function applyStatDropdownText()
+					local stat1 = ACSettings and ACSettings.buffFoodPreferredStat1 or "Stamina"
+					local stat2 = ACSettings and ACSettings.buffFoodPreferredStat2 or "Spirit"
+					local stat3 = ACSettings and ACSettings.buffFoodPreferredStat3 or "None"
+					UIDropDownMenu_SetSelectedValue(statDropdown1, stat1)
+					UIDropDownMenu_SetText(statDropdown1, stat1)
+					UIDropDownMenu_SetSelectedValue(statDropdown2, stat2)
+					UIDropDownMenu_SetText(statDropdown2, stat2)
+					UIDropDownMenu_SetSelectedValue(statDropdown3, stat3)
+					UIDropDownMenu_SetText(statDropdown3, stat3)
+				end
+
+				UIDropDownMenu_Initialize(buffPrefDropdown, function(self, level)
+					local current = ACSettings and ACSettings.buffFoodPreferenceMode or "restore"
+
+					local function onPick(button)
+						local value = button and button.value
+						ACSettings.buffFoodPreferenceMode = value
+						applyBuffPrefDropdownText()
+						refreshBuffPrefUI()
+						forceMacroUpdate()
+					end
+
+					local info = UIDropDownMenu_CreateInfo()
+					info.text = "Best restore (default)"
+					info.value = "restore"
+					info.func = onPick
+					info.checked = (current == "restore")
+					UIDropDownMenu_AddButton(info, level)
+
+					info = UIDropDownMenu_CreateInfo()
+					info.text = "Prefer stat"
+					info.value = "stat"
+					info.func = onPick
+					info.checked = (current == "stat")
+					UIDropDownMenu_AddButton(info, level)
+				end)
+
+				local function initStatDropdown(dropdown, settingsKey)
+					UIDropDownMenu_Initialize(dropdown, function(_, level)
+						local stats = { "Stamina", "Spirit", "Strength", "Agility", "Intellect", "None" }
+						for i = 1, #stats do
+							local stat = stats[i]
+							local info = UIDropDownMenu_CreateInfo()
+							info.text = stat
+							info.value = stat
+							info.func = function(button)
+								local value = button and button.value
+								ACSettings[settingsKey] = value
+								applyStatDropdownText()
+								forceMacroUpdate()
+							end
+							UIDropDownMenu_AddButton(info, level)
+						end
 					end)
 				end
 
+				initStatDropdown(statDropdown1, "buffFoodPreferredStat1")
+				initStatDropdown(statDropdown2, "buffFoodPreferredStat2")
+				initStatDropdown(statDropdown3, "buffFoodPreferredStat3")
+
 			panel:SetScript("OnShow", function()
 				minimapCheckbox:SetChecked(ACSettings.showMinimapButton and true or false)
+				applyBuffPrefDropdownText()
+				applyStatDropdownText()
+				refreshBuffPrefUI()
 				refreshOptionsMacroButtons(panel)
 			end)
 
 			if Settings and Settings.RegisterCanvasLayoutCategory and Settings.RegisterAddOnCategory then
 				local category = Settings.RegisterCanvasLayoutCategory(panel, panel.name)
 				Settings.RegisterAddOnCategory(category)
+				if category then
+					acOptionsCategoryID = (category.GetID and category:GetID()) or category.ID
+				end
 			elseif InterfaceOptions_AddCategory then
 				InterfaceOptions_AddCategory(panel)
 			end
@@ -972,12 +1286,13 @@
 					pickupMacroByName(def.macroName)
 				end)
 
-				button:SetScript("OnEnter", function(self)
-					GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
-					local macroIndex = getMacroIndexByNameSafe(def.macroName) or 0
-					if macroIndex > 0 then
-						local macroName = GetMacroInfo(macroIndex)
-						GameTooltip:SetText(def.tooltip)
+					button:SetScript("OnEnter", function(self)
+						requestHoverMacroRefresh()
+						GameTooltip:SetOwner(self, "ANCHOR_RIGHT")
+						local macroIndex = getMacroIndexByNameSafe(def.macroName) or 0
+						if macroIndex > 0 then
+							local macroName = GetMacroInfo(macroIndex)
+							GameTooltip:SetText(def.tooltip)
 						if def.choices then
 							GameTooltip:AddLine(def.choices, 0.9, 0.9, 0.9, true)
 						end
@@ -1026,13 +1341,14 @@
 		return event == "BAG_UPDATE_COOLDOWN";
 	end
 	
-	local function playerLeftCombat(event)
-		return event == "PLAYER_REGEN_ENABLED";
-	end
+		local function playerLeftCombat(event)
+			return event == "PLAYER_REGEN_ENABLED";
+		end
 
-	local function macroNeedsUpdating(event)
-		return playerLoggedIn(event) or bagContentChanged(event) or bagCooldownChanged(event) or forcedUpdate(event);
-	end
+
+		local function macroNeedsUpdating(event)
+			return playerLoggedIn(event) or bagContentChanged(event) or bagCooldownChanged(event) or forcedUpdate(event);
+		end
 	
 	local function playerIsInCombat()
 		return InCombatLockdown();
@@ -1243,10 +1559,19 @@
 		
 	end
 
-	local function eventHandlerForAutomatedFoodDrinkMacroScript(self, event, ...)
-		if event == "PLAYER_LOGIN" then
-			initUIOnce()
-		end
+		local function eventHandlerForAutomatedFoodDrinkMacroScript(self, event, ...)
+			if event == "UNIT_SPELLCAST_SUCCEEDED" then
+				local unit = ...
+				if unit == "player" and shouldRefreshMacrosOnCast() then
+					event = "AC_CAST_UPDATE"
+				else
+					return
+				end
+			end
+
+			if event == "PLAYER_LOGIN" then
+				initUIOnce()
+			end
 
 		onLogin(event)
 		determineIfMacroNeedsToBeUpdatedNowOrLater(event);
@@ -1275,12 +1600,13 @@
 		AutomatedConsumablesFrame = CreateFrame("Frame");
 	end
 
-	local function registerEventsNeededForAddon()
-		AutomatedConsumablesFrame:RegisterEvent("PLAYER_LOGIN");
-		AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE");
-		AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE_COOLDOWN");
-		AutomatedConsumablesFrame:RegisterEvent("PLAYER_REGEN_ENABLED");
-	end
+			local function registerEventsNeededForAddon()
+				AutomatedConsumablesFrame:RegisterEvent("PLAYER_LOGIN");
+				AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE");
+				AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE_COOLDOWN");
+				AutomatedConsumablesFrame:RegisterUnitEvent("UNIT_SPELLCAST_SUCCEEDED", "player");
+				AutomatedConsumablesFrame:RegisterEvent("PLAYER_REGEN_ENABLED");
+			end
 
 	local function connectAddonEventHandlerWithFrameForAddon()
 		AutomatedConsumablesFrame:SetScript("OnEvent", eventHandlerForAutomatedFoodDrinkMacroScript)
@@ -1438,7 +1764,7 @@
 				if itemID then
 					local classID, subClassID = getItemClassInfo(itemID)
 					if classID == 0 then
-						local restoresHealth, restoresMana, requiresSeated, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
+						local restoresHealth, restoresMana, requiresSeated, _, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
 						local usable = true
 						if IsUsableItem then
 							usable = IsUsableItem(itemID)
@@ -1469,7 +1795,7 @@
 		end
 	end
 
-	connectAddOnWithGame();
-end
+		connectAddOnWithGame();
+	
 
 			
