@@ -1,5 +1,5 @@
 -- Food/Drink database (Classic Era)
--- Generated from `FoodDrinksDatabaseClassic.xml` (wowhead-derived export).
+-- Generated from a wowhead-derived export (source XML not stored in the addon folder).
 --
 -- Structured tables:
 -- - AC_FOOD_ITEMS[itemID]  = { name="...", h=<health>, m=<mana> }         -- typically m=0
