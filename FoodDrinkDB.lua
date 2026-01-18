@@ -1,258 +1,307 @@
--- Optional database.
--- You can add known itemIDs to better categorize consumables:
--- - AC_DRINK_ITEM_IDS: mana-only drinks
--- - AC_FOOD_ITEM_IDS: health-only food (no Well Fed)
--- - AC_BUFFFOOD_ITEM_IDS: Well Fed / buff foods
+-- Food/Drink database (Classic Era)
+-- Generated from `FoodDrinksDatabaseClassic.xml` (wowhead-derived export).
 --
--- The addon also auto-detects categories by scanning tooltips, so these tables
--- can be left empty if you prefer.
-AC_DRINK_ITEM_IDS = AC_DRINK_ITEM_IDS or {}
-AC_FOOD_ITEM_IDS = AC_FOOD_ITEM_IDS or {}
-AC_BUFFFOOD_ITEM_IDS = AC_BUFFFOOD_ITEM_IDS or {}
+-- Structured tables:
+-- - AC_FOOD_ITEMS[itemID]  = { name="...", h=<health>, m=<mana> }         -- typically m=0
+-- - AC_DRINK_ITEMS[itemID] = { name="...", h=<health>, m=<mana> }         -- typically h=0
+-- - AC_FOODDRINK_BOTH_ITEMS[itemID] = { name="...", h=<health>, m=<mana> } -- restores both
+-- - AC_BUFFFOOD_ITEMS[statKey][itemID] = { name="...", h=<health>, m=<mana>, wf=true, bs={...} }
+--
+-- `h`/`m` are total restored amounts from the tooltip (not per tick).
+AC_FOOD_ITEMS = AC_FOOD_ITEMS or {}
+AC_DRINK_ITEMS = AC_DRINK_ITEMS or {}
+AC_BUFFFOOD_ITEMS = AC_BUFFFOOD_ITEMS or {}
 
--- Broad fallback list: all Classic "Food & Drink" items (union), used to quickly
--- identify candidates even if tooltip parsing/localization fails.
--- Generated from wowhead Classic Food & Drinks list
--- Source: https://www.wowhead.com/classic/items/consumables/food-and-drinks
-AC_FOOD_DRINK_ITEM_IDS = AC_FOOD_DRINK_ITEM_IDS or {
-	[117] = true,
-	[159] = true,
-	[414] = true,
-	[422] = true,
-	[724] = true,
-	[733] = true,
-	[787] = true,
-	[961] = true,
-	[1017] = true,
-	[1072] = true,
-	[1082] = true,
-	[1113] = true,
-	[1114] = true,
-	[1119] = true,
-	[1179] = true,
-	[1205] = true,
-	[1326] = true,
-	[1401] = true,
-	[1487] = true,
-	[1645] = true,
-	[1707] = true,
-	[1708] = true,
-	[2070] = true,
-	[2136] = true,
-	[2287] = true,
-	[2288] = true,
-	[2594] = true,
-	[2595] = true,
-	[2596] = true,
-	[2679] = true,
-	[2680] = true,
-	[2681] = true,
-	[2682] = true,
-	[2683] = true,
-	[2684] = true,
-	[2685] = true,
-	[2686] = true,
-	[2687] = true,
-	[2723] = true,
-	[2888] = true,
-	[2894] = true,
-	[3220] = true,
-	[3448] = true,
-	[3662] = true,
-	[3663] = true,
-	[3664] = true,
-	[3665] = true,
-	[3666] = true,
-	[3703] = true,
-	[3726] = true,
-	[3727] = true,
-	[3728] = true,
-	[3729] = true,
-	[3770] = true,
-	[3771] = true,
-	[3772] = true,
-	[3927] = true,
-	[4457] = true,
-	[4536] = true,
-	[4537] = true,
-	[4538] = true,
-	[4539] = true,
-	[4540] = true,
-	[4541] = true,
-	[4542] = true,
-	[4544] = true,
-	[4592] = true,
-	[4593] = true,
-	[4594] = true,
-	[4595] = true,
-	[4599] = true,
-	[4600] = true,
-	[4601] = true,
-	[4602] = true,
-	[4604] = true,
-	[4605] = true,
-	[4606] = true,
-	[4607] = true,
-	[4608] = true,
-	[4656] = true,
-	[4791] = true,
-	[5057] = true,
-	[5066] = true,
-	[5095] = true,
-	[5265] = true,
-	[5342] = true,
-	[5349] = true,
-	[5350] = true,
-	[5472] = true,
-	[5473] = true,
-	[5474] = true,
-	[5476] = true,
-	[5477] = true,
-	[5478] = true,
-	[5479] = true,
-	[5480] = true,
-	[5525] = true,
-	[5526] = true,
-	[5527] = true,
-	[6038] = true,
-	[6290] = true,
-	[6299] = true,
-	[6316] = true,
-	[6522] = true,
-	[6657] = true,
-	[6807] = true,
-	[6887] = true,
-	[6888] = true,
-	[6890] = true,
-	[7097] = true,
-	[7228] = true,
-	[7676] = true,
-	[7806] = true,
-	[7807] = true,
-	[7808] = true,
-	[8075] = true,
-	[8076] = true,
-	[8077] = true,
-	[8078] = true,
-	[8079] = true,
-	[8243] = true,
-	[8364] = true,
-	[8543] = true,
-	[8766] = true,
-	[8932] = true,
-	[8948] = true,
-	[8950] = true,
-	[8952] = true,
-	[8953] = true,
-	[8957] = true,
-	[9260] = true,
-	[9360] = true,
-	[9361] = true,
-	[9451] = true,
-	[9681] = true,
-	[10841] = true,
-	[11109] = true,
-	[11415] = true,
-	[11444] = true,
-	[11584] = true,
-	[11846] = true,
-	[11951] = true,
-	[12003] = true,
-	[12209] = true,
-	[12210] = true,
-	[12211] = true,
-	[12212] = true,
-	[12213] = true,
-	[12214] = true,
-	[12215] = true,
-	[12216] = true,
-	[12217] = true,
-	[12218] = true,
-	[12224] = true,
-	[12238] = true,
-	[12763] = true,
-	[13546] = true,
-	[13724] = true,
-	[13755] = true,
-	[13810] = true,
-	[13851] = true,
-	[13893] = true,
-	[13927] = true,
-	[13928] = true,
-	[13929] = true,
-	[13930] = true,
-	[13931] = true,
-	[13932] = true,
-	[13933] = true,
-	[13934] = true,
-	[13935] = true,
-	[16166] = true,
-	[16167] = true,
-	[16168] = true,
-	[16169] = true,
-	[16170] = true,
-	[16171] = true,
-	[16766] = true,
-	[16971] = true,
-	[17119] = true,
-	[17196] = true,
-	[17197] = true,
-	[17198] = true,
-	[17199] = true,
-	[17222] = true,
-	[17344] = true,
-	[17402] = true,
-	[17403] = true,
-	[17404] = true,
-	[17406] = true,
-	[17407] = true,
-	[17408] = true,
-	[18045] = true,
-	[18254] = true,
-	[18255] = true,
-	[18287] = true,
-	[18288] = true,
-	[18300] = true,
-	[18632] = true,
-	[18633] = true,
-	[18635] = true,
-	[19221] = true,
-	[19222] = true,
-	[19223] = true,
-	[19224] = true,
-	[19225] = true,
-	[19299] = true,
-	[19300] = true,
-	[19301] = true,
-	[19304] = true,
-	[19305] = true,
-	[19306] = true,
-	[19696] = true,
-	[19994] = true,
-	[19995] = true,
-	[19996] = true,
-	[20031] = true,
-	[20074] = true,
-	[20452] = true,
-	[20516] = true,
-	[20709] = true,
-	[21023] = true,
-	[21030] = true,
-	[21031] = true,
-	[21033] = true,
-	[21072] = true,
-	[21114] = true,
-	[21151] = true,
-	[21215] = true,
-	[21217] = true,
-	[21235] = true,
-	[21236] = true,
-	[21240] = true,
-	[21254] = true,
-	[21552] = true,
-	[21721] = true,
-	[22324] = true,
-	[22895] = true,
-	[23160] = true,
-	[23172] = true,
-}
+AC_FOOD_ITEMS[117] = { name="Tough Jerky", h=61.2, m=0 }
+AC_FOOD_ITEMS[414] = { name="Dalaran Sharp", h=243.6, m=0 }
+AC_FOOD_ITEMS[422] = { name="Dwarven Mild", h=552, m=0 }
+AC_FOOD_ITEMS[733] = { name="Westfall Stew", h=552, m=0 }
+AC_FOOD_ITEMS[787] = { name="Slitherskin Mackerel", h=61.2, m=0 }
+AC_FOOD_ITEMS[961] = { name="Healing Herb", h=61.2, m=0 }
+AC_FOOD_ITEMS[1113] = { name="Conjured Bread", h=243.6, m=0 }
+AC_FOOD_ITEMS[1114] = { name="Conjured Rye", h=552, m=0 }
+AC_FOOD_ITEMS[1119] = { name="Bottled Spirits", h=552, m=0 }
+AC_FOOD_ITEMS[1326] = { name="Sauteed Sunfish", h=243.6, m=0 }
+AC_FOOD_ITEMS[1487] = { name="Conjured Pumpernickel", h=874.8, m=0 }
+AC_FOOD_ITEMS[1707] = { name="Stormwind Brie", h=874.8, m=0 }
+AC_FOOD_ITEMS[2070] = { name="Darnassian Bleu", h=61.2, m=0 }
+AC_FOOD_ITEMS[2287] = { name="Haunch of Meat", h=243.6, m=0 }
+AC_FOOD_ITEMS[2679] = { name="Charred Wolf Meat", h=61.2, m=0 }
+AC_FOOD_ITEMS[2681] = { name="Roasted Boar Meat", h=61.2, m=0 }
+AC_FOOD_ITEMS[2685] = { name="Succulent Pork Ribs", h=552, m=0 }
+AC_FOOD_ITEMS[3770] = { name="Mutton Chop", h=552, m=0 }
+AC_FOOD_ITEMS[3771] = { name="Wild Hog Shank", h=874.8, m=0 }
+AC_FOOD_ITEMS[3927] = { name="Fine Aged Cheddar", h=1392, m=0 }
+AC_FOOD_ITEMS[4536] = { name="Shiny Red Apple", h=61.2, m=0 }
+AC_FOOD_ITEMS[4537] = { name="Tel'Abim Banana", h=243.6, m=0 }
+AC_FOOD_ITEMS[4538] = { name="Snapvine Watermelon", h=552, m=0 }
+AC_FOOD_ITEMS[4539] = { name="Goldenbark Apple", h=874.8, m=0 }
+AC_FOOD_ITEMS[4540] = { name="Tough Hunk of Bread", h=61.2, m=0 }
+AC_FOOD_ITEMS[4541] = { name="Freshly Baked Bread", h=243.6, m=0 }
+AC_FOOD_ITEMS[4542] = { name="Moist Cornbread", h=552, m=0 }
+AC_FOOD_ITEMS[4544] = { name="Mulgore Spice Bread", h=874.8, m=0 }
+AC_FOOD_ITEMS[4592] = { name="Longjaw Mud Snapper", h=243.6, m=0 }
+AC_FOOD_ITEMS[4593] = { name="Bristle Whisker Catfish", h=552, m=0 }
+AC_FOOD_ITEMS[4594] = { name="Rockscale Cod", h=874.8, m=0 }
+AC_FOOD_ITEMS[4599] = { name="Cured Ham Steak", h=1392, m=0 }
+AC_FOOD_ITEMS[4601] = { name="Soft Banana Bread", h=1392, m=0 }
+AC_FOOD_ITEMS[4602] = { name="Moon Harvest Pumpkin", h=1392, m=0 }
+AC_FOOD_ITEMS[4604] = { name="Forest Mushroom Cap", h=61.2, m=0 }
+AC_FOOD_ITEMS[4605] = { name="Red-speckled Mushroom", h=243.6, m=0 }
+AC_FOOD_ITEMS[4606] = { name="Spongy Morel", h=552, m=0 }
+AC_FOOD_ITEMS[4607] = { name="Delicious Cave Mold", h=874.8, m=0 }
+AC_FOOD_ITEMS[4608] = { name="Raw Black Truffle", h=1392, m=0 }
+AC_FOOD_ITEMS[4656] = { name="Small Pumpkin", h=61.2, m=0 }
+AC_FOOD_ITEMS[5057] = { name="Ripe Watermelon", h=61.2, m=0 }
+AC_FOOD_ITEMS[5066] = { name="Fissure Plant", h=243.6, m=0 }
+AC_FOOD_ITEMS[5095] = { name="Rainbow Fin Albacore", h=243.6, m=0 }
+AC_FOOD_ITEMS[5349] = { name="Conjured Muffin", h=61.2, m=0 }
+AC_FOOD_ITEMS[5473] = { name="Scorpid Surprise", h=294, m=0 }
+AC_FOOD_ITEMS[5478] = { name="Dig Rat Stew", h=552, m=0 }
+AC_FOOD_ITEMS[5526] = { name="Clam Chowder", h=552, m=0 }
+AC_FOOD_ITEMS[6290] = { name="Brilliant Smallfish", h=61.2, m=0 }
+AC_FOOD_ITEMS[6299] = { name="Sickly Looking Fish", h=30, m=0 }
+AC_FOOD_ITEMS[6316] = { name="Loch Frenzy Delight", h=243.6, m=0 }
+AC_FOOD_ITEMS[6807] = { name="Frog Leg Stew", h=874.8, m=0 }
+AC_FOOD_ITEMS[6887] = { name="Spotted Yellowtail", h=1392, m=0 }
+AC_FOOD_ITEMS[6888] = { name="Herb Baked Egg", h=61.2, m=0 }
+AC_FOOD_ITEMS[6890] = { name="Smoked Bear Meat", h=243.6, m=0 }
+AC_FOOD_ITEMS[7097] = { name="Leg Meat", h=61.2, m=0 }
+AC_FOOD_ITEMS[8075] = { name="Conjured Sourdough", h=1392, m=0 }
+AC_FOOD_ITEMS[8076] = { name="Conjured Sweet Roll", h=2148, m=0 }
+AC_FOOD_ITEMS[8077] = { name="Conjured Mineral Water", h=1992, m=0 }
+AC_FOOD_ITEMS[8364] = { name="Mithril Head Trout", h=874.8, m=0 }
+AC_FOOD_ITEMS[8932] = { name="Alterac Swiss", h=2148, m=0 }
+AC_FOOD_ITEMS[8948] = { name="Dried King Bolete", h=2148, m=0 }
+AC_FOOD_ITEMS[8950] = { name="Homemade Cherry Pie", h=2148, m=0 }
+AC_FOOD_ITEMS[8952] = { name="Roasted Quail", h=2148, m=0 }
+AC_FOOD_ITEMS[8953] = { name="Deep Fried Plantains", h=2148, m=0 }
+AC_FOOD_ITEMS[8957] = { name="Spinefin Halibut", h=2148, m=0 }
+AC_FOOD_ITEMS[9681] = { name="Grilled King Crawler Legs", h=1392, m=0 }
+AC_FOOD_ITEMS[11109] = { name="Special Chicken Feed", h=30, m=0 }
+AC_FOOD_ITEMS[11415] = { name="Mixed Berries", h=2148, m=0 }
+AC_FOOD_ITEMS[11444] = { name="Grim Guzzler Boar", h=2148, m=0 }
+AC_FOOD_ITEMS[12238] = { name="Darkshore Grouper", h=243.6, m=0 }
+AC_FOOD_ITEMS[13546] = { name="Bloodbelly Fish", h=1392, m=0 }
+AC_FOOD_ITEMS[13755] = { name="Winter Squid", h=874.8, m=0 }
+AC_FOOD_ITEMS[13893] = { name="Large Raw Mightfish", h=1392, m=0 }
+AC_FOOD_ITEMS[13930] = { name="Filet of Redgill", h=1392, m=0 }
+AC_FOOD_ITEMS[13933] = { name="Lobster Stew", h=2148, m=0 }
+AC_FOOD_ITEMS[13935] = { name="Baked Salmon", h=2148, m=0 }
+AC_FOOD_ITEMS[16166] = { name="Bean Soup", h=61.2, m=0 }
+AC_FOOD_ITEMS[16167] = { name="Versicolor Treat", h=243.6, m=0 }
+AC_FOOD_ITEMS[16168] = { name="Heaven Peach", h=1392, m=0 }
+AC_FOOD_ITEMS[16169] = { name="Wild Ricecake", h=874.8, m=0 }
+AC_FOOD_ITEMS[16170] = { name="Steamed Mandu", h=552, m=0 }
+AC_FOOD_ITEMS[16171] = { name="Shinsollo", h=2148, m=0 }
+AC_FOOD_ITEMS[16766] = { name="Undermine Clam Chowder", h=1392, m=0 }
+AC_FOOD_ITEMS[17119] = { name="Deeprun Rat Kabob", h=243.6, m=0 }
+AC_FOOD_ITEMS[17344] = { name="Candy Cane", h=61.2, m=0 }
+AC_FOOD_ITEMS[17406] = { name="Holiday Cheesewheel", h=243.6, m=0 }
+AC_FOOD_ITEMS[17407] = { name="Graccu's Homemade Meat Pie", h=874.8, m=0 }
+AC_FOOD_ITEMS[17408] = { name="Spicy Beefstick", h=1392, m=0 }
+AC_FOOD_ITEMS[18255] = { name="Runn Tum Tuber", h=1392, m=0 }
+AC_FOOD_ITEMS[18632] = { name="Moonbrook Riot Taffy", h=874.8, m=0 }
+AC_FOOD_ITEMS[18635] = { name="Bellara's Nutterbar", h=1392, m=0 }
+AC_FOOD_ITEMS[19223] = { name="Darkmoon Dog", h=61.2, m=0 }
+AC_FOOD_ITEMS[19224] = { name="Red Hot Wings", h=874.8, m=0 }
+AC_FOOD_ITEMS[19225] = { name="Deep Fried Candybar", h=2148, m=0 }
+AC_FOOD_ITEMS[19304] = { name="Spiced Beef Jerky", h=243.6, m=0 }
+AC_FOOD_ITEMS[19305] = { name="Pickled Kodo Foot", h=552, m=0 }
+AC_FOOD_ITEMS[19306] = { name="Crunchy Frog", h=1392, m=0 }
+AC_FOOD_ITEMS[21030] = { name="Darnassus Kimchi Pie", h=1392, m=0 }
+AC_FOOD_ITEMS[21031] = { name="Cabbage Kimchi", h=2148, m=0 }
+AC_FOOD_ITEMS[21033] = { name="Radish Kimchi", h=2148, m=0 }
+AC_FOOD_ITEMS[21552] = { name="Striped Yellowtail", h=1392, m=0 }
+AC_FOOD_ITEMS[22324] = { name="Winter Kimchi", h=2148, m=0 }
+AC_FOOD_ITEMS[22895] = { name="Conjured Cinnamon Roll", h=3180, m=0 }
+AC_FOOD_ITEMS[23160] = { name="Friendship Bread", h=2148, m=0 }
+
+AC_DRINK_ITEMS[159] = { name="Refreshing Spring Water", h=0, m=151.2 }
+AC_DRINK_ITEMS[1179] = { name="Ice Cold Milk", h=0, m=436.8 }
+AC_DRINK_ITEMS[1205] = { name="Melon Juice", h=0, m=835.2 }
+AC_DRINK_ITEMS[1645] = { name="Moonberry Juice", h=0, m=1992 }
+AC_DRINK_ITEMS[1708] = { name="Sweet Nectar", h=0, m=1344.6 }
+AC_DRINK_ITEMS[2136] = { name="Conjured Purified Water", h=0, m=835.2 }
+AC_DRINK_ITEMS[2288] = { name="Conjured Fresh Water", h=0, m=436.8 }
+AC_DRINK_ITEMS[3772] = { name="Conjured Spring Water", h=0, m=1344.6 }
+AC_DRINK_ITEMS[4791] = { name="Enchanted Water", h=0, m=1344.6 }
+AC_DRINK_ITEMS[5350] = { name="Conjured Water", h=0, m=151.2 }
+AC_DRINK_ITEMS[8078] = { name="Conjured Sparkling Water", h=0, m=2934 }
+AC_DRINK_ITEMS[8079] = { name="Conjured Crystal Water", h=0, m=4200 }
+AC_DRINK_ITEMS[8766] = { name="Morning Glory Dew", h=0, m=2934 }
+AC_DRINK_ITEMS[9451] = { name="Bubbling Water", h=0, m=835.2 }
+AC_DRINK_ITEMS[10841] = { name="Goldthorn Tea", h=0, m=1344.6 }
+AC_DRINK_ITEMS[17404] = { name="Blended Bean Brew", h=0, m=436.8 }
+AC_DRINK_ITEMS[18300] = { name="Hyjal Nectar", h=0, m=4200 }
+AC_DRINK_ITEMS[19299] = { name="Fizzy Faire Drink", h=0, m=835.2 }
+AC_DRINK_ITEMS[19300] = { name="Bottled Winterspring Water", h=0, m=1992 }
+
+AC_FOODDRINK_BOTH_ITEMS = AC_FOODDRINK_BOTH_ITEMS or {}
+AC_FOODDRINK_BOTH_ITEMS[2682] = { name="Cooked Crab Claw", h=294, m=294 }
+AC_FOODDRINK_BOTH_ITEMS[3448] = { name="Senggin Root", h=294, m=294 }
+AC_FOODDRINK_BOTH_ITEMS[13724] = { name="Enriched Manna Biscuit", h=2148, m=4410 }
+AC_FOODDRINK_BOTH_ITEMS[19301] = { name="Alterac Manna Biscuit", h=4410, m=4410 }
+AC_FOODDRINK_BOTH_ITEMS[20031] = { name="Essence Mango", h=2550, m=4410 }
+AC_FOODDRINK_BOTH_ITEMS[21072] = { name="Smoked Sagefish", h=378, m=567 }
+AC_FOODDRINK_BOTH_ITEMS[21217] = { name="Sagefish Delight", h=840, m=1260 }
+
+AC_BUFFFOOD_ITEMS["Agility"] = AC_BUFFFOOD_ITEMS["Agility"] or {}
+AC_BUFFFOOD_ITEMS["Agility"][13928] = { name="Grilled Squid", h=874.8, m=0, wf=true, bs={["Agility"]=10} }
+
+AC_BUFFFOOD_ITEMS["Intellect"] = AC_BUFFFOOD_ITEMS["Intellect"] or {}
+AC_BUFFFOOD_ITEMS["Intellect"][18254] = { name="Runn Tum Tuber Surprise", h=1933.2, m=0, wf=true, bs={["Intellect"]=10} }
+
+AC_BUFFFOOD_ITEMS["Spirit"] = AC_BUFFFOOD_ITEMS["Spirit"] or {}
+AC_BUFFFOOD_ITEMS["Spirit"][724] = { name="Goretusk Liver Pie", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][1017] = { name="Seasoned Wolf Kabob", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][1082] = { name="Redridge Goulash", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][2680] = { name="Spiced Wolf Meat", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][2683] = { name="Crab Cake", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][2684] = { name="Coyote Steak", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][2687] = { name="Dry Pork Ribs", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][2888] = { name="Beer Basted Boar Ribs", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][3220] = { name="Blood Sausage", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][3662] = { name="Crocolisk Steak", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][3663] = { name="Murloc Fin Soup", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][3664] = { name="Crocolisk Gumbo", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][3665] = { name="Curiously Tasty Omelet", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][3666] = { name="Gooey Spider Cake", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][3726] = { name="Big Bear Steak", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][3727] = { name="Hot Lion Chops", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][3728] = { name="Tasty Lion Steak", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][3729] = { name="Soothing Turtle Bisque", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][4457] = { name="Barbecued Buzzard Wing", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][5472] = { name="Kaldorei Spider Kabob", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][5474] = { name="Roasted Kodo Meat", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][5476] = { name="Fillet of Frenzy", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][5477] = { name="Strider Stew", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][5479] = { name="Crispy Lizard Tail", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][5480] = { name="Lean Venison", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][5525] = { name="Boiled Clams", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][5527] = { name="Goblin Deviled Clams", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][6038] = { name="Giant Clam Scorcho", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][7228] = { name="Tigule's Strawberry Ice Cream", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][7806] = { name="Lollipop", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][7807] = { name="Candy Bar", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][7808] = { name="Chocolate Square", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][11584] = { name="Cactus Apple Surprise", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][12209] = { name="Lean Wolf Steak", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Spirit"][12210] = { name="Roast Raptor", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][12211] = { name="Spiced Wolf Ribs", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][12212] = { name="Jungle Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][12213] = { name="Carrion Surprise", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][12214] = { name="Mystery Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][12215] = { name="Heavy Kodo Stew", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][12216] = { name="Spiced Chili Crab", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][12218] = { name="Monster Omelet", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][12224] = { name="Crispy Bat Wing", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][13851] = { name="Hot Wolf Ribs", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Spirit"][13929] = { name="Hot Smoked Bass", h=874.8, m=0, wf=true, bs={["Spirit"]=10} }
+AC_BUFFFOOD_ITEMS["Spirit"][16971] = { name="Clamlette Surprise", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][17197] = { name="Gingerbread Cookie", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][17198] = { name="Egg Nog", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][17199] = { name="Bad Egg Nog", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][17222] = { name="Spider Sausage", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][18045] = { name="Tender Wolf Steak", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][20074] = { name="Heavy Crocolisk Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+
+AC_BUFFFOOD_ITEMS["Stamina"] = AC_BUFFFOOD_ITEMS["Stamina"] or {}
+AC_BUFFFOOD_ITEMS["Stamina"][724] = { name="Goretusk Liver Pie", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][1017] = { name="Seasoned Wolf Kabob", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][1082] = { name="Redridge Goulash", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][2680] = { name="Spiced Wolf Meat", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][2683] = { name="Crab Cake", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][2684] = { name="Coyote Steak", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][2687] = { name="Dry Pork Ribs", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][2888] = { name="Beer Basted Boar Ribs", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][3220] = { name="Blood Sausage", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][3662] = { name="Crocolisk Steak", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][3663] = { name="Murloc Fin Soup", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][3664] = { name="Crocolisk Gumbo", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][3665] = { name="Curiously Tasty Omelet", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][3666] = { name="Gooey Spider Cake", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][3726] = { name="Big Bear Steak", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][3727] = { name="Hot Lion Chops", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][3728] = { name="Tasty Lion Steak", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][3729] = { name="Soothing Turtle Bisque", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][4457] = { name="Barbecued Buzzard Wing", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][5472] = { name="Kaldorei Spider Kabob", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][5474] = { name="Roasted Kodo Meat", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][5476] = { name="Fillet of Frenzy", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][5477] = { name="Strider Stew", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][5479] = { name="Crispy Lizard Tail", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][5480] = { name="Lean Venison", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][5525] = { name="Boiled Clams", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][5527] = { name="Goblin Deviled Clams", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][6038] = { name="Giant Clam Scorcho", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][7228] = { name="Tigule's Strawberry Ice Cream", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][7806] = { name="Lollipop", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][7807] = { name="Candy Bar", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][7808] = { name="Chocolate Square", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][11584] = { name="Cactus Apple Surprise", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][12209] = { name="Lean Wolf Steak", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
+AC_BUFFFOOD_ITEMS["Stamina"][12210] = { name="Roast Raptor", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][12211] = { name="Spiced Wolf Ribs", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][12212] = { name="Jungle Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][12213] = { name="Carrion Surprise", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][12214] = { name="Mystery Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][12215] = { name="Heavy Kodo Stew", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][12216] = { name="Spiced Chili Crab", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][12218] = { name="Monster Omelet", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][12224] = { name="Crispy Bat Wing", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][13851] = { name="Hot Wolf Ribs", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][13927] = { name="Cooked Glossy Mightfish", h=874.8, m=0, wf=true, bs={["Stamina"]=10} }
+AC_BUFFFOOD_ITEMS["Stamina"][13934] = { name="Mightfish Steak", h=1933.2, m=0, wf=true, bs={["Stamina"]=10} }
+AC_BUFFFOOD_ITEMS["Stamina"][16971] = { name="Clamlette Surprise", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][17197] = { name="Gingerbread Cookie", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][17198] = { name="Egg Nog", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][17199] = { name="Bad Egg Nog", h=61.2, m=0, wf=true, bs={["Spirit"]=2,["Stamina"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][17222] = { name="Spider Sausage", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][18045] = { name="Tender Wolf Steak", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][20074] = { name="Heavy Crocolisk Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
+AC_BUFFFOOD_ITEMS["Stamina"][21023] = { name="Dirge's Kickin' Chimaerok Chops", h=2550, m=0, wf=true, bs={["Stamina"]=25} }
+
+AC_BUFFFOOD_ITEMS["Strength"] = AC_BUFFFOOD_ITEMS["Strength"] or {}
+AC_BUFFFOOD_ITEMS["Strength"][13810] = { name="Blessed Sunfruit", h=1933.2, m=0, wf=true, bs={["Strength"]=10} }
+AC_BUFFFOOD_ITEMS["Strength"][20452] = { name="Smoked Desert Dumplings", h=2148, m=0, wf=true, bs={["Strength"]=20} }
+
+-- Derived legacy compatibility tables (used by the addon code)
+AC_FOOD_ITEM_IDS = AC_FOOD_ITEM_IDS or {}
+AC_DRINK_ITEM_IDS = AC_DRINK_ITEM_IDS or {}
+AC_BUFFFOOD_ITEM_IDS = AC_BUFFFOOD_ITEM_IDS or {}
+AC_FOOD_DRINK_ITEM_IDS = AC_FOOD_DRINK_ITEM_IDS or {}
+AC_FOODDRINK_ITEM_STATS = AC_FOODDRINK_ITEM_STATS or {}
+
+local function _ac_add_stat(itemID, stats)
+	AC_FOODDRINK_ITEM_STATS[itemID] = stats
+	AC_FOOD_DRINK_ITEM_IDS[itemID] = true
+end
+
+for itemID, s in pairs(AC_FOOD_ITEMS) do
+	if type(itemID) == "number" and type(s) == "table" then
+		AC_FOOD_ITEM_IDS[itemID] = true
+		_ac_add_stat(itemID, { h = s.h or 0, m = s.m or 0, wf = false, bs = nil, kind = "food" })
+	end
+end
+for itemID, s in pairs(AC_DRINK_ITEMS) do
+	if type(itemID) == "number" and type(s) == "table" then
+		AC_DRINK_ITEM_IDS[itemID] = true
+		_ac_add_stat(itemID, { h = s.h or 0, m = s.m or 0, wf = false, bs = nil, kind = "drink" })
+	end
+end
+for itemID, s in pairs(AC_FOODDRINK_BOTH_ITEMS) do
+	if type(itemID) == "number" and type(s) == "table" then
+		_ac_add_stat(itemID, { h = s.h or 0, m = s.m or 0, wf = false, bs = nil, kind = "both" })
+	end
+end
+for statKey, bucket in pairs(AC_BUFFFOOD_ITEMS) do
+	if type(statKey) == "string" and type(bucket) == "table" then
+		for itemID, s in pairs(bucket) do
+			if type(itemID) == "number" and type(s) == "table" then
+				AC_BUFFFOOD_ITEM_IDS[itemID] = true
+				_ac_add_stat(itemID, { h = s.h or 0, m = s.m or 0, wf = true, bs = s.bs, kind = "buff" })
+			end
+		end
+	end
+end

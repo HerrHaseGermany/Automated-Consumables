@@ -1,0 +1,2970 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Christian Raudzis</Author>
+  <LastAuthor>Christian Raudzis</LastAuthor>
+  <Created>2026-01-17T18:15:37Z</Created>
+  <LastSaved>2026-01-18T11:39:10Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>24100</WindowHeight>
+  <WindowWidth>32767</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>760</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Aptos Narrow" x:Family="Swiss" ss:Size="12"
+    ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s16" ss:Name="Link">
+   <Alignment ss:Vertical="Bottom"/>
+   <Borders/>
+   <Font ss:FontName="Aptos Narrow" x:Family="Swiss" ss:Size="12"
+    ss:Color="#467886" ss:Underline="Single"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s17">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="14" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s18" ss:Parent="s16">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="16" ss:Color="#000000"
+    ss:Underline="Single"/>
+  </Style>
+  <Style ss:ID="s19">
+   <Font ss:FontName="Arial" x:Family="Swiss" ss:Size="16" ss:Color="#000000"/>
+  </Style>
+  <Style ss:ID="s20">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Top"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="Aptos Narrow" x:Family="Swiss" ss:Size="16"
+    ss:Color="#000000" ss:Bold="1"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="Tabelle1">
+  <Table ss:ExpandedColumnCount="12" ss:ExpandedRowCount="193" x:FullColumns="1"
+   x:FullRows="1" ss:StyleID="s17" ss:DefaultColumnWidth="65"
+   ss:DefaultRowHeight="18">
+   <Column ss:StyleID="s17" ss:AutoFitWidth="0" ss:Width="242"/>
+   <Column ss:StyleID="s17" ss:AutoFitWidth="0" ss:Width="124"/>
+   <Column ss:StyleID="s17" ss:AutoFitWidth="0" ss:Width="149"/>
+   <Column ss:AutoFitWidth="0" ss:Span="1"/>
+   <Row ss:AutoFitHeight="0" ss:Height="22">
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Name</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Item Level</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Level Requirement</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">ID</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Health</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Mana</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Duration</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Strenght</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Agility</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="String">Stamina</Data></Cell>
+    <Cell ss:StyleID="s20"><Data ss:Type="String">Spirit</Data></Cell>
+    <Cell ss:StyleID="s20"><Data ss:Type="String">Intellect</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=11109/special-chicken-feed"><Data
+      ss:Type="String">Special Chicken Feed</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">11109</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6299/sickly-looking-fish"><Data
+      ss:Type="String">Sickly Looking Fish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6299</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4536/shiny-red-apple"><Data
+      ss:Type="String">Shiny Red Apple</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4536</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=159/refreshing-spring-water"><Data
+      ss:Type="String">Refreshing Spring Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">159</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">151.19999999999999</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=117/tough-jerky"><Data
+      ss:Type="String">Tough Jerky</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">117</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17197/gingerbread-cookie"><Data
+      ss:Type="String">Gingerbread Cookie</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17197</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=7097/leg-meat"><Data
+      ss:Type="String">Leg Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7097</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2680/spiced-wolf-meat"><Data
+      ss:Type="String">Spiced Wolf Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2680</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2070/darnassian-bleu"><Data
+      ss:Type="String">Darnassian Bleu</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2070</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4540/tough-hunk-of-bread"><Data
+      ss:Type="String">Tough Hunk of Bread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4540</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5350/conjured-water"><Data
+      ss:Type="String">Conjured Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5350</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">151.19999999999999</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6290/brilliant-smallfish"><Data
+      ss:Type="String">Brilliant Smallfish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6290</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=724/goretusk-liver-pie"><Data
+      ss:Type="String">Goretusk Liver Pie</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">724</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=787/slitherskin-mackerel"><Data
+      ss:Type="String">Slitherskin Mackerel</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">787</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4604/forest-mushroom-cap"><Data
+      ss:Type="String">Forest Mushroom Cap</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4604</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5349/conjured-muffin"><Data
+      ss:Type="String">Conjured Muffin</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5349</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17344/candy-cane"><Data
+      ss:Type="String">Candy Cane</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17344</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=7808/chocolate-square"><Data
+      ss:Type="String">Chocolate Square</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7808</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1707/stormwind-brie"><Data
+      ss:Type="String">Stormwind Brie</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1707</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8078/conjured-sparkling-water"><Data
+      ss:Type="String">Conjured Sparkling Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8078</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2934</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2288/conjured-fresh-water"><Data
+      ss:Type="String">Conjured Fresh Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2288</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">436.8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5479/crispy-lizard-tail"><Data
+      ss:Type="String">Crispy Lizard Tail</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">22</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5479</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=11415/mixed-berries"><Data
+      ss:Type="String">Mixed Berries</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">11415</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19299/fizzy-faire-drink"><Data
+      ss:Type="String">Fizzy Faire Drink</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19299</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">835.2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13927/cooked-glossy-mightfish"><Data
+      ss:Type="String">Cooked Glossy Mightfish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13927</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2679/charred-wolf-meat"><Data
+      ss:Type="String">Charred Wolf Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2679</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16166/bean-soup"><Data
+      ss:Type="String">Bean Soup</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16166</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17199/bad-egg-nog"><Data
+      ss:Type="String">Bad Egg Nog</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17199</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=7806/lollipop"><Data
+      ss:Type="String">Lollipop</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7806</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=11584/cactus-apple-surprise"><Data
+      ss:Type="String">Cactus Apple Surprise</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">11584</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12238/darkshore-grouper"><Data
+      ss:Type="String">Darkshore Grouper</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12238</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1179/ice-cold-milk"><Data
+      ss:Type="String">Ice Cold Milk</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1179</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">436.8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5525/boiled-clams"><Data
+      ss:Type="String">Boiled Clams</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5525</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21217/sagefish-delight"><Data
+      ss:Type="String">Sagefish Delight</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21217</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">840</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1260</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21072/smoked-sagefish"><Data
+      ss:Type="String">Smoked Sagefish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21072</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">378</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">567</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2683/crab-cake"><Data
+      ss:Type="String">Crab Cake</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2683</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2287/haunch-of-meat"><Data
+      ss:Type="String">Haunch of Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2287</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4541/freshly-baked-bread"><Data
+      ss:Type="String">Freshly Baked Bread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4541</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2684/coyote-steak"><Data
+      ss:Type="String">Coyote Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2684</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4537/telabim-banana"><Data
+      ss:Type="String">Tel'Abim Banana</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4537</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4592/longjaw-mud-snapper"><Data
+      ss:Type="String">Longjaw Mud Snapper</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4592</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=414/dalaran-sharp"><Data
+      ss:Type="String">Dalaran Sharp</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">414</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2687/dry-pork-ribs"><Data
+      ss:Type="String">Dry Pork Ribs</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2687</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5473/scorpid-surprise"><Data
+      ss:Type="String">Scorpid Surprise</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5473</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">294</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17119/deeprun-rat-kabob"><Data
+      ss:Type="String">Deeprun Rat Kabob</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17119</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2682/cooked-crab-claw"><Data
+      ss:Type="String">Cooked Crab Claw</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2682</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">294</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">294</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4602/moon-harvest-pumpkin"><Data
+      ss:Type="String">Moon Harvest Pumpkin</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4602</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5095/rainbow-fin-albacore"><Data
+      ss:Type="String">Rainbow Fin Albacore</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5095</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1326/sauteed-sunfish"><Data
+      ss:Type="String">Sauteed Sunfish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1326</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3448/senggin-root"><Data
+      ss:Type="String">Senggin Root</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">9</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3448</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">294</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">294</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3220/blood-sausage"><Data
+      ss:Type="String">Blood Sausage</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3220</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8075/conjured-sourdough"><Data
+      ss:Type="String">Conjured Sourdough</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8075</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2888/beer-basted-boar-ribs"><Data
+      ss:Type="String">Beer Basted Boar Ribs</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2888</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12224/crispy-bat-wing"><Data
+      ss:Type="String">Crispy Bat Wing</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12224</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19305/pickled-kodo-foot"><Data
+      ss:Type="String">Pickled Kodo Foot</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19305</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19225/deep-fried-candybar"><Data
+      ss:Type="String">Deep Fried Candybar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19225</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1114/conjured-rye"><Data
+      ss:Type="String">Conjured Rye</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1114</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=9451/bubbling-water"><Data
+      ss:Type="String">Bubbling Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">9451</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">835.2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16171/shinsollo"><Data
+      ss:Type="String">Shinsollo</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16171</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1082/redridge-goulash"><Data
+      ss:Type="String">Redridge Goulash</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1082</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">54</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8076/conjured-sweet-roll"><Data
+      ss:Type="String">Conjured Sweet Roll</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8076</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16167/versicolor-treat"><Data
+      ss:Type="String">Versicolor Treat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16167</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19304/spiced-beef-jerky"><Data
+      ss:Type="String">Spiced Beef Jerky</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19304</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3662/crocolisk-steak"><Data
+      ss:Type="String">Crocolisk Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3662</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17404/blended-bean-brew"><Data
+      ss:Type="String">Blended Bean Brew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17404</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">436.8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4593/bristle-whisker-catfish"><Data
+      ss:Type="String">Bristle Whisker Catfish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4593</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3770/mutton-chop"><Data
+      ss:Type="String">Mutton Chop</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3770</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5527/goblin-deviled-clams"><Data
+      ss:Type="String">Goblin Deviled Clams</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5527</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12209/lean-wolf-steak"><Data
+      ss:Type="String">Lean Wolf Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12209</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1205/melon-juice"><Data
+      ss:Type="String">Melon Juice</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1205</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">835.2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3665/curiously-tasty-omelet"><Data
+      ss:Type="String">Curiously Tasty Omelet</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3665</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3663/murloc-fin-soup"><Data
+      ss:Type="String">Murloc Fin Soup</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3663</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3664/crocolisk-gumbo"><Data
+      ss:Type="String">Crocolisk Gumbo</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3664</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1017/seasoned-wolf-kabob"><Data
+      ss:Type="String">Seasoned Wolf Kabob</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1017</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=422/dwarven-mild"><Data
+      ss:Type="String">Dwarven Mild</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">422</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4542/moist-cornbread"><Data
+      ss:Type="String">Moist Cornbread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4542</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=7228/tigules-strawberry-ice-cream"><Data
+      ss:Type="String">Tigule's Strawberry Ice Cream</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7228</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4606/spongy-morel"><Data
+      ss:Type="String">Spongy Morel</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4606</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2136/conjured-purified-water"><Data
+      ss:Type="String">Conjured Purified Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2136</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">835.2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5526/clam-chowder"><Data
+      ss:Type="String">Clam Chowder</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5526</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5478/dig-rat-stew"><Data
+      ss:Type="String">Dig Rat Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5478</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6890/smoked-bear-meat"><Data
+      ss:Type="String">Smoked Bear Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6890</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12215/heavy-kodo-stew"><Data
+      ss:Type="String">Heavy Kodo Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12215</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17407/graccus-homemade-meat-pie"><Data
+      ss:Type="String">Graccu's Homemade Meat Pie</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17407</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8077/conjured-mineral-water"><Data
+      ss:Type="String">Conjured Mineral Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8077</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1992</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3666/gooey-spider-cake"><Data
+      ss:Type="String">Gooey Spider Cake</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3666</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6316/loch-frenzy-delight"><Data
+      ss:Type="String">Loch Frenzy Delight</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6316</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1113/conjured-bread"><Data
+      ss:Type="String">Conjured Bread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1113</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2685/succulent-pork-ribs"><Data
+      ss:Type="String">Succulent Pork Ribs</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2685</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5480/lean-venison"><Data
+      ss:Type="String">Lean Venison</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5480</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13755/winter-squid"><Data
+      ss:Type="String">Winter Squid</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13755</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13928/grilled-squid"><Data
+      ss:Type="String">Grilled Squid</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13928</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4457/barbecued-buzzard-wing"><Data
+      ss:Type="String">Barbecued Buzzard Wing</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4457</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6807/frog-leg-stew"><Data
+      ss:Type="String">Frog Leg Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6807</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13810/blessed-sunfruit"><Data
+      ss:Type="String">Blessed Sunfruit</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13810</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1933.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=18254/runn-tum-tuber-surprise"><Data
+      ss:Type="String">Runn Tum Tuber Surprise</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18254</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1933.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4791/enchanted-water"><Data
+      ss:Type="String">Enchanted Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4791</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1344.6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3771/wild-hog-shank"><Data
+      ss:Type="String">Wild Hog Shank</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3771</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=10841/goldthorn-tea"><Data
+      ss:Type="String">Goldthorn Tea</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10841</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1344.6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8364/mithril-head-trout"><Data
+      ss:Type="String">Mithril Head Trout</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8364</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4594/rockscale-cod"><Data
+      ss:Type="String">Rockscale Cod</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4594</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4607/delicious-cave-mold"><Data
+      ss:Type="String">Delicious Cave Mold</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4607</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1708/sweet-nectar"><Data
+      ss:Type="String">Sweet Nectar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1708</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1344.6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4539/goldenbark-apple"><Data
+      ss:Type="String">Goldenbark Apple</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4539</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12210/roast-raptor"><Data
+      ss:Type="String">Roast Raptor</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12210</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13934/mightfish-steak"><Data
+      ss:Type="String">Mightfish Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13934</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1933.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=20074/heavy-crocolisk-stew"><Data
+      ss:Type="String">Heavy Crocolisk Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20074</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3729/soothing-turtle-bisque"><Data
+      ss:Type="String">Soothing Turtle Bisque</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3729</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3728/tasty-lion-steak"><Data
+      ss:Type="String">Tasty Lion Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3728</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=2681/roasted-boar-meat"><Data
+      ss:Type="String">Roasted Boar Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2681</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13851/hot-wolf-ribs"><Data
+      ss:Type="String">Hot Wolf Ribs</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13851</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=11444/grim-guzzler-boar"><Data
+      ss:Type="String">Grim Guzzler Boar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">11444</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3772/conjured-spring-water"><Data
+      ss:Type="String">Conjured Spring Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3772</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1344.6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6038/giant-clam-scorcho"><Data
+      ss:Type="String">Giant Clam Scorcho</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6038</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12213/carrion-surprise"><Data
+      ss:Type="String">Carrion Surprise</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12213</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12214/mystery-stew"><Data
+      ss:Type="String">Mystery Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12214</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17198/egg-nog"><Data
+      ss:Type="String">Egg Nog</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17198</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3727/hot-lion-chops"><Data
+      ss:Type="String">Hot Lion Chops</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3727</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13933/lobster-stew"><Data
+      ss:Type="String">Lobster Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13933</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17408/spicy-beefstick"><Data
+      ss:Type="String">Spicy Beefstick</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17408</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5472/kaldorei-spider-kabob"><Data
+      ss:Type="String">Kaldorei Spider Kabob</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5472</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19300/bottled-winterspring-water"><Data
+      ss:Type="String">Bottled Winterspring Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19300</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1992</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5057/ripe-watermelon"><Data
+      ss:Type="String">Ripe Watermelon</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5057</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4656/small-pumpkin"><Data
+      ss:Type="String">Small Pumpkin</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4656</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12212/jungle-stew"><Data
+      ss:Type="String">Jungle Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12212</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17406/holiday-cheesewheel"><Data
+      ss:Type="String">Holiday Cheesewheel</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17406</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5474/roasted-kodo-meat"><Data
+      ss:Type="String">Roasted Kodo Meat</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5474</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16170/steamed-mandu"><Data
+      ss:Type="String">Steamed Mandu</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16170</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19224/red-hot-wings"><Data
+      ss:Type="String">Red Hot Wings</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19224</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13929/hot-smoked-bass"><Data
+      ss:Type="String">Hot Smoked Bass</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13929</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">10</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16169/wild-ricecake"><Data
+      ss:Type="String">Wild Ricecake</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16169</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=18632/moonbrook-riot-taffy"><Data
+      ss:Type="String">Moonbrook Riot Taffy</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18632</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8932/alterac-swiss"><Data
+      ss:Type="String">Alterac Swiss</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8932</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8079/conjured-crystal-water"><Data
+      ss:Type="String">Conjured Crystal Water</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">65</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8079</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4200</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13893/large-raw-mightfish"><Data
+      ss:Type="String">Large Raw Mightfish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13893</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=20452/smoked-desert-dumplings"><Data
+      ss:Type="String">Smoked Desert Dumplings</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20452</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8952/roasted-quail"><Data
+      ss:Type="String">Roasted Quail</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8952</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13724/enriched-manna-biscuit"><Data
+      ss:Type="String">Enriched Manna Biscuit</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13724</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4410</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19301/alterac-manna-biscuit"><Data
+      ss:Type="String">Alterac Manna Biscuit</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">60</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">51</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19301</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4410</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4410</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21023/dirges-kickin-chimaerok-chops"><Data
+      ss:Type="String">Dirge's Kickin' Chimaerok Chops</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">65</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21023</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2550</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=22895/conjured-cinnamon-roll"><Data
+      ss:Type="String">Conjured Cinnamon Roll</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">65</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">22895</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3180</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=18255/runn-tum-tuber"><Data
+      ss:Type="String">Runn Tum Tuber</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18255</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8766/morning-glory-dew"><Data
+      ss:Type="String">Morning Glory Dew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8766</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2934</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13546/bloodbelly-fish"><Data
+      ss:Type="String">Bloodbelly Fish</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13546</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4599/cured-ham-steak"><Data
+      ss:Type="String">Cured Ham Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4599</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3927/fine-aged-cheddar"><Data
+      ss:Type="String">Fine Aged Cheddar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3927</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16971/clamlette-surprise"><Data
+      ss:Type="String">Clamlette Surprise</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16971</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=17222/spider-sausage"><Data
+      ss:Type="String">Spider Sausage</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">17222</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=18045/tender-wolf-steak"><Data
+      ss:Type="String">Tender Wolf Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18045</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4608/raw-black-truffle"><Data
+      ss:Type="String">Raw Black Truffle</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4608</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8953/deep-fried-plantains"><Data
+      ss:Type="String">Deep Fried Plantains</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8953</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=18300/hyjal-nectar"><Data
+      ss:Type="String">Hyjal Nectar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">65</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18300</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4200</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8948/dried-king-bolete"><Data
+      ss:Type="String">Dried King Bolete</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8948</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=20031/essence-mango"><Data
+      ss:Type="String">Essence Mango</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">65</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">20031</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2550</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4410</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12218/monster-omelet"><Data
+      ss:Type="String">Monster Omelet</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12218</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4601/soft-banana-bread"><Data
+      ss:Type="String">Soft Banana Bread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4601</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6887/spotted-yellowtail"><Data
+      ss:Type="String">Spotted Yellowtail</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6887</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8950/homemade-cherry-pie"><Data
+      ss:Type="String">Homemade Cherry Pie</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8950</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=8957/spinefin-halibut"><Data
+      ss:Type="String">Spinefin Halibut</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8957</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1645/moonberry-juice"><Data
+      ss:Type="String">Moonberry Juice</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1645</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1992</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13935/baked-salmon"><Data
+      ss:Type="String">Baked Salmon</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13935</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16168/heaven-peach"><Data
+      ss:Type="String">Heaven Peach</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16168</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12216/spiced-chili-crab"><Data
+      ss:Type="String">Spiced Chili Crab</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">40</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12216</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4544/mulgore-spice-bread"><Data
+      ss:Type="String">Mulgore Spice Bread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4544</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=733/westfall-stew"><Data
+      ss:Type="String">Westfall Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">733</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4538/snapvine-watermelon"><Data
+      ss:Type="String">Snapvine Watermelon</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4538</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=6888/herb-baked-egg"><Data
+      ss:Type="String">Herb Baked Egg</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6888</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19306/crunchy-frog"><Data
+      ss:Type="String">Crunchy Frog</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19306</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=23160/friendship-bread"><Data
+      ss:Type="String">Friendship Bread</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">23160</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=16766/undermine-clam-chowder"><Data
+      ss:Type="String">Undermine Clam Chowder</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">16766</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1487/conjured-pumpernickel"><Data
+      ss:Type="String">Conjured Pumpernickel</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1487</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5476/fillet-of-frenzy"><Data
+      ss:Type="String">Fillet of Frenzy</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5476</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=961/healing-herb"><Data
+      ss:Type="String">Healing Herb</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">961</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=3726/big-bear-steak"><Data
+      ss:Type="String">Big Bear Steak</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">3726</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5477/strider-stew"><Data
+      ss:Type="String">Strider Stew</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5477</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=4605/red-speckled-mushroom"><Data
+      ss:Type="String">Red-speckled Mushroom</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">4605</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=5066/fissure-plant"><Data
+      ss:Type="String">Fissure Plant</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">15</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5066</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">243.6</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=13930/filet-of-redgill"><Data
+      ss:Type="String">Filet of Redgill</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">13930</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=19223/darkmoon-dog"><Data
+      ss:Type="String">Darkmoon Dog</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">19223</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=7807/candy-bar"><Data
+      ss:Type="String">Candy Bar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">5</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">7807</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">61.2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=12211/spiced-wolf-ribs"><Data
+      ss:Type="String">Spiced Wolf Ribs</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">12211</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">874.8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">27</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">8</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21552/striped-yellowtail"><Data
+      ss:Type="String">Striped Yellowtail</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21552</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=22324/winter-kimchi"><Data
+      ss:Type="String">Winter Kimchi</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">22324</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=9681/grilled-king-crawler-legs"><Data
+      ss:Type="String">Grilled King Crawler Legs</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">9681</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21030/darnassus-kimchi-pie"><Data
+      ss:Type="String">Darnassus Kimchi Pie</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21030</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21031/cabbage-kimchi"><Data
+      ss:Type="String">Cabbage Kimchi</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21031</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=18635/bellaras-nutterbar"><Data
+      ss:Type="String">Bellara's Nutterbar</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">35</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">18635</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1392</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=1119/bottled-spirits"><Data
+      ss:Type="String">Bottled Spirits</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">25</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">1119</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">552</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">24</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="20">
+    <Cell ss:StyleID="s18" ss:HRef="https://www.wowhead.com/classic/item=21033/radish-kimchi"><Data
+      ss:Type="String">Radish Kimchi</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">55</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">45</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">21033</Data></Cell>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">2148</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"><Data ss:Type="Number">30</Data></Cell>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+    <Cell ss:StyleID="s19"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s17"/>
+    <Cell ss:StyleID="s17"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s17"/>
+    <Cell ss:StyleID="s17"/>
+   </Row>
+   <Row>
+    <Cell ss:Index="4" ss:StyleID="s17"/>
+    <Cell ss:StyleID="s17"/>
+   </Row>
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Header x:Margin="0.3"/>
+    <Footer x:Margin="0.3"/>
+    <PageMargins x:Bottom="0.78740157499999996" x:Left="0.7" x:Right="0.7"
+     x:Top="0.78740157499999996"/>
+   </PageSetup>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <VerticalResolution>0</VerticalResolution>
+   </Print>
+   <Selected/>
+   <LeftColumnVisible>1</LeftColumnVisible>
+   <FreezePanes/>
+   <FrozenNoSplit/>
+   <SplitHorizontal>1</SplitHorizontal>
+   <TopRowBottomPane>1</TopRowBottomPane>
+   <ActivePane>2</ActivePane>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+    </Pane>
+    <Pane>
+     <Number>2</Number>
+     <ActiveRow>0</ActiveRow>
+     <ActiveCol>1</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>

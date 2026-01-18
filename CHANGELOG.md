@@ -1,5 +1,9 @@
 ## Change log
 
+# 1.1.3
+- Improve initial food/drink selection by caching tooltip-derived restore values by itemID
+- Switch food/drink/buff selection to DB-driven values
+
 # 1.1.2
 - Removed Fallback
 - Add option to prefer a specific stat bufffood
