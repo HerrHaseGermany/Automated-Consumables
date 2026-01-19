@@ -294,7 +294,7 @@
 			for itemID, stats in pairs(statsTable) do
 				if type(itemID) == "number" and type(stats) == "table" then
 					local count = GetItemCount and GetItemCount(itemID) or 0
-					if count and count > 0 and (not IsUsableItem or IsUsableItem(itemID)) then
+					if count and count > 0 then
 						if not predicate or predicate(itemID, stats) then
 							local score = (stats.h or 0) + (stats.m or 0)
 							if score > bestScore or (score == bestScore and (not bestItemID or itemID > bestItemID)) then
@@ -321,7 +321,7 @@
 					local isBuff = stats.wf == true or (type(stats.bs) == "table" and next(stats.bs) ~= nil)
 					if isBuff then
 						local count = GetItemCount and GetItemCount(itemID) or 0
-						if count and count > 0 and (not IsUsableItem or IsUsableItem(itemID)) then
+						if count and count > 0 then
 							local bs = type(stats.bs) == "table" and stats.bs or nil
 							local a1 = (bs and preferredStat1) and (bs[preferredStat1] or 0) or 0
 							local a2 = (bs and preferredStat2) and (bs[preferredStat2] or 0) or 0
@@ -578,15 +578,10 @@
 							debugCandidatesPrinted = debugCandidatesPrinted + 1
 						end
 
-						local usable = true
-						if IsUsableItem then
-							usable = IsUsableItem(itemID)
+						local usable = (not IsUsableItem) or IsUsableItem(itemID)
+						if usable and not bestAnyUsableFoodOrDrinkItemID then
+							bestAnyUsableFoodOrDrinkItemID = itemID
 						end
-
-						if usable then
-							if not bestAnyUsableFoodOrDrinkItemID then
-								bestAnyUsableFoodOrDrinkItemID = itemID
-							end
 
 							local forcedDrink = type(_G.AC_DRINK_ITEM_IDS) == "table" and _G.AC_DRINK_ITEM_IDS[itemID]
 							local forcedFood = type(_G.AC_FOOD_ITEM_IDS) == "table" and _G.AC_FOOD_ITEM_IDS[itemID]
@@ -597,10 +592,10 @@
 								local treatAsAnyDrink = treatAsDrink or (mentionsMana and not mentionsHealth and not forcedFood)
 								local treatAsAnyFood = treatAsSimpleFood or (mentionsHealth and not mentionsMana and not forcedDrink)
 
-							if treatAsAnyDrink and not bestAnyUsableDrinkItemID then
+							if usable and treatAsAnyDrink and not bestAnyUsableDrinkItemID then
 								bestAnyUsableDrinkItemID = itemID
 							end
-							if treatAsAnyFood and not bestAnyUsableFoodItemID then
+							if usable and treatAsAnyFood and not bestAnyUsableFoodItemID then
 								bestAnyUsableFoodItemID = itemID
 							end
 
@@ -638,7 +633,6 @@
 								bestDrinkScore = restoresMana
 								bestDrinkItemID = itemID
 							end
-						end
 					end
 					end
 				end

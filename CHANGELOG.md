@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.1.5
+- Fix: Food/Drink/Buff macros no longer clear while swimming (don’t filter food/drink selection by `IsUsableItem` during macro rebuilds)
+
 # 1.1.4
 - minior fix
 
