@@ -44,6 +44,10 @@ AC_MANA_POTION_ITEM_IDS = AC_MANA_POTION_ITEM_IDS or {
 	[13444] = true, -- Major Mana Potion
 }
 
+AC_MANAAGATE_ITEM_IDS = AC_MANAAGATE_ITEM_IDS or {
+	[5514] = true, -- Mana Agate
+}
+
 AC_BANDAGE_ITEM_IDS = AC_BANDAGE_ITEM_IDS or {
 	[1251] = true, -- Linen Bandage
 	[2581] = true, -- Heavy Linen Bandage

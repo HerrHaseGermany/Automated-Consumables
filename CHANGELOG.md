@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.1.6
+- Add Mana Agate to Mana Potion macro with Healthstone-style cooldown fallback to mana potions
+
 # 1.1.5
 - Fix: Food/Drink/Buff macros no longer clear while swimming (don’t filter food/drink selection by `IsUsableItem` during macro rebuilds)
 
@@ -33,11 +36,3 @@
 
 # 1.0
 - Inital Version
-
-## Coming Up
-
-
-
-## Issues
-
-# TODO Healthstone macro behavior (cooldown/tooltip switching) is not correct yet

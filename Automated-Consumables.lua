@@ -659,10 +659,11 @@
 		return list
 	end
 
-	local healthPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_HEALTH_POTION_ITEM_IDS)
-	local healthstoneItemIDs = buildSortedItemIDListFromSet(_G.AC_HEALTHSTONE_ITEM_IDS)
-	local manaPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_MANA_POTION_ITEM_IDS)
-	local bandageItemIDs = buildSortedItemIDListFromSet(_G.AC_BANDAGE_ITEM_IDS)
+		local healthPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_HEALTH_POTION_ITEM_IDS)
+		local healthstoneItemIDs = buildSortedItemIDListFromSet(_G.AC_HEALTHSTONE_ITEM_IDS)
+		local manaPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_MANA_POTION_ITEM_IDS)
+		local manaAgateItemIDs = buildSortedItemIDListFromSet(_G.AC_MANAAGATE_ITEM_IDS)
+		local bandageItemIDs = buildSortedItemIDListFromSet(_G.AC_BANDAGE_ITEM_IDS)
 
 	local function findBestUsableItemIDFromSortedList(sortedItemIDs)
 		for i = #sortedItemIDs, 1, -1 do
@@ -704,10 +705,10 @@
 		return bestItemID
 	end
 
-	local function findBestHealthstoneItemID()
-		return findBestUsableItemIDFromSortedList(healthstoneItemIDs)
-			or findBestUsableItemIDInBagsByNameNeedle("healthstone")
-	end
+		local function findBestHealthstoneItemID()
+			return findBestUsableItemIDFromSortedList(healthstoneItemIDs)
+				or findBestUsableItemIDInBagsByNameNeedle("healthstone")
+		end
 
 	local function buildUseItemMacro(itemID, targetPlayer)
 		if not itemID then
@@ -766,10 +767,10 @@
 		return (startTime + duration - GetTime()) > 0
 	end
 
-	local function buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
-		if not healthstoneItemID and not healthPotionItemID then
-			return initialAddOnMacroString .. "\n"
-		end
+		local function buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
+			if not healthstoneItemID and not healthPotionItemID then
+				return initialAddOnMacroString .. "\n"
+			end
 
 		local stoneOnCooldown = itemIsOnCooldown(healthstoneItemID)
 		local potionOnCooldown = itemIsOnCooldown(healthPotionItemID)
@@ -797,8 +798,42 @@
 			)
 		end
 
-		return buildUseItemMacro(firstItemID, false)
-	end
+			return buildUseItemMacro(firstItemID, false)
+		end
+
+		local function buildManaAgateOrPotionMacro(manaAgateItemID, manaPotionItemID)
+			if not manaAgateItemID and not manaPotionItemID then
+				return initialAddOnMacroString .. "\n"
+			end
+
+			local agateOnCooldown = itemIsOnCooldown(manaAgateItemID)
+			local potionOnCooldown = itemIsOnCooldown(manaPotionItemID)
+
+			local firstItemID = nil
+			local secondItemID = nil
+
+			if manaAgateItemID and not agateOnCooldown then
+				firstItemID = manaAgateItemID
+				secondItemID = manaPotionItemID
+			elseif manaPotionItemID and not potionOnCooldown then
+				firstItemID = manaPotionItemID
+				secondItemID = manaAgateItemID
+			else
+				firstItemID = manaAgateItemID or manaPotionItemID
+				secondItemID = (firstItemID == manaAgateItemID) and manaPotionItemID or manaAgateItemID
+			end
+
+			if secondItemID then
+				return string.format(
+					"#showtooltip item:%d\n/use item:%d\n/use item:%d\n",
+					firstItemID,
+					firstItemID,
+					secondItemID
+				)
+			end
+
+			return buildUseItemMacro(firstItemID, false)
+		end
 
 			local function buildMacroStringForButton(macroButtonNumber)
 				if macroButtonNumber <= 3 then
@@ -835,9 +870,11 @@
 					return buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
 				end
 
-				if macroButtonNumber == 5 then
-					return buildUseItemMacro(findBestUsableItemIDFromSortedList(manaPotionItemIDs), false)
-				end
+					if macroButtonNumber == 5 then
+						local manaAgateItemID = findBestUsableItemIDFromSortedList(manaAgateItemIDs)
+						local manaPotionItemID = findBestUsableItemIDFromSortedList(manaPotionItemIDs)
+						return buildManaAgateOrPotionMacro(manaAgateItemID, manaPotionItemID)
+					end
 
 				if macroButtonNumber == 6 then
 					return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs), true)
