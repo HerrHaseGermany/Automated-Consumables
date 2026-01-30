@@ -1,5 +1,10 @@
 ## Change log
 
+# TODO Extend Databate to TBC
+
+# 1.1.7
+- Add Logo
+
 # 1.1.6
 - Add Mana Agate to Mana Potion macro with Healthstone-style cooldown fallback to mana potions
 
