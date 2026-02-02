@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.1.8
+- minor fix
+
 # 1.1.7
 - Add Logo
 - fix Minimap Button in TBC

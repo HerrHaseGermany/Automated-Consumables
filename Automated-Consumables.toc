@@ -1,11 +1,10 @@
 ## Interface: 11508, 20505
-## Version: 1.1.7
+## Version: 1.1.8
 ## Title: Automated-Consumables
 ## Author: Hase
 ## Notes: Automatically updates macros for food, drinks and Potions.
 ## SavedVariables: ACSettings
 ## IconTexture: Interface/AddOns/Automated-Consumables/Media/logo.blp
 FoodDrinkDB.lua
-FoodDrinkDB-Pending.lua
 PotionBandageDB.lua
 Automated-Consumables.lua
