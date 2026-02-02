@@ -117,6 +117,48 @@ AC_FOOD_ITEMS[22324] = { name="Winter Kimchi", h=2148, m=0 }
 AC_FOOD_ITEMS[22895] = { name="Conjured Cinnamon Roll", h=3180, m=0 }
 AC_FOOD_ITEMS[23160] = { name="Friendship Bread", h=2148, m=0 }
 
+-- Pending additions from FoodDrinkDB-Pending.csv
+AC_FOOD_ITEMS[8543] = { name="Underwater Mushroom Cap", h=874.8, m=0 }
+AC_FOOD_ITEMS[11951] = { name="Whipper Root Tuber", h=700, m=0 }
+AC_FOOD_ITEMS[12763] = { name="Un'Goro Etherfruit", h=2148, m=0 }
+AC_FOOD_ITEMS[18633] = { name="Styleen's Sour Suckerpop", h=243.6, m=0 }
+AC_FOOD_ITEMS[19696] = { name="Harvest Bread", h=2, m=0 }
+AC_FOOD_ITEMS[19994] = { name="Harvest Fruit", h=2, m=0 }
+AC_FOOD_ITEMS[19995] = { name="Harvest Boar", h=2, m=0 }
+AC_FOOD_ITEMS[19996] = { name="Harvest Fish", h=2, m=0 }
+AC_FOOD_ITEMS[20857] = { name="Honey Bread", h=61, m=0 }
+AC_FOOD_ITEMS[21215] = { name="Graccu's Mince Meat Fruitcake", h=5, m=0 }
+AC_FOOD_ITEMS[21235] = { name="Winter Veil Roast", h=2, m=0 }
+AC_FOOD_ITEMS[21236] = { name="Winter Veil Loaf", h=2, m=0 }
+AC_FOOD_ITEMS[21240] = { name="Winter Veil Candy", h=2, m=0 }
+AC_FOOD_ITEMS[22019] = { name="Conjured Croissant", h=7500, m=0 }
+AC_FOOD_ITEMS[23495] = { name="Springpaw Appetizer", h=61.2, m=0 }
+AC_FOOD_ITEMS[24009] = { name="Dried Fruit Rations", h=4320, m=0 }
+AC_FOOD_ITEMS[24072] = { name="Sand Pear Pie", h=243.6, m=0 }
+AC_FOOD_ITEMS[24338] = { name="Hellfire Spineleaf", h=2148, m=0 }
+AC_FOOD_ITEMS[27855] = { name="Mag'har Grainbread", h=4320, m=0 }
+AC_FOOD_ITEMS[27857] = { name="Garadar Sharp", h=4320, m=0 }
+AC_FOOD_ITEMS[27858] = { name="Sunspring Carp", h=4320, m=0 }
+AC_FOOD_ITEMS[27859] = { name="Zangar Caps", h=4320, m=0 }
+AC_FOOD_ITEMS[28486] = { name="Moser's Magnificent Muffin", h=4320, m=0 }
+AC_FOOD_ITEMS[29393] = { name="Diamond Berries", h=4320, m=0 }
+AC_FOOD_ITEMS[29402] = { name="Jessen's Special Slop OLD", h=4320, m=0 }
+AC_FOOD_ITEMS[29412] = { name="Jessen's Special Slop", h=4320, m=0 }
+AC_FOOD_ITEMS[29448] = { name="Mag'har Mild Cheese", h=7500, m=0 }
+AC_FOOD_ITEMS[29449] = { name="Bladespire Bagel", h=7500, m=0 }
+AC_FOOD_ITEMS[29451] = { name="Clefthoof Ribs", h=7500, m=0 }
+AC_FOOD_ITEMS[29452] = { name="Zangar Trout", h=7500, m=0 }
+AC_FOOD_ITEMS[29453] = { name="Sporeggar Mushroom", h=7500, m=0 }
+AC_FOOD_ITEMS[30355] = { name="Grilled Shadowmoon Tuber", h=7500, m=0 }
+AC_FOOD_ITEMS[30458] = { name="Stromgarde Muenster", h=4320, m=0 }
+AC_FOOD_ITEMS[30610] = { name="Smoked Black Bear Meat", h=4320, m=0 }
+AC_FOOD_ITEMS[30816] = { name="Spice Bread", h=61.2, m=0 }
+AC_FOOD_ITEMS[32685] = { name="Ogri'la Chicken Fingers", h=7500, m=0 }
+AC_FOOD_ITEMS[33048] = { name="Stewed Trout", h=7500, m=0 }
+AC_FOOD_ITEMS[35710] = { name="Delicious Baked Ham", h=7800, m=0 }
+AC_FOOD_ITEMS[38427] = { name="Pickled Egg", h=4320, m=0 }
+AC_FOOD_ITEMS[38428] = { name="Rock-Salted Pretzel", h=7500, m=0 }
+
 AC_DRINK_ITEMS[159] = { name="Refreshing Spring Water", h=0, m=151.2 }
 AC_DRINK_ITEMS[1179] = { name="Ice Cold Milk", h=0, m=436.8 }
 AC_DRINK_ITEMS[1205] = { name="Melon Juice", h=0, m=835.2 }
@@ -137,6 +179,19 @@ AC_DRINK_ITEMS[18300] = { name="Hyjal Nectar", h=0, m=4200 }
 AC_DRINK_ITEMS[19299] = { name="Fizzy Faire Drink", h=0, m=835.2 }
 AC_DRINK_ITEMS[19300] = { name="Bottled Winterspring Water", h=0, m=1992 }
 
+-- Pending additions from FoodDrinkDB-Pending.csv
+AC_DRINK_ITEMS[22018] = { name="Conjured Glacier Water", h=0, m=7200 }
+AC_DRINK_ITEMS[29395] = { name="Ethermead", h=0, m=7200 }
+AC_DRINK_ITEMS[29401] = { name="Sparkling Southshore Cider", h=0, m=7200 }
+AC_DRINK_ITEMS[29454] = { name="Silverwine", h=0, m=5100 }
+AC_DRINK_ITEMS[30457] = { name="Gilneas Sparkling Water", h=0, m=7200 }
+AC_DRINK_ITEMS[30703] = { name="Conjured Mountain Spring Water", h=0, m=5100 }
+AC_DRINK_ITEMS[32668] = { name="Dos Ogris", h=0, m=7200 }
+AC_DRINK_ITEMS[33042] = { name="Black Coffee", h=0, m=7200 }
+AC_DRINK_ITEMS[38429] = { name="Blackrock Spring Water", h=0, m=2934 }
+AC_DRINK_ITEMS[38430] = { name="Blackrock Mineral Water", h=0, m=5100 }
+AC_DRINK_ITEMS[38431] = { name="Blackrock Fortified Water", h=0, m=7200 }
+
 AC_FOODDRINK_BOTH_ITEMS = AC_FOODDRINK_BOTH_ITEMS or {}
 AC_FOODDRINK_BOTH_ITEMS[2682] = { name="Cooked Crab Claw", h=294, m=294 }
 AC_FOODDRINK_BOTH_ITEMS[3448] = { name="Senggin Root", h=294, m=294 }
@@ -146,8 +201,18 @@ AC_FOODDRINK_BOTH_ITEMS[20031] = { name="Essence Mango", h=2550, m=4410 }
 AC_FOODDRINK_BOTH_ITEMS[21072] = { name="Smoked Sagefish", h=378, m=567 }
 AC_FOODDRINK_BOTH_ITEMS[21217] = { name="Sagefish Delight", h=840, m=1260 }
 
+-- Pending additions from FoodDrinkDB-Pending.csv
+AC_FOODDRINK_BOTH_ITEMS[13931] = { name="Nightfin Soup", h=874.8, m=8 }
+AC_FOODDRINK_BOTH_ITEMS[13932] = { name="Poached Sunscale Salmon", h=874.8, m=6 }
+AC_FOODDRINK_BOTH_ITEMS[23172] = { name="Refreshing Red Apple", h=4, m=4 }
+AC_FOODDRINK_BOTH_ITEMS[28112] = { name="Underspore Pod", h=4410, m=4410 }
+AC_FOODDRINK_BOTH_ITEMS[33053] = { name="Hot Buttered Trout", h=7500, m=7200 }
+
 AC_BUFFFOOD_ITEMS["Agility"] = AC_BUFFFOOD_ITEMS["Agility"] or {}
+AC_BUFFFOOD_ITEMS["Spirit"] = AC_BUFFFOOD_ITEMS["Spirit"] or {}
+AC_BUFFFOOD_ITEMS["Spirit"][33825] = { name="Skullfish Soup", h=0, m=7200, wf=true, bs={ Spirit=20, SpellCrit=20 } }
 AC_BUFFFOOD_ITEMS["Agility"][13928] = { name="Grilled Squid", h=874.8, m=0, wf=true, bs={["Agility"]=10} }
+AC_BUFFFOOD_ITEMS["Agility"][30358] = { name="Oronok's Tuber of Agility", h=7500, m=0, wf=true, bs={["Agility"]=20,["Spirit"]=20} }
 
 AC_BUFFFOOD_ITEMS["Intellect"] = AC_BUFFFOOD_ITEMS["Intellect"] or {}
 AC_BUFFFOOD_ITEMS["Intellect"][18254] = { name="Runn Tum Tuber Surprise", h=1933.2, m=0, wf=true, bs={["Intellect"]=10} }
@@ -206,6 +271,26 @@ AC_BUFFFOOD_ITEMS["Spirit"][17222] = { name="Spider Sausage", h=1392, m=0, wf=tr
 AC_BUFFFOOD_ITEMS["Spirit"][18045] = { name="Tender Wolf Steak", h=1392, m=0, wf=true, bs={["Spirit"]=12,["Stamina"]=12} }
 AC_BUFFFOOD_ITEMS["Spirit"][20074] = { name="Heavy Crocolisk Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
 
+-- Pending additions from FoodDrinkDB-Pending.csv
+AC_BUFFFOOD_ITEMS["Spirit"][20516] = { name="Bobbing Apple", h=2, m=0, wf=true, bs={["Stamina"]=15,["Spirit"]=15} }
+AC_BUFFFOOD_ITEMS["Spirit"][21254] = { name="Winter Veil Cookie", h=2, m=0, wf=true, bs={["Stamina"]=15,["Spirit"]=15} }
+AC_BUFFFOOD_ITEMS["Spirit"][22645] = { name="Crunchy Spider Surprise", h=243.6, m=0, wf=true, bs={["Stamina"]=4,["Spirit"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][23756] = { name="Cookie's Jumbo Gumbo", h=61.2, m=0, wf=true, bs={["Stamina"]=2,["Spirit"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][24105] = { name="Roasted Moongraze Tenderloin", h=61.2, m=0, wf=true, bs={["Stamina"]=2,["Spirit"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][24539] = { name="Marsh Lichen", h=4320, m=0, wf=true, bs={["Spirit"]=10} }
+AC_BUFFFOOD_ITEMS["Spirit"][27635] = { name="Lynx Steak", h=61.2, m=0, wf=true, bs={["Stamina"]=2,["Spirit"]=2} }
+AC_BUFFFOOD_ITEMS["Spirit"][27636] = { name="Bat Bites", h=243.6, m=0, wf=true, bs={["Stamina"]=4,["Spirit"]=4} }
+AC_BUFFFOOD_ITEMS["Spirit"][27651] = { name="Buzzard Bites", h=4300, m=0, wf=true, bs={["Stamina"]=20,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][27665] = { name="Poached Bluefish", h=7500, m=0, wf=true, bs={["SpellPower"]=23,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][29293] = { name="Bonestripper Buzzard Hotwings", h=2148, m=0, wf=true, bs={["Stamina"]=14,["Spirit"]=14} }
+AC_BUFFFOOD_ITEMS["Spirit"][30155] = { name="Clam Bar", h=4320, m=0, wf=true, bs={["Stamina"]=20,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][30357] = { name="Oronok's Tuber of Healing", h=7500, m=0, wf=true, bs={["Healing"]=44,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][30358] = { name="Oronok's Tuber of Agility", h=7500, m=0, wf=true, bs={["Agility"]=20,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][30359] = { name="Oronok's Tuber of Strength", h=7500, m=0, wf=true, bs={["Strength"]=20,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][30361] = { name="Oronok's Tuber of Spell Power", h=7500, m=0, wf=true, bs={["SpellPower"]=23,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Spirit"][33004] = { name="Clamlette Surprise", h=1392, m=0, wf=true, bs={["Stamina"]=12,["Spirit"]=12} }
+AC_BUFFFOOD_ITEMS["Spirit"][34411] = { name="Hot Apple Cider", h=0, m=7200, wf=true, bs={["Stamina"]=20,["Spirit"]=30} }
+
 AC_BUFFFOOD_ITEMS["Stamina"] = AC_BUFFFOOD_ITEMS["Stamina"] or {}
 AC_BUFFFOOD_ITEMS["Stamina"][724] = { name="Goretusk Liver Pie", h=243.6, m=0, wf=true, bs={["Spirit"]=4,["Stamina"]=4} }
 AC_BUFFFOOD_ITEMS["Stamina"][1017] = { name="Seasoned Wolf Kabob", h=552, m=0, wf=true, bs={["Spirit"]=6,["Stamina"]=6} }
@@ -262,11 +347,91 @@ AC_BUFFFOOD_ITEMS["Stamina"][18045] = { name="Tender Wolf Steak", h=1392, m=0, w
 AC_BUFFFOOD_ITEMS["Stamina"][20074] = { name="Heavy Crocolisk Stew", h=874.8, m=0, wf=true, bs={["Spirit"]=8,["Stamina"]=8} }
 AC_BUFFFOOD_ITEMS["Stamina"][21023] = { name="Dirge's Kickin' Chimaerok Chops", h=2550, m=0, wf=true, bs={["Stamina"]=25} }
 
+-- Pending additions from FoodDrinkDB-Pending.csv
+AC_BUFFFOOD_ITEMS["Stamina"][20516] = { name="Bobbing Apple", h=2, m=0, wf=true, bs={["Stamina"]=15,["Spirit"]=15} }
+AC_BUFFFOOD_ITEMS["Stamina"][21254] = { name="Winter Veil Cookie", h=2, m=0, wf=true, bs={["Stamina"]=15,["Spirit"]=15} }
+AC_BUFFFOOD_ITEMS["Stamina"][22645] = { name="Crunchy Spider Surprise", h=243.6, m=0, wf=true, bs={["Stamina"]=4,["Spirit"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][23756] = { name="Cookie's Jumbo Gumbo", h=61.2, m=0, wf=true, bs={["Stamina"]=2,["Spirit"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][24008] = { name="Dried Mushroom Rations", h=4320, m=0, wf=true, bs={["Stamina"]=10} }
+AC_BUFFFOOD_ITEMS["Stamina"][24105] = { name="Roasted Moongraze Tenderloin", h=61.2, m=0, wf=true, bs={["Stamina"]=2,["Spirit"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][27635] = { name="Lynx Steak", h=61.2, m=0, wf=true, bs={["Stamina"]=2,["Spirit"]=2} }
+AC_BUFFFOOD_ITEMS["Stamina"][27636] = { name="Bat Bites", h=243.6, m=0, wf=true, bs={["Stamina"]=4,["Spirit"]=4} }
+AC_BUFFFOOD_ITEMS["Stamina"][27651] = { name="Buzzard Bites", h=4300, m=0, wf=true, bs={["Stamina"]=20,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Stamina"][28501] = { name="Ravager Egg Omelet", h=4320, m=0, wf=true, bs={["Stamina"]=10} }
+AC_BUFFFOOD_ITEMS["Stamina"][29293] = { name="Bonestripper Buzzard Hotwings", h=2148, m=0, wf=true, bs={["Stamina"]=14,["Spirit"]=14} }
+AC_BUFFFOOD_ITEMS["Stamina"][30155] = { name="Clam Bar", h=4320, m=0, wf=true, bs={["Stamina"]=20,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["Stamina"][33004] = { name="Clamlette Surprise", h=1392, m=0, wf=true, bs={["Stamina"]=12,["Spirit"]=12} }
+AC_BUFFFOOD_ITEMS["Stamina"][34411] = { name="Hot Apple Cider", h=0, m=7200, wf=true, bs={["Stamina"]=20,["Spirit"]=30} }
+
 AC_BUFFFOOD_ITEMS["Strength"] = AC_BUFFFOOD_ITEMS["Strength"] or {}
 AC_BUFFFOOD_ITEMS["Strength"][13810] = { name="Blessed Sunfruit", h=1933.2, m=0, wf=true, bs={["Strength"]=10} }
 AC_BUFFFOOD_ITEMS["Strength"][20452] = { name="Smoked Desert Dumplings", h=2148, m=0, wf=true, bs={["Strength"]=20} }
+-- Pending additions from FoodDrinkDB-Pending.csv
+AC_BUFFFOOD_ITEMS["Strength"][29292] = { name="Helboar Bacon", h=2148, m=0, wf=true, bs={["Strength"]=20} }
+AC_BUFFFOOD_ITEMS["Strength"][30359] = { name="Oronok's Tuber of Strength", h=7500, m=0, wf=true, bs={["Strength"]=20,["Spirit"]=20} }
+
+AC_BUFFFOOD_ITEMS["Healing"] = AC_BUFFFOOD_ITEMS["Healing"] or {}
+AC_BUFFFOOD_ITEMS["Healing"][30357] = { name="Oronok's Tuber of Healing", h=7500, m=0, wf=true, bs={["Healing"]=44,["Spirit"]=20} }
+
+AC_BUFFFOOD_ITEMS["SpellPower"] = AC_BUFFFOOD_ITEMS["SpellPower"] or {}
+AC_BUFFFOOD_ITEMS["SpellPower"][27665] = { name="Poached Bluefish", h=7500, m=0, wf=true, bs={["SpellPower"]=23,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["SpellPower"][30361] = { name="Oronok's Tuber of Spell Power", h=7500, m=0, wf=true, bs={["SpellPower"]=23,["Spirit"]=20} }
+AC_BUFFFOOD_ITEMS["SpellPower"][35565] = { name="Juicy Bear Burger", h=1933.2, m=0, wf=true, bs={["SpellPower"]=14} }
+
+AC_BUFFFOOD_ITEMS["AttackPower"] = AC_BUFFFOOD_ITEMS["AttackPower"] or {}
+AC_BUFFFOOD_ITEMS["AttackPower"][35563] = { name="Charred Bear Kabobs", h=1933.2, m=0, wf=true, bs={["AttackPower"]=24} }
+
+AC_BUFFFOOD_ITEMS["Random"] = AC_BUFFFOOD_ITEMS["Random"] or {}
+AC_BUFFFOOD_ITEMS["Random"][32686] = { name="Mingo's Fortune Giblets", h=7500, m=0, wf=true, bs={["Random"]="buff"} }
 
 -- Derived legacy compatibility tables (used by the addon code)
+-- ------------------------------------------------------------
+-- TBC additions (The Burning Crusade)
+-- ------------------------------------------------------------
+
+-- Basic/vendor foods
+AC_FOOD_ITEMS[27854] = { name="Smoked Talbuk Venison", h=4320, m=0 }
+AC_FOOD_ITEMS[27856] = { name="Skethyl Berries", h=4320, m=0 }
+AC_FOOD_ITEMS[29394] = { name="Lyribread", h=7500, m=0 }
+AC_FOOD_ITEMS[29450] = { name="Telaari Grapes", h=7500, m=0 }
+AC_FOOD_ITEMS[27661] = { name="Blackened Trout", h=4320, m=0 }
+
+-- Basic/vendor drinks
+AC_DRINK_ITEMS[28399] = { name="Filtered Draenic Water", h=0, m=5100 }
+AC_DRINK_ITEMS[27860] = { name="Purified Draenic Water", h=0, m=7200 }
+AC_DRINK_ITEMS[32455] = { name="Star's Lament", h=0, m=4200 }
+AC_DRINK_ITEMS[32453] = { name="Star's Tears", h=0, m=7200 } 
+
+-- Restores both health + mana
+AC_FOODDRINK_BOTH_ITEMS[32722] = { name="Enriched Terocone Juice", h=4320, m=5100 }
+AC_FOODDRINK_BOTH_ITEMS[34780] = { name="Naaru Ration", h=7500, m=7200 }
+AC_FOODDRINK_BOTH_ITEMS[34062] = { name="Conjured Mana Biscuit", h=7500, m=7200 } -- mage table, already present in some clients; keep here for TBC safety
+
+-- Outland cooking well-fed foods (IDs 27655-27667)
+-- Note: These are all well-fed items; we place them into their relevant stat buckets so "Prefer stat" can pick them.
+AC_BUFFFOOD_ITEMS["Spirit"] = AC_BUFFFOOD_ITEMS["Spirit"] or {}
+AC_BUFFFOOD_ITEMS["Stamina"] = AC_BUFFFOOD_ITEMS["Stamina"] or {}
+AC_BUFFFOOD_ITEMS["Strength"] = AC_BUFFFOOD_ITEMS["Strength"] or {}
+AC_BUFFFOOD_ITEMS["Agility"] = AC_BUFFFOOD_ITEMS["Agility"] or {}
+
+AC_BUFFFOOD_ITEMS["Spirit"][27657] = { name="Blackened Basilisk", h=7500, m=0, wf=true, bs={ Spirit=20, SpellPower=23 } }
+AC_BUFFFOOD_ITEMS["Spirit"][31673] = { name="Crunchy Serpent", h=7500, m=0, wf=true, bs={ Spirit=20, SpellPower=23 } }
+AC_BUFFFOOD_ITEMS["Spirit"][27666] = { name="Golden Fish Sticks", h=7500, m=0, wf=true, bs={ Spirit=20, Healing=44 } }
+AC_BUFFFOOD_ITEMS["Agility"][27664] = { name="Grilled Mudfish", h=7500, m=0, wf=true, bs={ Agility=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Spirit"][31672] = { name="Mok'Nathal Shortribs", h=7500, m=0, wf=true, bs={ Stamina=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Strength"][27658] = { name="Roasted Clefthoof", h=7500, m=0, wf=true, bs={ Strength=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Spirit"][27662] = { name="Feltail Delight", h=4320, m=0, wf=true, bs={ Stamina=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Spirit"][27655] = { name="Ravager Dog", h=4320, m=0, wf=true, bs={ Spirit=20, AttackPower=40 } }
+AC_BUFFFOOD_ITEMS["Stamina"][27663] = { name="Blackened Sporefish", h=4320, m=0, wf=true, bs={ Stamina=20, MP5=8 } }
+AC_BUFFFOOD_ITEMS["Spirit"][33867] = { name="Broiled Bloodfin", h=4320, m=0, wf=true, bs={ ResistAll=8 } }
+AC_BUFFFOOD_ITEMS["Strength"][27660] = { name="Talbuk Steak", h=7500, m=0, wf=true, bs={ Stamina=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Agility"][27659] = { name="Warp Burger", h=7500, m=0, wf=true, bs={ Agility=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Stamina"][32721] = { name="Skyguard Rations", h=6000, m=0, wf=true, bs={ Stamina=15, Spirit=15 } }
+AC_BUFFFOOD_ITEMS["Stamina"][33052] = { name="Fisherman's Feast", h=7500, m=0, wf=true, bs={ Stamina=30, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Stamina"][33872] = { name="Spicy Hot Talbuk", h=7500, m=0, wf=true, bs={ Hit=20, Spirit=20 } }
+AC_BUFFFOOD_ITEMS["Stamina"][27667] = { name="Spicy Crawdad", h=7500, m=0, wf=true, bs={ Stamina=30, Spirit=20 } }
+
+
 AC_FOOD_ITEM_IDS = AC_FOOD_ITEM_IDS or {}
 AC_DRINK_ITEM_IDS = AC_DRINK_ITEM_IDS or {}
 AC_BUFFFOOD_ITEM_IDS = AC_BUFFFOOD_ITEM_IDS or {}

@@ -1,9 +1,11 @@
 ## Change log
 
-# TODO Extend Databate to TBC
-
 # 1.1.7
 - Add Logo
+- fix Minimap Button in TBC
+- Add message when a macro updates (e.g., "ACFood Macro has been updated to Grilled Squid")
+- extended Databate to TBC
+- Refresh macros when `PLAYER_ALIVE` fires so they reflect new consumables after resurrection
 
 # 1.1.6
 - Add Mana Agate to Mana Potion macro with Healthstone-style cooldown fallback to mana potions

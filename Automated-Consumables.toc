@@ -6,5 +6,6 @@
 ## SavedVariables: ACSettings
 ## IconTexture: Interface/AddOns/Automated-Consumables/Media/logo.blp
 FoodDrinkDB.lua
+FoodDrinkDB-Pending.lua
 PotionBandageDB.lua
 Automated-Consumables.lua

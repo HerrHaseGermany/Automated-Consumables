@@ -7,8 +7,16 @@
 		if type(ACSettings) ~= "table" then
 			ACSettings = {}
 		end
+		if ACSettings.defaultsVersion ~= 1 then
+			ACSettings.showMinimapButton = true
+			ACSettings.showMacroUpdateMessages = true
+			ACSettings.defaultsVersion = 1
+		end
 		if ACSettings.showMinimapButton == nil then
 			ACSettings.showMinimapButton = true
+		end
+		if ACSettings.showMacroUpdateMessages == nil then
+			ACSettings.showMacroUpdateMessages = true
 		end
 		if ACSettings.buffFoodPreferenceMode == nil then
 			ACSettings.buffFoodPreferenceMode = "restore"
@@ -1006,6 +1014,33 @@
 		return itemIDText and tonumber(itemIDText) or nil
 	end
 
+	local function getMacroUpdateTargetFromBody(body)
+		local itemID = parseFirstItemIDFromMacroBody(body)
+		if not itemID then
+			return "empty"
+		end
+		if GetItemInfo then
+			local itemName = GetItemInfo(itemID)
+			if itemName and itemName ~= "" then
+				return itemName
+			end
+		end
+		return "item:" .. itemID
+	end
+
+	local function maybePrintMacroUpdate(macroButtonName, oldBody, newBody)
+		if not (ACSettings and ACSettings.showMacroUpdateMessages) then
+			return
+		end
+		local oldItemID = parseFirstItemIDFromMacroBody(oldBody)
+		local newItemID = parseFirstItemIDFromMacroBody(newBody)
+		if oldItemID == newItemID then
+			return
+		end
+		local targetName = getMacroUpdateTargetFromBody(newBody)
+		print(string.format("%s%s Macro has been updated to %s", ACADDON_CHAT_TITLE, macroButtonName, targetName))
+	end
+
 	local function getBestIconForMacro(macroIndex)
 		if not macroIndex or macroIndex <= 0 then
 			return "Interface\\Icons\\INV_Misc_QuestionMark"
@@ -1225,8 +1260,16 @@
 					updateMinimapButtonVisibility()
 				end)
 
+				local macroMessageCheckbox = CreateFrame("CheckButton", nil, panel, "UICheckButtonTemplate")
+				macroMessageCheckbox:SetPoint("TOPLEFT", minimapCheckbox, "BOTTOMLEFT", 0, -8)
+				macroMessageCheckbox.Text:SetText("Show macro update messages")
+				macroMessageCheckbox:SetChecked(ACSettings.showMacroUpdateMessages and true or false)
+				macroMessageCheckbox:SetScript("OnClick", function(self)
+					ACSettings.showMacroUpdateMessages = self:GetChecked() and true or false
+				end)
+
 				local help = panel:CreateFontString(nil, "ARTWORK", "GameFontHighlightSmall")
-				help:SetPoint("TOPLEFT", minimapCheckbox, "BOTTOMLEFT", 0, -16)
+				help:SetPoint("TOPLEFT", macroMessageCheckbox, "BOTTOMLEFT", 0, -16)
 				help:SetText("Drag and drop Macro to Bar")
 
 					local macroDefs = getMacroDefs()
@@ -1423,6 +1466,7 @@
 
 			panel:SetScript("OnShow", function()
 				minimapCheckbox:SetChecked(ACSettings.showMinimapButton and true or false)
+				macroMessageCheckbox:SetChecked(ACSettings.showMacroUpdateMessages and true or false)
 				applyBuffPrefDropdownText()
 				applyStatDropdownText()
 				refreshBuffPrefUI()
@@ -1723,7 +1767,8 @@
 					local function macroNeedsUpdating(event)
 						return bagContentChanged(event)
 							or bagCooldownChanged(event)
-							or forcedUpdate(event);
+							or forcedUpdate(event)
+							or playerAlive(event);
 					end
 	
 	local function playerIsInCombat()
@@ -1859,6 +1904,9 @@
 		local function updateMacro(macroButtonName)
 			local macroIndex = getMacroIndexByNameSafe(macroButtonName)
 			if macroIndex and macroIndex > 0 then
+				local _, _, oldBody = GetMacroInfo(macroIndex)
+				local newBody = tableOfAddOnMacroButtonContentStrings[macroButtonName]
+				maybePrintMacroUpdate(macroButtonName, oldBody, newBody)
 				EditMacro(macroIndex, macroButtonName, nil, tableOfAddOnMacroButtonContentStrings[macroButtonName], nil);
 			end
 		end
@@ -1885,12 +1933,16 @@
 
 				local macroIndex = getMacroIndexByNameSafe(macroButtonName)
 				if macroIndex and macroIndex > 0 then
+					local _, _, oldBody = GetMacroInfo(macroIndex)
+					maybePrintMacroUpdate(macroButtonName, oldBody, macroBody)
 					EditMacro(macroIndex, macroButtonName, nil, macroBody, nil)
 				else
 					local legacyName = legacyFoodDrinkMacroNames[macroButtonNumber]
 					if legacyName then
 						local legacyIndex = getMacroIndexByNameSafe(legacyName)
 						if legacyIndex and legacyIndex > 0 then
+							local _, _, oldBody = GetMacroInfo(legacyIndex)
+							maybePrintMacroUpdate(macroButtonName, oldBody, macroBody)
 							EditMacro(legacyIndex, macroButtonName, nil, macroBody, nil)
 						else
 							if getTotalNumberOfMacros() < MAX_ACCOUNT_MACROS then
@@ -1928,6 +1980,8 @@
 
 			local macroIndex = getMacroIndexByNameSafe(macroButtonName)
 			if macroIndex and macroIndex > 0 then
+				local _, _, oldBody = GetMacroInfo(macroIndex)
+				maybePrintMacroUpdate(macroButtonName, oldBody, macroBody)
 				EditMacro(macroIndex, macroButtonName, nil, macroBody, nil)
 				return
 			end
@@ -1936,6 +1990,8 @@
 			if legacyName then
 				local legacyIndex = getMacroIndexByNameSafe(legacyName)
 				if legacyIndex and legacyIndex > 0 then
+					local _, _, oldBody = GetMacroInfo(legacyIndex)
+					maybePrintMacroUpdate(macroButtonName, oldBody, macroBody)
 					EditMacro(legacyIndex, macroButtonName, nil, macroBody, nil)
 					return
 				end
@@ -2052,6 +2108,10 @@
 
 			if event == "PLAYER_LOGIN" then
 				initUIOnce()
+			elseif event == "PLAYER_ENTERING_WORLD" or event == "PLAYER_ALIVE" then
+				if uiInitialized then
+					updateMinimapButtonVisibility()
+				end
 			end
 
 		onLogin(event)

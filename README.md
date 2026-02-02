@@ -1,8 +1,6 @@
 # Automated-Consumables
 Automatically updates macros for food, drinks and Potions.
 
-Database is not TBC Ready!
-
 Creates/updates three macros (strongest available in your bags):
 - `ACFood`: simple food (health-only, no Well Fed)
 - `ACDrink`: drink (mana-only)

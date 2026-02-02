@@ -14,6 +14,9 @@ AC_HEALTH_POTION_ITEM_IDS = AC_HEALTH_POTION_ITEM_IDS or {
 	[1710] = true, -- Greater Healing Potion
 	[3928] = true, -- Superior Healing Potion
 	[13446] = true, -- Major Healing Potion
+	[22829] = true, -- Super Healing Potion
+	[31676] = true, -- Fel Regeneration Potion
+	[33092] = true, -- Healing Potion Injector
 }
 
 AC_HEALTHSTONE_ITEM_IDS = AC_HEALTHSTONE_ITEM_IDS or {
@@ -33,6 +36,9 @@ AC_HEALTHSTONE_ITEM_IDS = AC_HEALTHSTONE_ITEM_IDS or {
 	[19011] = true, -- Healthstone (Improved II)
 	[19012] = true, -- Greater Healthstone (Improved II)
 	[19013] = true, -- Major Healthstone (Improved II)
+	[22103] = true, -- Master Healthstone
+	[22104] = true, -- Master Healthstone
+	[22105] = true, -- Master Healthstone
 }
 
 AC_MANA_POTION_ITEM_IDS = AC_MANA_POTION_ITEM_IDS or {
@@ -42,6 +48,9 @@ AC_MANA_POTION_ITEM_IDS = AC_MANA_POTION_ITEM_IDS or {
 	[6149] = true, -- Greater Mana Potion
 	[13443] = true, -- Superior Mana Potion
 	[13444] = true, -- Major Mana Potion
+	[22832] = true, -- Super Mana Potion
+	[31677] = true, -- Fel Mana Potion
+	[33093] = true, -- Mana Potion Injector
 }
 
 AC_MANAAGATE_ITEM_IDS = AC_MANAAGATE_ITEM_IDS or {
@@ -59,6 +68,8 @@ AC_BANDAGE_ITEM_IDS = AC_BANDAGE_ITEM_IDS or {
 	[8545] = true, -- Heavy Mageweave Bandage
 	[14529] = true, -- Runecloth Bandage
 	[14530] = true, -- Heavy Runecloth Bandage
+	[21990] = true, -- Netherweave Bandage
+	[21991] = true, -- Heavy Netherweave Bandage
 }
 
 -- Broad fallback union list (fast candidate check).
@@ -69,6 +80,9 @@ AC_POTION_BANDAGE_ITEM_IDS = AC_POTION_BANDAGE_ITEM_IDS or {
 	[1710] = true,
 	[3928] = true,
 	[13446] = true,
+	[22829] = true,
+	[31676] = true,
+	[33092] = true,
 	[5512] = true,
 	[5511] = true,
 	[5509] = true,
@@ -84,12 +98,18 @@ AC_POTION_BANDAGE_ITEM_IDS = AC_POTION_BANDAGE_ITEM_IDS or {
 	[19011] = true,
 	[19012] = true,
 	[19013] = true,
+	[22103] = true,
+	[22104] = true,
+	[22105] = true,
 	[2455] = true,
 	[3385] = true,
 	[3827] = true,
 	[6149] = true,
 	[13443] = true,
 	[13444] = true,
+	[22832] = true,
+	[31677] = true,
+	[33093] = true,
 	[1251] = true,
 	[2581] = true,
 	[3530] = true,
@@ -100,4 +120,6 @@ AC_POTION_BANDAGE_ITEM_IDS = AC_POTION_BANDAGE_ITEM_IDS or {
 	[8545] = true,
 	[14529] = true,
 	[14530] = true,
+	[21990] = true,
+	[21991] = true,
 }
