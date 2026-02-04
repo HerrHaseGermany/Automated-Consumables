@@ -1,5 +1,9 @@
 ## Change log
 
+# 1.1.9
+- license update
+- minor fix
+
 # 1.1.8
 - minor fix
 
