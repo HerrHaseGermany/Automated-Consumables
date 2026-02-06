@@ -108,6 +108,19 @@
 		return nil
 	end
 
+	local function shouldIgnoreUsableCheck()
+		if UnitIsDeadOrGhost and UnitIsDeadOrGhost("player") == true then
+			return true
+		end
+		if UnitOnTaxi and UnitOnTaxi("player") == true then
+			return true
+		end
+		if UnitIsControlling and UnitIsControlling("player") == false then
+			return true
+		end
+		return false
+	end
+
 	local itemScanTooltip = CreateFrame("GameTooltip", "AutomatedConsumablesScanTooltip", UIParent, "GameTooltipTemplate")
 	itemScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 
@@ -514,6 +527,7 @@
 			local bestPreferredBuffFoodStatAmount2 = -1
 			local bestPreferredBuffFoodStatAmount3 = -1
 			local bestFoodAndDrinkScore = -1
+			local ignoreUsableCheck = shouldIgnoreUsableCheck()
 
 			local buffFoodPreferenceMode = ACSettings and ACSettings.buffFoodPreferenceMode or "restore"
 			local preferredStat1 = ACSettings and ACSettings.buffFoodPreferredStat1 or nil
@@ -586,7 +600,7 @@
 							debugCandidatesPrinted = debugCandidatesPrinted + 1
 						end
 
-						local usable = (not IsUsableItem) or IsUsableItem(itemID)
+						local usable = ignoreUsableCheck or (not IsUsableItem) or IsUsableItem(itemID)
 						if usable and not bestAnyUsableFoodOrDrinkItemID then
 							bestAnyUsableFoodOrDrinkItemID = itemID
 						end
@@ -674,11 +688,13 @@
 		local bandageItemIDs = buildSortedItemIDListFromSet(_G.AC_BANDAGE_ITEM_IDS)
 
 	local function findBestUsableItemIDFromSortedList(sortedItemIDs)
+		local ignoreUsableCheck = shouldIgnoreUsableCheck()
+
 		for i = #sortedItemIDs, 1, -1 do
 			local itemID = sortedItemIDs[i]
 			local count = GetItemCount(itemID)
 			if count and count > 0 then
-				if not IsUsableItem or IsUsableItem(itemID) then
+				if ignoreUsableCheck or not IsUsableItem or IsUsableItem(itemID) then
 					return itemID
 				end
 			end
@@ -691,6 +707,8 @@
 			return nil
 		end
 
+		local ignoreUsableCheck = shouldIgnoreUsableCheck()
+
 		local bestItemID = nil
 		for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
 			local numSlots = getContainerNumSlots(bagId) or 0
@@ -700,7 +718,7 @@
 					local itemName = GetItemInfo(itemID)
 					if itemName and itemName ~= "" then
 						if itemName:lower():find(nameNeedleLower, 1, true) then
-							if not IsUsableItem or IsUsableItem(itemID) then
+							if ignoreUsableCheck or not IsUsableItem or IsUsableItem(itemID) then
 								if not bestItemID or itemID > bestItemID then
 									bestItemID = itemID
 								end
@@ -1175,7 +1193,7 @@
 			border:SetPoint("TOPLEFT", button, "TOPLEFT", 0, 0)
 
 			local icon = button:CreateTexture(nil, "ARTWORK")
-			icon:SetTexture("Interface\\Icons\\INV_Potion_27")
+			icon:SetTexture("Interface\\AddOns\\Automated-Consumables\\Media\\logo")
 			icon:SetPoint("TOPLEFT", button, "TOPLEFT", 6, -6)
 			icon:SetPoint("BOTTOMRIGHT", button, "BOTTOMRIGHT", -6, 6)
 			icon:SetTexCoord(0.07, 0.93, 0.07, 0.93)
