@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.3
+- Macro creation now prefers character macros first and falls back to account macros only if the character macro list is full.
+
 # 1.2
 - minor fix
 
