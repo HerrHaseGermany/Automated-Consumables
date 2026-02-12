@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.3.2
+- Skip consumables that require a higher level than the player
+
 # 1.3.1
 - revert changes from 1.3
 

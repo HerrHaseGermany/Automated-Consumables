@@ -124,6 +124,49 @@
 	local itemScanTooltip = CreateFrame("GameTooltip", "AutomatedConsumablesScanTooltip", UIParent, "GameTooltipTemplate")
 	itemScanTooltip:SetOwner(UIParent, "ANCHOR_NONE")
 
+	local function getRequiredLevelFromItemInfo(itemID)
+		if not itemID or not GetItemInfo then
+			return nil
+		end
+		local _, _, _, _, minLevel = GetItemInfo(itemID)
+		if type(minLevel) == "number" and minLevel > 0 then
+			return minLevel
+		end
+		return nil
+	end
+
+	local function getRequiredLevelForItemID(itemID)
+		local requiredLevel = getRequiredLevelFromItemInfo(itemID)
+		if requiredLevel then
+			return requiredLevel
+		end
+		if not itemID then
+			return nil
+		end
+		for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
+			local numSlots = getContainerNumSlots(bagId) or 0
+			for slotIndex = 1, numSlots do
+				local slotItemID = getContainerItemID(bagId, slotIndex) or getContainerItemIDFallback(bagId, slotIndex)
+				if slotItemID == itemID then
+					local _, _, _, slotRequiredLevel = parseRestoreAmountsFromTooltip(bagId, slotIndex)
+					return slotRequiredLevel
+				end
+			end
+		end
+		return nil
+	end
+
+	local function playerMeetsRequiredLevel(requiredLevel)
+		if not requiredLevel or requiredLevel <= 0 then
+			return true
+		end
+		local playerLevel = UnitLevel and UnitLevel("player") or nil
+		if not playerLevel then
+			return true
+		end
+		return playerLevel >= requiredLevel
+	end
+
 			local function parseRestoreAmountsFromTooltip(bagId, slotIndex, wantBuffStats)
 				itemScanTooltip:ClearLines()
 				itemScanTooltip:SetBagItem(bagId, slotIndex)
@@ -131,6 +174,7 @@
 		local restoresHealth = 0
 		local restoresMana = 0
 		local requiresSeated = false
+		local requiredLevel = nil
 		local isWellFed = false
 		local mentionsHealth = false
 		local mentionsMana = false
@@ -143,6 +187,35 @@
 			end
 			local cleaned = numText:gsub("%.", ""):gsub(",", "")
 			return tonumber(cleaned)
+		end
+
+		local requiredLevelPattern = nil
+		do
+			local needle = _G.ITEM_MIN_LEVEL
+			if needle and needle ~= "" then
+				local escaped = needle:gsub("([%%%^%$%(%)%.%[%]%*%+%-%?])", "%%%1")
+				requiredLevelPattern = escaped:gsub("%%d", "([%%d%.,]+)")
+			end
+		end
+
+		local function parseRequiredLevelFromText(text)
+			if requiredLevel then
+				return
+			end
+			if requiredLevelPattern then
+				local numText = text:match(requiredLevelPattern)
+				local amount = parseLocalizedNumber(numText)
+				if amount and amount > 0 then
+					requiredLevel = amount
+					return
+				end
+			end
+			local lowerText = text:lower()
+			local numText = lowerText:match("requires level%s*([%d%.,]+)")
+			local amount = parseLocalizedNumber(numText)
+			if amount and amount > 0 then
+				requiredLevel = amount
+			end
 		end
 
 		local function maybeRecordBuffStat(statKey, amount)
@@ -192,12 +265,14 @@
 				if isWellFed == false and next(buffStats) ~= nil then
 					isWellFed = true
 				end
-			end
+		end
 
 		local function applyTooltipText(text)
 			if not text or text == "" then
 				return
 			end
+
+			parseRequiredLevelFromText(text)
 
 			local seatedNeedle = _G.ITEM_MUST_REMAIN_SEATED
 			if seatedNeedle and seatedNeedle ~= "" and text:find(seatedNeedle, 1, true) then
@@ -261,7 +336,7 @@
 			applyTooltipText(rightLine and rightLine:GetText() or nil)
 		end
 
-			return restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats
+			return restoresHealth, restoresMana, requiresSeated, requiredLevel, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats
 		end
 
 		local function getFoodDrinkStatsFromDB(itemID)
@@ -316,7 +391,9 @@
 				if type(itemID) == "number" and type(stats) == "table" then
 					local count = GetItemCount and GetItemCount(itemID) or 0
 					if count and count > 0 then
-						if not predicate or predicate(itemID, stats) then
+						local requiredLevel = getRequiredLevelForItemID(itemID)
+						local meetsLevel = playerMeetsRequiredLevel(requiredLevel)
+						if meetsLevel and (not predicate or predicate(itemID, stats)) then
 							local score = (stats.h or 0) + (stats.m or 0)
 							if score > bestScore or (score == bestScore and (not bestItemID or itemID > bestItemID)) then
 								bestScore = score
@@ -343,19 +420,23 @@
 					if isBuff then
 						local count = GetItemCount and GetItemCount(itemID) or 0
 						if count and count > 0 then
-							local bs = type(stats.bs) == "table" and stats.bs or nil
-							local a1 = (bs and preferredStat1) and (bs[preferredStat1] or 0) or 0
-							local a2 = (bs and preferredStat2) and (bs[preferredStat2] or 0) or 0
-							local a3 = (bs and preferredStat3) and (bs[preferredStat3] or 0) or 0
-							local restore = (stats.h or 0) + (stats.m or 0)
-							if a1 > bestA1
-								or (a1 == bestA1 and a2 > bestA2)
-								or (a1 == bestA1 and a2 == bestA2 and a3 > bestA3)
-								or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore > bestRestore)
-								or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore == bestRestore and (not bestItemID or itemID > bestItemID))
-							then
-								bestA1, bestA2, bestA3, bestRestore = a1, a2, a3, restore
-								bestItemID = itemID
+							local requiredLevel = getRequiredLevelForItemID(itemID)
+							local meetsLevel = playerMeetsRequiredLevel(requiredLevel)
+							if meetsLevel then
+								local bs = type(stats.bs) == "table" and stats.bs or nil
+								local a1 = (bs and preferredStat1) and (bs[preferredStat1] or 0) or 0
+								local a2 = (bs and preferredStat2) and (bs[preferredStat2] or 0) or 0
+								local a3 = (bs and preferredStat3) and (bs[preferredStat3] or 0) or 0
+								local restore = (stats.h or 0) + (stats.m or 0)
+								if a1 > bestA1
+									or (a1 == bestA1 and a2 > bestA2)
+									or (a1 == bestA1 and a2 == bestA2 and a3 > bestA3)
+									or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore > bestRestore)
+									or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore == bestRestore and (not bestItemID or itemID > bestItemID))
+								then
+									bestA1, bestA2, bestA3, bestRestore = a1, a2, a3, restore
+									bestItemID = itemID
+								end
 							end
 						end
 					end
@@ -562,27 +643,32 @@
 					itemID = getContainerItemIDFallback(bagId, slotIndex)
 					end
 					if itemID then
-							local restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats
+							local restoresHealth, restoresMana, requiresSeated, requiredLevel, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats
 							local db = getFoodDrinkStatsFromDB(itemID)
 							if db then
 								restoresHealth = db.h or 0
 								restoresMana = db.m or 0
 								requiresSeated = false
+								requiredLevel = getRequiredLevelForItemID(itemID)
 								isWellFed = db.wf and true or false
 								tooltipLines = 1
 								mentionsHealth = db.mh ~= nil and db.mh or (restoresHealth > 0)
 								mentionsMana = db.mm ~= nil and db.mm or (restoresMana > 0)
 								buffStats = (wantBuffStats and type(db.bs) == "table") and db.bs or nil
 							else
-								restoresHealth, restoresMana, requiresSeated, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats =
+								restoresHealth, restoresMana, requiresSeated, requiredLevel, isWellFed, tooltipLines, mentionsHealth, mentionsMana, buffStats =
 									parseRestoreAmountsFromTooltip(bagId, slotIndex, wantBuffStats)
 								rememberFoodDrinkStats(itemID, restoresHealth, restoresMana, isWellFed, mentionsHealth, mentionsMana, buffStats)
 							end
+							if not requiredLevel then
+								requiredLevel = getRequiredLevelForItemID(itemID)
+							end
+						local meetsLevel = playerMeetsRequiredLevel(requiredLevel)
 						local classID, subClassID = getItemClassInfo(itemID)
 						local isFoodOrDrink = itemIsFoodOrDrink(itemID)
 							or ((classID == 0 and subClassID == 0) and requiresSeated)
 
-					if isFoodOrDrink then
+					if meetsLevel and isFoodOrDrink then
 						if AC_DEBUG and debugCandidatesPrinted < 10 then
 							local itemName = GetItemInfo(itemID)
 							print(string.format(
@@ -600,7 +686,7 @@
 							debugCandidatesPrinted = debugCandidatesPrinted + 1
 						end
 
-						local usable = ignoreUsableCheck or (not IsUsableItem) or IsUsableItem(itemID)
+							local usable = ignoreUsableCheck or (not IsUsableItem) or IsUsableItem(itemID)
 						if usable and not bestAnyUsableFoodOrDrinkItemID then
 							bestAnyUsableFoodOrDrinkItemID = itemID
 						end
@@ -695,7 +781,10 @@
 			local count = GetItemCount(itemID)
 			if count and count > 0 then
 				if ignoreUsableCheck or not IsUsableItem or IsUsableItem(itemID) then
-					return itemID
+					local requiredLevel = getRequiredLevelForItemID(itemID)
+					if playerMeetsRequiredLevel(requiredLevel) then
+						return itemID
+					end
 				end
 			end
 		end
@@ -719,8 +808,11 @@
 					if itemName and itemName ~= "" then
 						if itemName:lower():find(nameNeedleLower, 1, true) then
 							if ignoreUsableCheck or not IsUsableItem or IsUsableItem(itemID) then
-								if not bestItemID or itemID > bestItemID then
-									bestItemID = itemID
+								local requiredLevel = getRequiredLevelForItemID(itemID)
+								if playerMeetsRequiredLevel(requiredLevel) then
+									if not bestItemID or itemID > bestItemID then
+										bestItemID = itemID
+									end
 								end
 							end
 						end
@@ -1746,7 +1838,7 @@
 					if not itemID then
 						return false
 					end
-					local _, _, _, _, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
+					local _, _, _, _, _, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
 					return (tooltipLines or 0) > 0
 				end
 
@@ -2263,7 +2355,7 @@
 				local itemID = getContainerItemID(bagId, slotIndex) or getContainerItemIDFallback(bagId, slotIndex)
 				if itemID then
 					slotsWithItemID = slotsWithItemID + 1
-					local restoresHealth, restoresMana, requiresSeated = parseRestoreAmountsFromTooltip(bagId, slotIndex)
+					local restoresHealth, restoresMana, requiresSeated, requiredLevel = parseRestoreAmountsFromTooltip(bagId, slotIndex)
 					local classID, subClassID = getItemClassInfo(itemID)
 					local isConsumable = itemIsConsumable(itemID)
 					local isFoodOrDrink = itemIsFoodOrDrink(itemID)
@@ -2292,13 +2384,14 @@
 						local itemName, _, _, _, _, itemType, itemSubType, _, _, _, _, gClassID, gSubClassID = GetItemInfo(itemID)
 
 						print(string.format(
-							"%sitem:%d name=%s isConsumable=%s isFoodDrink=%s seated=%s hp=%d mana=%d C_Item=%s/%s GetItemInfoInstant=%s/%s GetItemInfo=%s/%s type=%s sub=%s seatedNeedle=%s",
+							"%sitem:%d name=%s isConsumable=%s isFoodDrink=%s seated=%s lvl=%s hp=%d mana=%d C_Item=%s/%s GetItemInfoInstant=%s/%s GetItemInfo=%s/%s type=%s sub=%s seatedNeedle=%s",
 							ACADDON_CHAT_TITLE,
 							itemID,
 							tostring(itemName),
 							tostring(isConsumable),
 							tostring(isFoodOrDrink),
 							tostring(requiresSeated),
+							tostring(requiredLevel),
 							restoresHealth,
 							restoresMana,
 							tostring(cItemClassID),
@@ -2438,14 +2531,14 @@
 				if itemID then
 					local classID, subClassID = getItemClassInfo(itemID)
 					if classID == 0 then
-						local restoresHealth, restoresMana, requiresSeated, _, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
+						local restoresHealth, restoresMana, requiresSeated, requiredLevel, _, tooltipLines = parseRestoreAmountsFromTooltip(bagId, slotIndex)
 						local usable = true
 						if IsUsableItem then
 							usable = IsUsableItem(itemID)
 						end
 						local itemName = GetItemInfo(itemID)
 						print(string.format(
-							"%sProbe: bag=%d slot=%d item:%d name=%s class=%s/%s usable=%s seated=%s hp=%d mana=%d lines=%d",
+							"%sProbe: bag=%d slot=%d item:%d name=%s class=%s/%s usable=%s seated=%s lvl=%s hp=%d mana=%d lines=%d",
 							ACADDON_CHAT_TITLE,
 							bagId,
 							slotIndex,
@@ -2455,6 +2548,7 @@
 							tostring(subClassID),
 							tostring(usable),
 							tostring(requiresSeated),
+							tostring(requiredLevel),
 							restoresHealth,
 							restoresMana,
 							tooltipLines
