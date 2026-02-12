@@ -11,7 +11,6 @@ Creates/updates three macros (strongest available in your bags):
 
 Notes:
 - This addon manages `ACFood`, `ACDrink`, `ACBuff`, `ACHealthPotion`, `ACManaPotion`, and `ACBandage`.
-- New: Macro creation now prefers character macros first and falls back to account macros only if the character macro list is full.
 - Optional database: you can add known itemIDs in `FoodDrinkDB.lua` to force-categorize items (drink/food/bufffood).
 - Food/drink items are detected via item IDs + item class info; on Classic Era some Food/Drink items report as generic Consumable, so the addon also uses the built-in localized “must remain seated” tooltip string to identify food/drink (and avoid misclassifying potions).
 - “Best” is determined by scanning your bags and reading restore amounts from tooltips using localized HEALTH/MANA strings; if amounts can’t be determined, it falls back to “any usable Food & Drink” so macros still get populated.

@@ -1849,41 +1849,8 @@
 		end
 	end
 
-	local function getMacroCounts()
-		if GetNumMacros then
-			local accountCount, characterCount = GetNumMacros()
-			return accountCount or 0, characterCount or 0
-		end
-		return 0, 0
-	end
-
 	local function getTotalNumberOfMacros()
-		local accountCount, characterCount = getMacroCounts()
-		return (accountCount or 0) + (characterCount or 0)
-	end
-
-	local function getAccountMacroCount()
-		local accountCount = getMacroCounts()
-		return accountCount or 0
-	end
-
-	local function getCharacterMacroCount()
-		local _, characterCount = getMacroCounts()
-		return characterCount or 0
-	end
-
-	local function createMacroPreferCharacter(macroButtonName, macroBody)
-		local accountCount, characterCount = getMacroCounts()
-		if characterCount < MAX_CHARACTER_MACROS then
-			CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", macroBody, true)
-			return true
-		end
-		if accountCount < MAX_ACCOUNT_MACROS then
-			CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", macroBody, false)
-			return true
-		end
-		print(string.format("%sCould not create macro %s. Macro limit reached.", ACADDON_CHAT_TITLE, macroButtonName))
-		return false
+		return GetNumMacros();
 	end
 
 	local function getMacroName(macroNumber)
@@ -1996,19 +1963,33 @@
 							maybePrintMacroUpdate(macroButtonName, oldBody, macroBody)
 							EditMacro(legacyIndex, macroButtonName, nil, macroBody, nil)
 						else
-							createMacroPreferCharacter(macroButtonName, macroBody)
+							if getTotalNumberOfMacros() < MAX_ACCOUNT_MACROS then
+								CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", macroBody, nil)
+							else
+								print(string.format("%sCould not create macro %s. Macro limit reached.", ACADDON_CHAT_TITLE, macroButtonName))
+							end
 						end
 					else
-						createMacroPreferCharacter(macroButtonName, macroBody)
+						if getTotalNumberOfMacros() < MAX_ACCOUNT_MACROS then
+							CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", macroBody, nil)
+						else
+							print(string.format("%sCould not create macro %s. Macro limit reached.", ACADDON_CHAT_TITLE, macroButtonName))
+						end
 					end
 				end
 			end
 			return foundAny
 		end
 
-	local function createNewMacro(macroButtonName)
+	local function createNewMacro(macroButtonName, macrosCreated)
 		print(string.format("%sExisting macro ("..macroButtonName..") for Automated-Consumables not found. Creating new one...", ACADDON_CHAT_TITLE));
-		return createMacroPreferCharacter(macroButtonName, tableOfAddOnMacroButtonContentStrings[macroButtonName])
+		if (getTotalNumberOfMacros() + macrosCreated) < MAX_ACCOUNT_MACROS then
+			CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", tableOfAddOnMacroButtonContentStrings[macroButtonName], nil);
+			return true;
+		else
+			print(string.format("%sCould not create macro "..macroButtonName..". Macro limit reached.", ACADDON_CHAT_TITLE));
+			return false;
+		end
 	end
 
 		local function updateOrCreateSingleMacro(macroButtonNumber)
@@ -2034,7 +2015,11 @@
 				end
 			end
 
-			createMacroPreferCharacter(macroButtonName, macroBody)
+			if getTotalNumberOfMacros() < MAX_ACCOUNT_MACROS then
+				CreateMacro(macroButtonName, "INV_MISC_QUESTIONMARK", macroBody, nil)
+			else
+				print(string.format("%sCould not create macro %s. Macro limit reached.", ACADDON_CHAT_TITLE, macroButtonName))
+			end
 		end
 
 		local function migrateLegacyMacroNames()
@@ -2055,12 +2040,18 @@
 		end
 
 	local function updateMacrosInGame()
+		local macrosCreated = 0;
+
 		for macroButtonName, macroButtonExists in pairs(tableOfAddOnMacroButtonExistanceStatus) do
 
 			if macroButtonExists then
 				updateMacro(macroButtonName);
 			else
-				createNewMacro(macroButtonName);
+				local macroCreated;
+				macroCreated = createNewMacro(macroButtonName, macrosCreated);
+				if macroCreated == true then
+					macrosCreated = macrosCreated + 1;
+				end
 			end
 		end
 		
