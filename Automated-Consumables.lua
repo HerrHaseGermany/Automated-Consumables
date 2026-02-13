@@ -135,6 +135,8 @@
 		return nil
 	end
 
+	local parseRestoreAmountsFromTooltip
+
 	local function getRequiredLevelForItemID(itemID)
 		local requiredLevel = getRequiredLevelFromItemInfo(itemID)
 		if requiredLevel then
@@ -167,9 +169,9 @@
 		return playerLevel >= requiredLevel
 	end
 
-			local function parseRestoreAmountsFromTooltip(bagId, slotIndex, wantBuffStats)
-				itemScanTooltip:ClearLines()
-				itemScanTooltip:SetBagItem(bagId, slotIndex)
+	parseRestoreAmountsFromTooltip = function(bagId, slotIndex, wantBuffStats)
+		itemScanTooltip:ClearLines()
+		itemScanTooltip:SetBagItem(bagId, slotIndex)
 
 		local restoresHealth = 0
 		local restoresMana = 0
