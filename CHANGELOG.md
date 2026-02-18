@@ -1,5 +1,8 @@
 ## Change log
 
+# 1.3.4
+- add missing item to database
+
 # 1.3.3
 - add missing item to database
 

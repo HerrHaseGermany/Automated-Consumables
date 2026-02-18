@@ -55,6 +55,8 @@ AC_MANA_POTION_ITEM_IDS = AC_MANA_POTION_ITEM_IDS or {
 
 AC_MANAAGATE_ITEM_IDS = AC_MANAAGATE_ITEM_IDS or {
 	[5514] = true, -- Mana Agate
+	[5513] = true, -- Mana Jade
+	[8007] = true, -- Mana Citrine
 	[8008] = true, -- Mana Ruby
 }
 
