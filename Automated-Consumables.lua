@@ -41,6 +41,7 @@
 			"ACHealthPotion",
 			"ACManaPotion",
 			"ACBandage",
+			"ACSoulstone",
 		}
 
 		local legacyFoodDrinkMacroNames = {
@@ -64,7 +65,7 @@
 	local updateMacroNow = false;
 
 	local function getNumberOfMacroButtons()
-		return 6;
+		return 7;
 	end
 
 	local function getContainerNumSlots(bagId)
@@ -774,6 +775,7 @@
 		local manaPotionItemIDs = buildSortedItemIDListFromSet(_G.AC_MANA_POTION_ITEM_IDS)
 		local manaAgateItemIDs = buildSortedItemIDListFromSet(_G.AC_MANAAGATE_ITEM_IDS)
 		local bandageItemIDs = buildSortedItemIDListFromSet(_G.AC_BANDAGE_ITEM_IDS)
+		local soulstoneItemIDs = buildSortedItemIDListFromSet(_G.AC_SOULSTONE_ITEM_IDS)
 
 	local function findBestUsableItemIDFromSortedList(sortedItemIDs)
 		local ignoreUsableCheck = shouldIgnoreUsableCheck()
@@ -998,6 +1000,10 @@
 
 				if macroButtonNumber == 6 then
 					return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs), true)
+				end
+
+				if macroButtonNumber == 7 then
+					return buildUseItemMacro(findBestUsableItemIDFromSortedList(soulstoneItemIDs), false)
 				end
 
 				return initialAddOnMacroString .. "\n"
@@ -1259,6 +1265,7 @@
 				{ macroName = "ACHealthPotion", label = "Health", tooltip = "Healthstone / Healing Potion", choices = "Prefers Healthstone (incl. improved variants). Falls back to the best healing potion available." },
 				{ macroName = "ACManaPotion", label = "Mana", tooltip = "Mana Potion", choices = "Uses the best mana potion available." },
 				{ macroName = "ACBandage", label = "Bandage", tooltip = "Bandage (self)", choices = "Uses the best bandage available on yourself." },
+				{ macroName = "ACSoulstone", label = "Soulstone", tooltip = "Soulstone", choices = "Uses the best soulstone available." },
 			}
 		end
 
@@ -1387,8 +1394,8 @@
 					local macroDefs = getMacroDefs()
 					local buttonSize = 96
 				local padding = 16
-				local cols = 3
-				local rows = 2
+				local cols = 4
+				local rows = math.ceil(#macroDefs / cols)
 				local labelPad = 12
 				local rowSpacing = buttonSize + padding + labelPad
 				local gridWidth = cols * buttonSize + (cols - 1) * padding
@@ -1604,7 +1611,6 @@
 		end
 
 			local panel = CreateFrame("Frame", "ACMacroPanel", UIParent, "BasicFrameTemplateWithInset")
-			panel:SetSize(200, 190)
 			panel:SetPoint("CENTER", UIParent, "CENTER", 0, 0)
 			panel:SetClampedToScreen(true)
 			panel:SetMovable(true)
@@ -1692,10 +1698,12 @@
 			local buttonSize = 52
 			local padding = 12
 			local cols = 3
-			local rows = 2
+			local rows = math.ceil(#macroDefs / cols)
 			local gridWidth = cols * buttonSize + (cols - 1) * padding
 			local labelPad = 12
 			local gridHeight = rows * buttonSize + (rows - 1) * padding + labelPad
+			local panelHeight = gridHeight + 62
+			panel:SetSize(200, panelHeight)
 
 			local contentFrame = panel.Inset or panel
 			local gridFrame = CreateFrame("Frame", nil, contentFrame)

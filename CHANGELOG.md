@@ -1,5 +1,9 @@
 ## Change log
 
+# 1.3.5
+- add missing items to database
+- add soulstone macro
+
 # 1.3.4
 - add missing item to database
 
