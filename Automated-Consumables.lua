@@ -1,6 +1,13 @@
 	
 		local BAG_ID_BACKPACK = 0
 		local BAG_ID_LAST = 4
+
+	-- Prefer namespaced APIs while retaining support for older Classic clients.
+	local GetItemCount = (C_Item and C_Item.GetItemCount) or GetItemCount
+	local GetItemInfo = (C_Item and C_Item.GetItemInfo) or GetItemInfo
+	local IsUsableItem = (C_Item and C_Item.IsUsableItem) or IsUsableItem
+	local MAX_ACCOUNT_MACROS = (Constants and Constants.MacroConsts and Constants.MacroConsts.MAX_ACCOUNT_MACROS)
+		or MAX_ACCOUNT_MACROS or 120
 	
 		local basicMacroButtonName = "ACbutton";
 
