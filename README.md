@@ -12,8 +12,8 @@ Creates/updates seven macros (best available in your bags):
 
 Database update (2.0.0):
 - Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic, and Retail use separate
-  generated Wowhead datasets. All 418 legacy candidate IDs were checked against
-  each client's source, alongside its LibItemDB v1.9.0 catalog.
+  generated consumable datasets. The existing candidate catalog was checked
+  separately for each supported client.
 - Coverage is the known catalog, not a guarantee that every undiscovered or
   future item is included. Explicit source "not found" responses are reported.
 - Retail uses readable bag-item tooltips for missing or scaled amounts, with
@@ -32,10 +32,6 @@ Database update (2.0.0):
   a harmful after-effect remain available but rank after ordinary healing
   potions. Battleground and instance restrictions are checked for the current
   location; macro updates wait until combat ends when necessary.
-- See [database generation and validation](data/README.md) for sources, reports,
-  rebuilding, known limitations, and Retail runtime validation.
-- `python3 tools/collect_wowhead.py` collects the seven supported client sources in
-  sequence without activation. Use `--status` to inspect live progress.
 
 Notes:
 - This addon manages `ACFood`, `ACDrink`, `ACBuff`, `ACHealthPotion`, `ACManaPotion`, `ACBandage`, and `ACSoulstone`.

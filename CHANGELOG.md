@@ -1,7 +1,7 @@
 ## Change log
 
 # 2.0.0 — 2026-11-14
-- Enable separate, regenerated Wowhead databases for Forever, Classic Era,
+- Enable separate, regenerated consumable databases for Forever, Classic Era,
   TBC, Wrath, Cataclysm, MoP Classic, and Retail. Preserve source snapshots,
   candidate provenance, coverage reports and legacy comparisons.
 - Add Retail bag-tooltip resolution for missing/scaled amounts, protected-value

@@ -30,7 +30,7 @@ dofile("RuntimeValues.lua")
 local manifest = assert(io.open("Databases.xml")):read("*a")
 for file in manifest:gmatch('<Script file="([^"]+)"') do dofile(file) end
 local version = AC_Database.ClientVersion(interface)
-if not (AC_WOWHEAD_DATABASES and AC_WOWHEAD_DATABASES[version]) then
+if not (AC_GENERATED_DATABASES and AC_GENERATED_DATABASES[version]) then
     local staging = "data/staged/" .. version .. ".lua"
     local file = io.open(staging)
     if file then file:close(); dofile(staging) end
@@ -38,8 +38,8 @@ end
 local stagedRetail = version == "retail" and arg[2] == "--staged"
 if stagedRetail then
     dofile("data/staged/retail.lua")
-    assert(AC_WOWHEAD_DATABASES.retail.enabled == false, "Retail staging must stay disabled on disk")
-    AC_WOWHEAD_DATABASES.retail.enabled = true -- test process only; never publish
+    assert(AC_GENERATED_DATABASES.retail.enabled == false, "Retail staging must stay disabled on disk")
+    AC_GENERATED_DATABASES.retail.enabled = true -- test process only; never publish
 end
 dofile("DatabaseInit.lua")
 local activeRetail = version == "retail" and AC_Database.activeVersion == "retail"
@@ -64,14 +64,14 @@ if activeRetail then
     assert(AC_MANA_POTION_ITEM_IDS[2455])
     assert(not AC_SOULSTONE_ITEM_IDS[153113])
 elseif activeEra then
-    assert(AC_WOWHEAD_DATABASES.forever == nil and AC_WOWHEAD_DATABASES.tbc == nil)
+    assert(AC_GENERATED_DATABASES.forever == nil and AC_GENERATED_DATABASES.tbc == nil)
     assert(AC_DRINK_ITEMS[8077].m == 1992)
     assert(AC_BUFFFOOD_ITEMS.MP5[13931].bs.MP5 == 8)
     assert(AC_BUFFFOOD_ITEMS.HP5[13932].bs.HP5 == 6)
     assert(AC_MANAAGATE_ITEM_IDS[5514])
     assert(not AC_HEALTH_POTION_ITEM_IDS[22829], "TBC potions must not leak into Era")
 elseif activeMoP then
-    assert(AC_WOWHEAD_DATABASES.forever == nil and AC_WOWHEAD_DATABASES.cata == nil)
+    assert(AC_GENERATED_DATABASES.forever == nil and AC_GENERATED_DATABASES.cata == nil)
     assert(AC_CONSUMABLE_ITEM_STATS[5512].familyOnlyRestoration)
     assert(AC_Database.Score(AC_CONSUMABLE_ITEM_STATS[5512], "h") == nil)
     assert(AC_CONSUMABLE_ITEM_STATS[5513].m == 45000)
@@ -80,7 +80,7 @@ elseif activeMoP then
     assert(not AC_MANA_POTION_ITEM_IDS[76092], "Focus potions must not replace instant combat recovery")
     assert(AC_CONSUMABLE_ITEM_STATS[101745].m == 300000, "Numeric source arithmetic must retain its total")
 elseif activeWrath or activeCata then
-    assert(AC_WOWHEAD_DATABASES.forever == nil and AC_WOWHEAD_DATABASES.tbc == nil)
+    assert(AC_GENERATED_DATABASES.forever == nil and AC_GENERATED_DATABASES.tbc == nil)
     assert(AC_CONSUMABLE_ITEM_STATS[5223] == nil, "Empty Mana Gem is not usable recovery")
     assert(AC_DRINK_ITEMS[8077].m == 1992)
     assert(not AC_MANA_POTION_ITEM_IDS[57194], "Concentration potions must not replace instant combat recovery")
@@ -98,7 +98,7 @@ elseif interface ~= 16001 and not activeTBC then
     assert(AC_FOOD_ITEMS == legacyFood, "Another client's data must not be replaced by Forever")
     assert(AC_HEALTH_POTION_ITEM_IDS[22829], "Legacy TBC data must remain available")
 elseif activeTBC then
-    assert(AC_WOWHEAD_DATABASES.forever == nil, "Foreign datasets must return before registration")
+    assert(AC_GENERATED_DATABASES.forever == nil, "Foreign datasets must return before registration")
     assert(AC_DRINK_ITEMS[8077].m == 1992, "TBC water must not use Forever's changed value")
     assert(AC_BUFFFOOD_ITEMS.MP5[13931].bs.MP5 == 8)
     assert(AC_BUFFFOOD_ITEMS.HP5[13932].bs.HP5 == 6)
