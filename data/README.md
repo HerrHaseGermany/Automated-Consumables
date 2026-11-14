@@ -310,11 +310,13 @@ Track `generated/`, `published/`, `sources/`, `seeds/` and `reports/` for
 reproducibility. `staged/` is disposable generated output and is Git-ignored;
 recreate it with `--rebuild`. Local HTTP/toolchain caches and `dist/` are ignored.
 Do not remove published/source snapshots merely to reduce the installed size:
-`.gitattributes` uses `export-ignore` to omit tests, tools, development snapshots,
-reports and repository configuration from GitHub's automatic source archives.
-The rules must be committed in the release tag. These files remain tracked and
-available in a normal clone. The addon runtime files and `data/generated/`
-remain included. `tools/package_addon.py` and `.pkgmeta` apply the equivalent
+`.gitattributes` excludes all files by default from GitHub's automatic source
+archives, then explicitly includes the runtime files declared by the TOC and
+database manifest, the icon and the license. README, changelog, tests, tools,
+development snapshots, reports and repository configuration remain available
+in a normal clone but are not exported. Add new runtime resources to this
+allowlist whenever the TOC or database manifest changes. The rules must be
+committed in the release tag. `tools/package_addon.py` and `.pkgmeta` apply the equivalent
 exclusions to separately packaged releases.
 The release ZIP is named from the TOC version and contains only runtime assets
 plus the license, README and changelog.

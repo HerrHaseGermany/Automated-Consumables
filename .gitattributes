@@ -1,18 +1,26 @@
-# Keep development files in Git, but omit them from source/release archives.
-/.gitattributes export-ignore
-/.gitignore export-ignore
-/.github export-ignore
-/.pkgmeta export-ignore
-/.vscode export-ignore
-/AGENTS.md export-ignore
-/tests export-ignore
-/tools export-ignore
-/ref export-ignore
-/.cache export-ignore
-/dist export-ignore
-/data/README.md export-ignore
-/data/published export-ignore
-/data/reports export-ignore
-/data/seeds export-ignore
-/data/sources export-ignore
-/data/staged export-ignore
+# Export only addon runtime resources and the license.
+# Add new runtime files here when the TOC or database manifest changes.
+/* export-ignore
+/Automated-Consumables.lua -export-ignore
+/Automated-Consumables.toc -export-ignore
+/Database.lua -export-ignore
+/DatabaseInit.lua -export-ignore
+/Databases.xml -export-ignore
+/FoodDrinkDB.lua -export-ignore
+/LICENSE -export-ignore
+/PotionBandageDB.lua -export-ignore
+/RuntimeValues.lua -export-ignore
+/Media -export-ignore
+/Media/* export-ignore
+/Media/logo.blp -export-ignore
+/data -export-ignore
+/data/* export-ignore
+/data/generated -export-ignore
+/data/generated/* export-ignore
+/data/generated/cata.lua -export-ignore
+/data/generated/era.lua -export-ignore
+/data/generated/forever.lua -export-ignore
+/data/generated/mop.lua -export-ignore
+/data/generated/retail.lua -export-ignore
+/data/generated/tbc.lua -export-ignore
+/data/generated/wrath.lua -export-ignore
