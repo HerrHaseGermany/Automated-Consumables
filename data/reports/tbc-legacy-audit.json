@@ -1,0 +1,1368 @@
+{
+  "additions": [
+    {
+      "id": 1165,
+      "kind": "food",
+      "name": "Test Food"
+    },
+    {
+      "id": 1401,
+      "kind": "both",
+      "name": "Green Tea Leaf"
+    },
+    {
+      "id": 2456,
+      "kind": "healthpotion",
+      "name": "Minor Rejuvenation Potion"
+    },
+    {
+      "id": 9144,
+      "kind": "healthpotion",
+      "name": "Wildvine Potion"
+    },
+    {
+      "id": 12190,
+      "kind": "recoverypotion",
+      "name": "Dreamless Sleep Potion"
+    },
+    {
+      "id": 13813,
+      "kind": "buff",
+      "name": "Blessed Sunfruit Juice"
+    },
+    {
+      "id": 15723,
+      "kind": "healthpotion",
+      "name": "Tea with Sugar"
+    },
+    {
+      "id": 17348,
+      "kind": "healthpotion",
+      "name": "Major Healing Draught"
+    },
+    {
+      "id": 17349,
+      "kind": "healthpotion",
+      "name": "Superior Healing Draught"
+    },
+    {
+      "id": 17351,
+      "kind": "manapotion",
+      "name": "Major Mana Draught"
+    },
+    {
+      "id": 17352,
+      "kind": "manapotion",
+      "name": "Superior Mana Draught"
+    },
+    {
+      "id": 18253,
+      "kind": "healthpotion",
+      "name": "Major Rejuvenation Potion"
+    },
+    {
+      "id": 19060,
+      "kind": "both",
+      "name": "Warsong Gulch Enriched Ration"
+    },
+    {
+      "id": 19061,
+      "kind": "both",
+      "name": "Warsong Gulch Iron Ration"
+    },
+    {
+      "id": 19062,
+      "kind": "both",
+      "name": "Warsong Gulch Field Ration"
+    },
+    {
+      "id": 19066,
+      "kind": "bandage",
+      "name": "Warsong Gulch Runecloth Bandage"
+    },
+    {
+      "id": 19067,
+      "kind": "bandage",
+      "name": "Warsong Gulch Mageweave Bandage"
+    },
+    {
+      "id": 19068,
+      "kind": "bandage",
+      "name": "Warsong Gulch Silk Bandage"
+    },
+    {
+      "id": 19307,
+      "kind": "bandage",
+      "name": "Alterac Heavy Runecloth Bandage"
+    },
+    {
+      "id": 19318,
+      "kind": "buff",
+      "name": "Bottled Alterac Spring Water"
+    },
+    {
+      "id": 19997,
+      "kind": "drink",
+      "name": "Harvest Nectar"
+    },
+    {
+      "id": 20002,
+      "kind": "recoverypotion",
+      "name": "Greater Dreamless Sleep Potion"
+    },
+    {
+      "id": 20062,
+      "kind": "both",
+      "name": "Arathi Basin Enriched Ration"
+    },
+    {
+      "id": 20063,
+      "kind": "both",
+      "name": "Arathi Basin Field Ration"
+    },
+    {
+      "id": 20064,
+      "kind": "both",
+      "name": "Arathi Basin Iron Ration"
+    },
+    {
+      "id": 20065,
+      "kind": "bandage",
+      "name": "Arathi Basin Mageweave Bandage"
+    },
+    {
+      "id": 20066,
+      "kind": "bandage",
+      "name": "Arathi Basin Runecloth Bandage"
+    },
+    {
+      "id": 20067,
+      "kind": "bandage",
+      "name": "Arathi Basin Silk Bandage"
+    },
+    {
+      "id": 20222,
+      "kind": "both",
+      "name": "Defiler's Enriched Ration"
+    },
+    {
+      "id": 20223,
+      "kind": "both",
+      "name": "Defiler's Field Ration"
+    },
+    {
+      "id": 20224,
+      "kind": "both",
+      "name": "Defiler's Iron Ration"
+    },
+    {
+      "id": 20225,
+      "kind": "both",
+      "name": "Highlander's Enriched Ration"
+    },
+    {
+      "id": 20226,
+      "kind": "both",
+      "name": "Highlander's Field Ration"
+    },
+    {
+      "id": 20227,
+      "kind": "both",
+      "name": "Highlander's Iron Ration"
+    },
+    {
+      "id": 20232,
+      "kind": "bandage",
+      "name": "Defiler's Mageweave Bandage"
+    },
+    {
+      "id": 20234,
+      "kind": "bandage",
+      "name": "Defiler's Runecloth Bandage"
+    },
+    {
+      "id": 20235,
+      "kind": "bandage",
+      "name": "Defiler's Silk Bandage"
+    },
+    {
+      "id": 20237,
+      "kind": "bandage",
+      "name": "Highlander's Mageweave Bandage"
+    },
+    {
+      "id": 20243,
+      "kind": "bandage",
+      "name": "Highlander's Runecloth Bandage"
+    },
+    {
+      "id": 20244,
+      "kind": "bandage",
+      "name": "Highlander's Silk Bandage"
+    },
+    {
+      "id": 20389,
+      "kind": "both",
+      "name": "Candy Corn"
+    },
+    {
+      "id": 20390,
+      "kind": "both",
+      "name": "Candy Bar"
+    },
+    {
+      "id": 22836,
+      "kind": "recoverypotion",
+      "name": "Major Dreamless Sleep Potion"
+    },
+    {
+      "id": 22850,
+      "kind": "healthpotion",
+      "name": "Super Rejuvenation Potion"
+    },
+    {
+      "id": 23684,
+      "kind": "bandage",
+      "name": "Crystal Infused Bandage"
+    },
+    {
+      "id": 30347,
+      "kind": "healthstone",
+      "name": "Alexander's Test Healthstone"
+    },
+    {
+      "id": 32762,
+      "kind": "manapotion",
+      "name": "Rulkster's Brain Juice"
+    },
+    {
+      "id": 32783,
+      "kind": "manapotion",
+      "name": "Blue Ogre Brew"
+    },
+    {
+      "id": 32784,
+      "kind": "healthpotion",
+      "name": "Red Ogre Brew"
+    },
+    {
+      "id": 32902,
+      "kind": "manapotion",
+      "name": "Bottled Nethergon Energy"
+    },
+    {
+      "id": 32903,
+      "kind": "manapotion",
+      "name": "Cenarion Mana Salve"
+    },
+    {
+      "id": 32904,
+      "kind": "healthpotion",
+      "name": "Cenarion Healing Salve"
+    },
+    {
+      "id": 32905,
+      "kind": "healthpotion",
+      "name": "Bottled Nethergon Vapor"
+    },
+    {
+      "id": 32909,
+      "kind": "manapotion",
+      "name": "Blue Ogre Brew Special"
+    },
+    {
+      "id": 32910,
+      "kind": "healthpotion",
+      "name": "Red Ogre Brew Special"
+    },
+    {
+      "id": 34410,
+      "kind": "buff",
+      "name": "Honeyed Holiday Ham"
+    },
+    {
+      "id": 34440,
+      "kind": "healthpotion",
+      "name": "Mad Alchemist's Potion"
+    }
+  ],
+  "changes": [
+    {
+      "id": 159,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 151.2
+      },
+      "name": "Refreshing Spring Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 151.0
+      }
+    },
+    {
+      "id": 1072,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "manapotion",
+        "m": 0.0
+      },
+      "name": "Full Moonshine",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 320.0
+      }
+    },
+    {
+      "id": 1179,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 436.8
+      },
+      "name": "Ice Cold Milk",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 437.0
+      }
+    },
+    {
+      "id": 1205,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 835.2
+      },
+      "name": "Melon Juice",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      }
+    },
+    {
+      "id": 1708,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 1344.6
+      },
+      "name": "Sweet Nectar",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      }
+    },
+    {
+      "id": 2136,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 835.2
+      },
+      "name": "Conjured Purified Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      }
+    },
+    {
+      "id": 2288,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 436.8
+      },
+      "name": "Conjured Fresh Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 437.0
+      }
+    },
+    {
+      "id": 3772,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 1344.6
+      },
+      "name": "Conjured Spring Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      }
+    },
+    {
+      "id": 4791,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 1344.6
+      },
+      "name": "Enchanted Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      }
+    },
+    {
+      "id": 5350,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 151.2
+      },
+      "name": "Conjured Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 151.0
+      }
+    },
+    {
+      "id": 6888,
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Herb Baked Egg",
+      "wowhead": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 61.2,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 7228,
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 552.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Tigule's Strawberry Ice Cream",
+      "wowhead": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 8077,
+      "legacy": {
+        "bs": {},
+        "h": 1992.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Conjured Mineral Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1992.0
+      }
+    },
+    {
+      "id": 9451,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 835.2
+      },
+      "name": "Bubbling Water",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      }
+    },
+    {
+      "id": 10841,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 1344.6
+      },
+      "name": "Goldthorn Tea",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      }
+    },
+    {
+      "id": 11951,
+      "legacy": {
+        "bs": {},
+        "h": 700.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Whipper Root Tuber",
+      "wowhead": {
+        "bs": {},
+        "h": 800.0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 13928,
+      "legacy": {
+        "bs": {
+          "Agility": 10.0
+        },
+        "h": 874.8,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Grilled Squid",
+      "wowhead": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 13931,
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "both",
+        "m": 8.0
+      },
+      "name": "Nightfin Soup",
+      "wowhead": {
+        "bs": {
+          "MP5": 8.0
+        },
+        "h": 874.8,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 13932,
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "both",
+        "m": 6.0
+      },
+      "name": "Poached Sunscale Salmon",
+      "wowhead": {
+        "bs": {
+          "HP5": 6.0
+        },
+        "h": 874.8,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 13934,
+      "legacy": {
+        "bs": {
+          "Stamina": 10.0
+        },
+        "h": 1933.2,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Mightfish Steak",
+      "wowhead": {
+        "bs": {
+          "Stamina": 10.0
+        },
+        "h": 4320.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 17404,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 436.8
+      },
+      "name": "Blended Bean Brew",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 437.0
+      }
+    },
+    {
+      "id": 19299,
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 835.2
+      },
+      "name": "Fizzy Faire Drink",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      }
+    },
+    {
+      "id": 19696,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Harvest Bread",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 19994,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Harvest Fruit",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 19995,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Harvest Boar",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 19996,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Harvest Fish",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 20031,
+      "legacy": {
+        "bs": {},
+        "h": 2550.0,
+        "kind": "both",
+        "m": 4410.0
+      },
+      "name": "Essence Mango",
+      "wowhead": {
+        "bs": {},
+        "h": 4320.0,
+        "kind": "both",
+        "m": 4410.0
+      }
+    },
+    {
+      "id": 20516,
+      "legacy": {
+        "bs": {
+          "Spirit": 15.0,
+          "Stamina": 15.0
+        },
+        "h": 2.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Bobbing Apple",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 20857,
+      "legacy": {
+        "bs": {},
+        "h": 61.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Honey Bread",
+      "wowhead": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 21023,
+      "legacy": {
+        "bs": {
+          "Stamina": 25.0
+        },
+        "h": 2550.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Dirge's Kickin' Chimaerok Chops",
+      "wowhead": {
+        "bs": {
+          "Stamina": 25.0
+        },
+        "h": 4320.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 21072,
+      "legacy": {
+        "bs": {},
+        "h": 378.0,
+        "kind": "both",
+        "m": 567.0
+      },
+      "name": "Smoked Sagefish",
+      "wowhead": {
+        "bs": {
+          "MP5": 3.0
+        },
+        "h": 378.0,
+        "kind": "buff",
+        "m": 567.0
+      }
+    },
+    {
+      "id": 21215,
+      "legacy": {
+        "bs": {},
+        "h": 5.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Graccu's Mince Meat Fruitcake",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "both",
+        "m": 0
+      }
+    },
+    {
+      "id": 21217,
+      "legacy": {
+        "bs": {},
+        "h": 840.0,
+        "kind": "both",
+        "m": 1260.0
+      },
+      "name": "Sagefish Delight",
+      "wowhead": {
+        "bs": {
+          "MP5": 6.0
+        },
+        "h": 840.0,
+        "kind": "buff",
+        "m": 1260.0
+      }
+    },
+    {
+      "id": 21235,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Winter Veil Roast",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 21236,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Winter Veil Loaf",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 21240,
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Winter Veil Candy",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 21254,
+      "legacy": {
+        "bs": {
+          "Spirit": 15.0,
+          "Stamina": 15.0
+        },
+        "h": 2.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Winter Veil Cookie",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 22895,
+      "legacy": {
+        "bs": {},
+        "h": 3180.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Conjured Cinnamon Roll",
+      "wowhead": {
+        "bs": {},
+        "h": 4320.0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 23172,
+      "legacy": {
+        "bs": {},
+        "h": 4.0,
+        "kind": "both",
+        "m": 4.0
+      },
+      "name": "Refreshing Red Apple",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "both",
+        "m": 0
+      }
+    },
+    {
+      "id": 23176,
+      "legacy": {
+        "bs": {
+          "MP5": 8.0
+        },
+        "h": 840.0,
+        "kind": "buff",
+        "m": 1260.0
+      },
+      "name": "Fizzy Energy Drink",
+      "wowhead": {
+        "bs": {
+          "MP5": 6.0
+        },
+        "h": 840.0,
+        "kind": "buff",
+        "m": 1260.0
+      }
+    },
+    {
+      "id": 24009,
+      "legacy": {
+        "bs": {},
+        "h": 4320.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Dried Fruit Rations",
+      "wowhead": {
+        "bs": {
+          "Stamina": 10.0
+        },
+        "h": 4320.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 27651,
+      "legacy": {
+        "bs": {
+          "Spirit": 20.0,
+          "Stamina": 20.0
+        },
+        "h": 4300.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Buzzard Bites",
+      "wowhead": {
+        "bs": {
+          "Spirit": 20.0,
+          "Stamina": 20.0
+        },
+        "h": 4320.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 32686,
+      "legacy": {
+        "bs": {
+          "Random": "buff"
+        },
+        "h": 7500.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Mingo's Fortune Giblets",
+      "wowhead": {
+        "bs": {},
+        "h": 7500.0,
+        "kind": "food",
+        "m": 0
+      }
+    },
+    {
+      "id": 33023,
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 1392.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Savory Sausage",
+      "wowhead": {
+        "bs": {
+          "Spirit": 12.0,
+          "Stamina": 12.0
+        },
+        "h": 1392.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 33024,
+      "legacy": {
+        "bs": {
+          "Spirit": 8.0,
+          "Stamina": 8.0
+        },
+        "h": 2148.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Pickled Sausage",
+      "wowhead": {
+        "bs": {
+          "Spirit": 14.0,
+          "Stamina": 14.0
+        },
+        "h": 2148.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 33025,
+      "legacy": {
+        "bs": {
+          "Spirit": 12.0,
+          "Stamina": 12.0
+        },
+        "h": 4320.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Spicy Smoked Sausage",
+      "wowhead": {
+        "bs": {
+          "Spirit": 20.0,
+          "Stamina": 20.0
+        },
+        "h": 4320.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 33026,
+      "legacy": {
+        "bs": {
+          "Spirit": 14.0,
+          "Stamina": 14.0
+        },
+        "h": 7500.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "The Golden Link",
+      "wowhead": {
+        "bs": {
+          "Spirit": 20.0,
+          "Stamina": 20.0
+        },
+        "h": 7500.0,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 33028,
+      "legacy": {
+        "bs": {
+          "Spirit": 4.0,
+          "Stamina": 4.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 436.8
+      },
+      "name": "Barleybrew Light",
+      "wowhead": {
+        "bs": {
+          "Spirit": 4.0,
+          "Stamina": 4.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 437.0
+      }
+    },
+    {
+      "id": 33029,
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 835.2
+      },
+      "name": "Barleybrew Dark",
+      "wowhead": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 835.0
+      }
+    },
+    {
+      "id": 33030,
+      "legacy": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 151.2
+      },
+      "name": "Barleybrew Clear",
+      "wowhead": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 151.0
+      }
+    },
+    {
+      "id": 33031,
+      "legacy": {
+        "bs": {
+          "Spirit": 8.0,
+          "Stamina": 8.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 1344.6
+      },
+      "name": "Thunder 45",
+      "wowhead": {
+        "bs": {
+          "Spirit": 8.0,
+          "Stamina": 8.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 1345.0
+      }
+    },
+    {
+      "id": 33043,
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "The Essential Brewfest Pretzel",
+      "wowhead": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 61.2,
+        "kind": "buff",
+        "m": 0
+      }
+    },
+    {
+      "id": 33825,
+      "legacy": {
+        "bs": {
+          "SpellCrit": 20.0,
+          "Spirit": 20.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 7200.0
+      },
+      "name": "Skullfish Soup",
+      "wowhead": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 7200.0
+      }
+    },
+    {
+      "id": 34017,
+      "legacy": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 151.2
+      },
+      "name": "Small Step Brew",
+      "wowhead": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 151.0
+      }
+    },
+    {
+      "id": 34018,
+      "legacy": {
+        "bs": {
+          "Spirit": 4.0,
+          "Stamina": 4.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 436.8
+      },
+      "name": "Long Stride Brew",
+      "wowhead": {
+        "bs": {
+          "Spirit": 4.0,
+          "Stamina": 4.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 437.0
+      }
+    },
+    {
+      "id": 34019,
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 835.2
+      },
+      "name": "Path of Brew",
+      "wowhead": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 835.0
+      }
+    },
+    {
+      "id": 34020,
+      "legacy": {
+        "bs": {
+          "Spirit": 8.0,
+          "Stamina": 8.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 1344.6
+      },
+      "name": "Jungle River Water",
+      "wowhead": {
+        "bs": {
+          "Spirit": 8.0,
+          "Stamina": 8.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 1345.0
+      }
+    },
+    {
+      "id": 34411,
+      "legacy": {
+        "bs": {
+          "Spirit": 30.0,
+          "Stamina": 20.0
+        },
+        "h": 0.0,
+        "kind": "buff",
+        "m": 7200.0
+      },
+      "name": "Hot Apple Cider",
+      "wowhead": {
+        "bs": {
+          "Spirit": 20.0,
+          "Stamina": 20.0
+        },
+        "h": 0,
+        "kind": "buff",
+        "m": 7200.0
+      }
+    },
+    {
+      "id": 35565,
+      "legacy": {
+        "bs": {
+          "SpellPower": 14.0
+        },
+        "h": 1933.2,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Juicy Bear Burger",
+      "wowhead": {
+        "bs": {},
+        "h": 1933.2,
+        "kind": "food",
+        "m": 0
+      }
+    }
+  ],
+  "legacyNotFetched": [],
+  "note": "Differences include intentional client-specific changes; they are not all manual-entry errors.",
+  "version": "tbc"
+}

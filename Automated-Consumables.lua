@@ -1,6 +1,6 @@
 	
 		local BAG_ID_BACKPACK = 0
-		local BAG_ID_LAST = 4
+		local BAG_ID_LAST = NUM_TOTAL_EQUIPPED_BAG_SLOTS or NUM_BAG_SLOTS or 4
 
 	-- Prefer namespaced APIs while retaining support for older Classic clients.
 	local GetItemCount = (C_Item and C_Item.GetItemCount) or GetItemCount
@@ -152,6 +152,10 @@
 		end
 		if not itemID then
 			return nil
+		end
+		local imported = AC_CONSUMABLE_ITEM_STATS and AC_CONSUMABLE_ITEM_STATS[itemID]
+		if imported and type(imported.requiredLevel) == "number" then
+			return imported.requiredLevel
 		end
 		for bagId = BAG_ID_BACKPACK, BAG_ID_LAST do
 			local numSlots = getContainerNumSlots(bagId) or 0
@@ -353,6 +357,10 @@
 			if not itemID then
 				return nil
 			end
+			local imported = AC_FOODDRINK_ITEM_STATS and AC_FOODDRINK_ITEM_STATS[itemID]
+			if AC_Database and AC_Database.activeVersion and imported then
+				return imported
+			end
 			if type(_G.AC_FOOD_ITEMS) == "table" then
 				local s = _G.AC_FOOD_ITEMS[itemID]
 				if type(s) == "table" then
@@ -390,6 +398,13 @@
 			return true
 		end
 
+		local function foodDrinkRestoreScore(stats)
+			if AC_Database then
+				return AC_Database.Score(stats)
+			end
+			return (stats.h or 0) + (stats.m or 0)
+		end
+
 		local function pickBestAvailableFoodDrinkItemID(predicate)
 			local statsTable = type(_G.AC_FOODDRINK_ITEM_STATS) == "table" and _G.AC_FOODDRINK_ITEM_STATS or nil
 			if not statsTable then
@@ -404,8 +419,8 @@
 						local requiredLevel = getRequiredLevelForItemID(itemID)
 						local meetsLevel = playerMeetsRequiredLevel(requiredLevel)
 						if meetsLevel and (not predicate or predicate(itemID, stats)) then
-							local score = (stats.h or 0) + (stats.m or 0)
-							if score > bestScore or (score == bestScore and (not bestItemID or itemID > bestItemID)) then
+							local score = foodDrinkRestoreScore(stats)
+							if score and (score > bestScore or (score == bestScore and (not bestItemID or itemID > bestItemID))) then
 								bestScore = score
 								bestItemID = itemID
 							end
@@ -437,12 +452,12 @@
 								local a1 = (bs and preferredStat1) and (bs[preferredStat1] or 0) or 0
 								local a2 = (bs and preferredStat2) and (bs[preferredStat2] or 0) or 0
 								local a3 = (bs and preferredStat3) and (bs[preferredStat3] or 0) or 0
-								local restore = (stats.h or 0) + (stats.m or 0)
-								if a1 > bestA1
+								local restore = foodDrinkRestoreScore(stats)
+								if restore and (a1 > bestA1
 									or (a1 == bestA1 and a2 > bestA2)
 									or (a1 == bestA1 and a2 == bestA2 and a3 > bestA3)
 									or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore > bestRestore)
-									or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore == bestRestore and (not bestItemID or itemID > bestItemID))
+									or (a1 == bestA1 and a2 == bestA2 and a3 == bestA3 and restore == bestRestore and (not bestItemID or itemID > bestItemID)))
 								then
 									bestA1, bestA2, bestA3, bestRestore = a1, a2, a3, restore
 									bestItemID = itemID
@@ -568,7 +583,7 @@
 							return true
 						end
 						if stats.kind == "both" then
-							return (stats.h or 0) > 0
+							return (stats.h or 0) > 0 or (stats.hp or 0) > 0 or stats.runtimeHealth
 						end
 						return (stats.h or 0) > 0 and (stats.m or 0) == 0 and stats.wf ~= true
 					end)
@@ -581,7 +596,7 @@
 							return true
 						end
 						if stats.kind == "both" then
-							return (stats.m or 0) > 0
+							return (stats.m or 0) > 0 or (stats.mp or 0) > 0 or stats.runtimeMana
 						end
 						return (stats.m or 0) > 0 and (stats.h or 0) == 0
 					end)
@@ -784,8 +799,11 @@
 		local bandageItemIDs = buildSortedItemIDListFromSet(_G.AC_BANDAGE_ITEM_IDS)
 		local soulstoneItemIDs = buildSortedItemIDListFromSet(_G.AC_SOULSTONE_ITEM_IDS)
 
-	local function findBestUsableItemIDFromSortedList(sortedItemIDs)
+	local function findBestUsableItemIDFromSortedList(sortedItemIDs, resource)
 		local ignoreUsableCheck = shouldIgnoreUsableCheck()
+		local bestItemID, bestScore = nil, -1
+		local bestRisk = math.huge
+		local familyOnlyItemID = nil
 
 		for i = #sortedItemIDs, 1, -1 do
 			local itemID = sortedItemIDs[i]
@@ -794,12 +812,23 @@
 				if ignoreUsableCheck or not IsUsableItem or IsUsableItem(itemID) then
 					local requiredLevel = getRequiredLevelForItemID(itemID)
 					if playerMeetsRequiredLevel(requiredLevel) then
-						return itemID
+						local stats = AC_CONSUMABLE_ITEM_STATS and AC_CONSUMABLE_ITEM_STATS[itemID]
+						if not stats or not resource then
+							return itemID
+						end
+						local score = AC_Database.Score(stats, resource)
+						if stats.kind == "healthstone" and (stats.familyOnlyRestoration or stats.runtimeRestorationRequired) and AC_Database.IsEligible(stats) then
+							familyOnlyItemID = familyOnlyItemID or itemID
+						end
+						local risk = stats.hasHarmfulAfterEffect and 1 or 0
+						if score and (risk < bestRisk or (risk == bestRisk and score > bestScore)) then
+							bestItemID, bestScore, bestRisk = itemID, score, risk
+						end
 					end
 				end
 			end
 		end
-		return nil
+		return bestItemID or familyOnlyItemID
 	end
 
 	local function findBestUsableItemIDInBagsByNameNeedle(nameNeedleLower)
@@ -835,7 +864,7 @@
 	end
 
 		local function findBestHealthstoneItemID()
-			return findBestUsableItemIDFromSortedList(healthstoneItemIDs)
+			return findBestUsableItemIDFromSortedList(healthstoneItemIDs, "h")
 				or findBestUsableItemIDInBagsByNameNeedle("healthstone")
 		end
 
@@ -964,9 +993,11 @@
 			return buildUseItemMacro(firstItemID, false)
 		end
 
-			local function buildMacroStringForButton(macroButtonNumber)
+			local function buildMacroStringForButton(macroButtonNumber, foodSelection)
+				if not foodSelection and AC_Database.BeginUpdate then AC_Database.BeginUpdate() end
 				if macroButtonNumber <= 3 then
-					local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID = scanBagsForBestConsumables()
+					foodSelection = foodSelection or { scanBagsForBestConsumables() }
+					local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID = foodSelection[1], foodSelection[2], foodSelection[3]
 
 					local itemID = nil
 					local kind = nil
@@ -995,18 +1026,18 @@
 
 				if macroButtonNumber == 4 then
 					local healthstoneItemID = findBestHealthstoneItemID()
-					local healthPotionItemID = findBestUsableItemIDFromSortedList(healthPotionItemIDs)
+					local healthPotionItemID = findBestUsableItemIDFromSortedList(healthPotionItemIDs, "h")
 					return buildHealthstoneOrPotionMacro(healthstoneItemID, healthPotionItemID)
 				end
 
 					if macroButtonNumber == 5 then
-						local manaAgateItemID = findBestUsableItemIDFromSortedList(manaAgateItemIDs)
-						local manaPotionItemID = findBestUsableItemIDFromSortedList(manaPotionItemIDs)
+						local manaAgateItemID = findBestUsableItemIDFromSortedList(manaAgateItemIDs, "m")
+						local manaPotionItemID = findBestUsableItemIDFromSortedList(manaPotionItemIDs, "m")
 						return buildManaAgateOrPotionMacro(manaAgateItemID, manaPotionItemID)
 					end
 
 				if macroButtonNumber == 6 then
-					return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs), true)
+					return buildUseItemMacro(findBestUsableItemIDFromSortedList(bandageItemIDs, "h"), true)
 				end
 
 				if macroButtonNumber == 7 then
@@ -1033,7 +1064,7 @@
 	end
 
 			local function forcedUpdate(event)
-				return event == "AC_FORCE_UPDATE" or event == "AC_INITIAL_UPDATE" or event == "AC_HOVER_UPDATE" or event == "AC_CAST_UPDATE"
+				return event == "AC_FORCE_UPDATE" or event == "AC_INITIAL_UPDATE" or event == "AC_HOVER_UPDATE" or event == "AC_CAST_UPDATE" or event == "AC_RUNTIME_ITEM_UPDATE"
 			end
 
 		local lastCastMacroRefreshAt = 0
@@ -1534,11 +1565,11 @@
 					local stat2 = ACSettings and ACSettings.buffFoodPreferredStat2 or "Spirit"
 					local stat3 = ACSettings and ACSettings.buffFoodPreferredStat3 or "None"
 					UIDropDownMenu_SetSelectedValue(statDropdown1, stat1)
-					UIDropDownMenu_SetText(statDropdown1, stat1)
+					UIDropDownMenu_SetText(statDropdown1, AC_Database.BuffStatLabel(stat1))
 					UIDropDownMenu_SetSelectedValue(statDropdown2, stat2)
-					UIDropDownMenu_SetText(statDropdown2, stat2)
+					UIDropDownMenu_SetText(statDropdown2, AC_Database.BuffStatLabel(stat2))
 					UIDropDownMenu_SetSelectedValue(statDropdown3, stat3)
-					UIDropDownMenu_SetText(statDropdown3, stat3)
+					UIDropDownMenu_SetText(statDropdown3, AC_Database.BuffStatLabel(stat3))
 				end
 
 				UIDropDownMenu_Initialize(buffPrefDropdown, function(self, level)
@@ -1569,11 +1600,11 @@
 
 				local function initStatDropdown(dropdown, settingsKey)
 					UIDropDownMenu_Initialize(dropdown, function(_, level)
-						local stats = { "Stamina", "Spirit", "Strength", "Agility", "Intellect", "None" }
+						local stats = AC_Database.BuffStatOptions()
 						for i = 1, #stats do
 							local stat = stats[i]
 							local info = UIDropDownMenu_CreateInfo()
-							info.text = stat
+							info.text = AC_Database.BuffStatLabel(stat)
 							info.value = stat
 							info.func = function(button)
 								local value = button and button.value
@@ -1895,6 +1926,7 @@
 						return bagContentChanged(event)
 							or bagCooldownChanged(event)
 							or forcedUpdate(event)
+							or (didInitialMacroRefresh and (event == "ZONE_CHANGED_NEW_AREA" or event == "PLAYER_ENTERING_WORLD"))
 							or playerAlive(event);
 					end
 	
@@ -2010,14 +2042,16 @@
 		tableOfAddOnMacroButtonContentStrings[macroButtonName] = tableOfAddOnMacroButtonContentStrings[macroButtonName]..stringToAdd;
 	end
 
-	local function updateMacroButtonString(macroButtonNumber)
-		addStringToMacroButtonString(macroButtonNumber, buildMacroStringForButton(macroButtonNumber));
+	local function updateMacroButtonString(macroButtonNumber, foodSelection)
+		addStringToMacroButtonString(macroButtonNumber, buildMacroStringForButton(macroButtonNumber, foodSelection));
 	end
 
 	local function updateAllMacroStrings()
 --		print(string.format("%sUpdating all macro strings", ACADDON_CHAT_TITLE));
+		if AC_Database.BeginUpdate then AC_Database.BeginUpdate() end
+		local foodSelection = { scanBagsForBestConsumables() }
 		for macrobuttonNumber = 1, getNumberOfMacroButtons() do
-			updateMacroButtonString(macrobuttonNumber);
+			updateMacroButtonString(macrobuttonNumber, foodSelection);
 		end
 
 		if AC_DEBUG then
@@ -2039,6 +2073,7 @@
 		end
 
 		local function updateOrCreateFoodDrinkBuffMacros()
+			if AC_Database.BeginUpdate then AC_Database.BeginUpdate() end
 			local bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID = scanBagsForBestConsumables()
 			local itemIDs = { bestSimpleFoodItemID, bestDrinkItemID, bestBuffFoodItemID }
 			local kinds = { "Food", "Drink", "Buff Food" }
@@ -2167,6 +2202,24 @@
 	end
 
 				local function eventHandlerForAutomatedFoodDrinkMacroScript(self, event, ...)
+					if AC_Database.activeVersion == "retail" and (event == "PLAYER_LEVEL_UP" or event == "UNIT_MAXHEALTH" or event == "UNIT_MAXPOWER") then
+						local unit = ...
+						if event ~= "PLAYER_LEVEL_UP" and unit ~= "player" then return end
+						if event == "PLAYER_LEVEL_UP" and C_Timer and C_Timer.After then
+							C_Timer.After(0, function() eventHandlerForAutomatedFoodDrinkMacroScript(self, "AC_RUNTIME_ITEM_UPDATE") end)
+							return
+						end
+						event = "AC_RUNTIME_ITEM_UPDATE"
+					end
+					if event == "ITEM_DATA_LOAD_RESULT" then
+						local itemID, success = ...
+						if issecretvalue and (issecretvalue(itemID) or issecretvalue(success)) then return end
+						local stats = AC_CONSUMABLE_ITEM_STATS and AC_CONSUMABLE_ITEM_STATS[itemID]
+						if success ~= true or not stats or not (stats.runtimeRestorationRequired or stats.runtimeRestorationPreferred) then return end
+						local count = GetItemCount and GetItemCount(itemID) or 0
+						if (issecretvalue and issecretvalue(count)) or not count or count <= 0 then return end
+						event = "AC_RUNTIME_ITEM_UPDATE"
+					end
 					local function scheduleInitialMacroRefresh()
 						if initialMacroRefreshScheduled then
 							return
@@ -2307,9 +2360,16 @@
 					local function registerEventsNeededForAddon()
 						AutomatedConsumablesFrame:RegisterEvent("PLAYER_LOGIN");
 						AutomatedConsumablesFrame:RegisterEvent("PLAYER_ENTERING_WORLD");
+						AutomatedConsumablesFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA");
 						AutomatedConsumablesFrame:RegisterEvent("PLAYER_ALIVE");
 						AutomatedConsumablesFrame:RegisterEvent("SPELLS_CHANGED");
 						AutomatedConsumablesFrame:RegisterEvent("GET_ITEM_INFO_RECEIVED");
+						if AC_Database.activeVersion == "retail" then
+							AutomatedConsumablesFrame:RegisterEvent("ITEM_DATA_LOAD_RESULT")
+							AutomatedConsumablesFrame:RegisterEvent("PLAYER_LEVEL_UP")
+							AutomatedConsumablesFrame:RegisterUnitEvent("UNIT_MAXHEALTH", "player")
+							AutomatedConsumablesFrame:RegisterUnitEvent("UNIT_MAXPOWER", "player")
+						end
 						AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE");
 						AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE_DELAYED");
 						AutomatedConsumablesFrame:RegisterEvent("BAG_UPDATE_COOLDOWN");

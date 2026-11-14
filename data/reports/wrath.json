@@ -1,0 +1,329 @@
+{
+  "categories": {
+    "bandage": 30,
+    "both": 34,
+    "buff": 170,
+    "drink": 57,
+    "food": 205,
+    "healthpotion": 45,
+    "healthstone": 25,
+    "managem": 6,
+    "manapotion": 35,
+    "placedfood": 6,
+    "recoverypotion": 4,
+    "soulstone": 7
+  },
+  "discovery": {
+    "coverage": "partial",
+    "errors": {},
+    "sources": [
+      {
+        "provenance": {
+          "archiveSha256": "852b091101bf709f54026369abe240cd3060b8fe20b601f3a457209740693afa",
+          "core": "ItemDB/Data/Wrath/_core/Consumable.lua",
+          "coreSha256": "f126ad1b92115cf5cb2b5fe44e8491b9633965951abf5a71a8b896a024661741",
+          "coverage": "Food/drink, potion and bandage entries, plus named stone and mana-gem families. When the source has only generic subclass 0, the entire consumable core is included. Not proof of complete game coverage.",
+          "license": "MIT",
+          "names": "ItemDB/Data/Wrath/enUS/Names.lua",
+          "namesSha256": "f7d661c3ac90645e8ebe25a61b5b48360e3ed2fc43d34225d90b37d04056569f",
+          "provider": "LibItemDB",
+          "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
+          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+        },
+        "seed": "wrath.json"
+      },
+      {
+        "provenance": "Candidate IDs from the currently shipped FoodDrinkDB.lua and PotionBandageDB.lua at ec046a1868f5eed68427c48562738e596e46dbc4. Values are never imported from these files; candidates must be fetched separately for each target client.",
+        "seed": "legacy.json"
+      },
+      {
+        "provenance": {
+          "archiveSha256": "852b091101bf709f54026369abe240cd3060b8fe20b601f3a457209740693afa",
+          "candidateCore": "ItemDB/Data/Wrath/_core/Consumable.lua",
+          "coreSha256": "f126ad1b92115cf5cb2b5fe44e8491b9633965951abf5a71a8b896a024661741",
+          "coverage": "Supplementary name-based candidates in generic subclasses 0/8; not an existence or completeness claim. Effects and eligibility come only from the client-specific source.",
+          "license": "MIT",
+          "names": "ItemDB/Data/Wrath/enUS/Names.lua",
+          "namesSha256": "f7d661c3ac90645e8ebe25a61b5b48360e3ed2fc43d34225d90b37d04056569f",
+          "provider": "LibItemDB",
+          "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
+          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+        },
+        "seed": "wrath-generic.json"
+      }
+    ]
+  },
+  "excluded": [
+    761,
+    1199,
+    1450,
+    1649,
+    1851,
+    2071,
+    2459,
+    2461,
+    2462,
+    2593,
+    2594,
+    2595,
+    2596,
+    2633,
+    2686,
+    2723,
+    2894,
+    3384,
+    3386,
+    3387,
+    3703,
+    3768,
+    3823,
+    4418,
+    4595,
+    4600,
+    4623,
+    4953,
+    5223,
+    5265,
+    5342,
+    5631,
+    5632,
+    5633,
+    5634,
+    5816,
+    6048,
+    6049,
+    6050,
+    6051,
+    6052,
+    6372,
+    6522,
+    6637,
+    6657,
+    6811,
+    7676,
+    8243,
+    8411,
+    9030,
+    9036,
+    9172,
+    9260,
+    9360,
+    9361,
+    11846,
+    12003,
+    12217,
+    13442,
+    13455,
+    13456,
+    13457,
+    13458,
+    13459,
+    13460,
+    13461,
+    13462,
+    13506,
+    17196,
+    17402,
+    17403,
+    18287,
+    18288,
+    19221,
+    19222,
+    20008,
+    20709,
+    21114,
+    21151,
+    21238,
+    21721,
+    22779,
+    22826,
+    22828,
+    22837,
+    22838,
+    22839,
+    22841,
+    22842,
+    22844,
+    22845,
+    22846,
+    22847,
+    22849,
+    22871,
+    23246,
+    23326,
+    23435,
+    23684,
+    23696,
+    23698,
+    23704,
+    23715,
+    23848,
+    27656,
+    28284,
+    29112,
+    29443,
+    30309,
+    30793,
+    30858,
+    32424,
+    32667,
+    32840,
+    32844,
+    32845,
+    32846,
+    32847,
+    32971,
+    33866,
+    33874,
+    33924,
+    33929,
+    33956,
+    34076,
+    34646,
+    34832,
+    34861,
+    35223,
+    35720,
+    36748,
+    36770,
+    37490,
+    37494,
+    37496,
+    37498,
+    37584,
+    37661,
+    37900,
+    37904,
+    37906,
+    37908,
+    38320,
+    38350,
+    38351,
+    38432,
+    38466,
+    38518,
+    38626,
+    38641,
+    39878,
+    39883,
+    40035,
+    40036,
+    40042,
+    40093,
+    40211,
+    40212,
+    40213,
+    40214,
+    40215,
+    40216,
+    40217,
+    41374,
+    42436,
+    42438,
+    42439,
+    42548,
+    43004,
+    43005,
+    43088,
+    43488,
+    43490,
+    43491,
+    43492,
+    43695,
+    43696,
+    44114,
+    44228,
+    44570,
+    44571,
+    44573,
+    44574,
+    44575,
+    44610,
+    44616,
+    44617,
+    44618,
+    44619,
+    44620,
+    44728,
+    44818,
+    46319
+  ],
+  "failures": {},
+  "familyOnlyRestoration": {},
+  "fetched": 817,
+  "included": 624,
+  "legacyRecoveryExclusions": [],
+  "runtimeRestorationPreferred": [],
+  "runtimeRestorationRequired": {},
+  "unavailable": {},
+  "unresolved": {},
+  "version": "wrath",
+  "warnings": {
+    "20516": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "21254": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "22238": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "32783": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "32784": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "32902": [
+      "Unresolved use restriction: Only works inside Tempest Keep: The Eye, The Arcatraz, The Botanica, The Mechanar"
+    ],
+    "32903": [
+      "Unresolved use restriction: Only works inside Coilfang: The Serpentshrine, The Underbog, The Steamvaults, The Slave Pens"
+    ],
+    "32904": [
+      "Unresolved use restriction: Only works inside Coilfang: The Serpentshrine, The Underbog, The Steamvaults, The Slave Pens"
+    ],
+    "32905": [
+      "Unresolved use restriction: Only works inside Tempest Keep: The Eye, The Arcatraz, The Botanica, The Mechanar"
+    ],
+    "32909": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "32910": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "39971": [
+      "Unresolved use restriction: Can only be used in battlegrounds and arenas"
+    ],
+    "42997": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "43001": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44791": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44836": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44837": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44838": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44839": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44840": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "46691": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "46887": [
+      "Well Fed buff has no known numeric stats in this source"
+    ]
+  }
+}

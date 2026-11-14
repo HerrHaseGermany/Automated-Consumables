@@ -2,3 +2,6 @@
 .vscode/
 .gitattributes
 ref/
+.cache/
+__pycache__/
+dist/

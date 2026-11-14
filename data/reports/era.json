@@ -1,0 +1,1507 @@
+{
+  "categories": {
+    "bandage": 24,
+    "both": 24,
+    "buff": 68,
+    "drink": 25,
+    "food": 118,
+    "healthpotion": 20,
+    "healthstone": 15,
+    "managem": 4,
+    "manapotion": 11,
+    "recoverypotion": 2,
+    "soulstone": 5
+  },
+  "discovery": {
+    "coverage": "partial",
+    "errors": {},
+    "sources": [
+      {
+        "provenance": {
+          "archiveSha256": "852b091101bf709f54026369abe240cd3060b8fe20b601f3a457209740693afa",
+          "core": "ItemDB/Data/Vanilla/_core/Consumable.lua",
+          "coreSha256": "8c3da5196c6223fb9de0a64e5a5a0eac78bfe5fe0ff99aff2f2ec204d924d4b1",
+          "coverage": "Food/drink, potion and bandage entries, plus named stone and mana-gem families. When the source has only generic subclass 0, the entire consumable core is included. Not proof of complete game coverage.",
+          "license": "MIT",
+          "names": "ItemDB/Data/Vanilla/enUS/Names.lua",
+          "namesSha256": "d57f5cc82f367b471b7dd294f3b0dc4d1d0fed120044bf6c235e2fc62af46b40",
+          "provider": "LibItemDB",
+          "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
+          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+        },
+        "seed": "era.json"
+      },
+      {
+        "provenance": "Candidate IDs from the currently shipped FoodDrinkDB.lua and PotionBandageDB.lua at ec046a1868f5eed68427c48562738e596e46dbc4. Values are never imported from these files; candidates must be fetched separately for each target client.",
+        "seed": "legacy.json"
+      }
+    ]
+  },
+  "excluded": [
+    761,
+    835,
+    836,
+    951,
+    954,
+    955,
+    1127,
+    1128,
+    1176,
+    1177,
+    1178,
+    1180,
+    1181,
+    1187,
+    1191,
+    1199,
+    1262,
+    1267,
+    1268,
+    1269,
+    1321,
+    1322,
+    1399,
+    1400,
+    1402,
+    1434,
+    1450,
+    1477,
+    1478,
+    1533,
+    1612,
+    1649,
+    1700,
+    1703,
+    1704,
+    1711,
+    1712,
+    1851,
+    1995,
+    2071,
+    2091,
+    2289,
+    2290,
+    2304,
+    2313,
+    2454,
+    2457,
+    2458,
+    2459,
+    2460,
+    2461,
+    2462,
+    2593,
+    2594,
+    2595,
+    2596,
+    2633,
+    2686,
+    2688,
+    2723,
+    2892,
+    2893,
+    2894,
+    2895,
+    2896,
+    2927,
+    3012,
+    3013,
+    3382,
+    3383,
+    3384,
+    3386,
+    3387,
+    3388,
+    3389,
+    3390,
+    3391,
+    3434,
+    3438,
+    3441,
+    3456,
+    3507,
+    3703,
+    3768,
+    3773,
+    3775,
+    3776,
+    3823,
+    3824,
+    3825,
+    3826,
+    3828,
+    3829,
+    4265,
+    4418,
+    4419,
+    4421,
+    4422,
+    4424,
+    4425,
+    4426,
+    4427,
+    4479,
+    4480,
+    4481,
+    4546,
+    4595,
+    4598,
+    4600,
+    4603,
+    4623,
+    4842,
+    4941,
+    4945,
+    4952,
+    4953,
+    5013,
+    5014,
+    5015,
+    5041,
+    5042,
+    5043,
+    5044,
+    5045,
+    5046,
+    5047,
+    5048,
+    5049,
+    5205,
+    5206,
+    5223,
+    5227,
+    5228,
+    5229,
+    5237,
+    5265,
+    5342,
+    5378,
+    5406,
+    5407,
+    5421,
+    5457,
+    5631,
+    5632,
+    5633,
+    5634,
+    5654,
+    5740,
+    5816,
+    5823,
+    5859,
+    5878,
+    5880,
+    5951,
+    5996,
+    5997,
+    6048,
+    6049,
+    6050,
+    6051,
+    6052,
+    6074,
+    6183,
+    6244,
+    6289,
+    6291,
+    6303,
+    6308,
+    6317,
+    6361,
+    6362,
+    6372,
+    6373,
+    6464,
+    6486,
+    6529,
+    6530,
+    6532,
+    6635,
+    6636,
+    6637,
+    6638,
+    6643,
+    6644,
+    6645,
+    6646,
+    6647,
+    6657,
+    6662,
+    6781,
+    6782,
+    6811,
+    6812,
+    6841,
+    6842,
+    6851,
+    6852,
+    6926,
+    6927,
+    6929,
+    6947,
+    6949,
+    6950,
+    6951,
+    7127,
+    7227,
+    7266,
+    7307,
+    7388,
+    7516,
+    7627,
+    7629,
+    7676,
+    7970,
+    8048,
+    8095,
+    8164,
+    8173,
+    8243,
+    8365,
+    8366,
+    8410,
+    8411,
+    8412,
+    8423,
+    8424,
+    8432,
+    8444,
+    8493,
+    8529,
+    8546,
+    8548,
+    8827,
+    8926,
+    8927,
+    8928,
+    8949,
+    8951,
+    8956,
+    8959,
+    8984,
+    8985,
+    9030,
+    9036,
+    9088,
+    9154,
+    9155,
+    9172,
+    9179,
+    9186,
+    9187,
+    9197,
+    9206,
+    9224,
+    9233,
+    9260,
+    9264,
+    9311,
+    9312,
+    9313,
+    9314,
+    9315,
+    9317,
+    9318,
+    9319,
+    9360,
+    9361,
+    9546,
+    9569,
+    10305,
+    10306,
+    10307,
+    10308,
+    10309,
+    10310,
+    10592,
+    10621,
+    10663,
+    10684,
+    10687,
+    10688,
+    10689,
+    10690,
+    10830,
+    10918,
+    10920,
+    10921,
+    10922,
+    11148,
+    11197,
+    11325,
+    11405,
+    11413,
+    11443,
+    11616,
+    11846,
+    11885,
+    11914,
+    11948,
+    11953,
+    12003,
+    12217,
+    12385,
+    12440,
+    12526,
+    12533,
+    12586,
+    12650,
+    12712,
+    12762,
+    12820,
+    12884,
+    12885,
+    12886,
+    12894,
+    12922,
+    12924,
+    13149,
+    13151,
+    13152,
+    13153,
+    13154,
+    13155,
+    13156,
+    13367,
+    13442,
+    13445,
+    13447,
+    13452,
+    13453,
+    13454,
+    13455,
+    13456,
+    13457,
+    13458,
+    13459,
+    13460,
+    13461,
+    13462,
+    13506,
+    13508,
+    13509,
+    13510,
+    13511,
+    13512,
+    13513,
+    13514,
+    13562,
+    13703,
+    13754,
+    13756,
+    13758,
+    13759,
+    13760,
+    13761,
+    13881,
+    13888,
+    13889,
+    13891,
+    14542,
+    15314,
+    15564,
+    15778,
+    16086,
+    16102,
+    16103,
+    16104,
+    16105,
+    16106,
+    16107,
+    16108,
+    16282,
+    17048,
+    17162,
+    17163,
+    17196,
+    17202,
+    17302,
+    17303,
+    17304,
+    17305,
+    17307,
+    17308,
+    17402,
+    17403,
+    17708,
+    17827,
+    17828,
+    17829,
+    17830,
+    17882,
+    17883,
+    17884,
+    17885,
+    17886,
+    17887,
+    17888,
+    17889,
+    17890,
+    17891,
+    17892,
+    17893,
+    17894,
+    17895,
+    17896,
+    17897,
+    17898,
+    17899,
+    18105,
+    18106,
+    18154,
+    18209,
+    18251,
+    18258,
+    18269,
+    18284,
+    18287,
+    18288,
+    18294,
+    18297,
+    18595,
+    18599,
+    18606,
+    18607,
+    18640,
+    18662,
+    18666,
+    18667,
+    18668,
+    18669,
+    19026,
+    19045,
+    19046,
+    19150,
+    19151,
+    19152,
+    19153,
+    19154,
+    19155,
+    19182,
+    19183,
+    19221,
+    19222,
+    19425,
+    20004,
+    20007,
+    20008,
+    20079,
+    20080,
+    20081,
+    20228,
+    20229,
+    20230,
+    20231,
+    20233,
+    20236,
+    20337,
+    20397,
+    20398,
+    20399,
+    20405,
+    20409,
+    20410,
+    20411,
+    20413,
+    20414,
+    20557,
+    20558,
+    20559,
+    20560,
+    20676,
+    20677,
+    20678,
+    20679,
+    20709,
+    20844,
+    20908,
+    21038,
+    21071,
+    21114,
+    21140,
+    21151,
+    21153,
+    21162,
+    21163,
+    21164,
+    21212,
+    21213,
+    21238,
+    21243,
+    21267,
+    21325,
+    21536,
+    21546,
+    21557,
+    21558,
+    21559,
+    21560,
+    21561,
+    21562,
+    21569,
+    21570,
+    21571,
+    21574,
+    21575,
+    21576,
+    21577,
+    21578,
+    21589,
+    21590,
+    21591,
+    21592,
+    21593,
+    21595,
+    21711,
+    21714,
+    21716,
+    21717,
+    21718,
+    21719,
+    21720,
+    21721,
+    21739,
+    21740,
+    21741,
+    21742,
+    21743,
+    21744,
+    21745,
+    21746,
+    21747,
+    21811,
+    21815,
+    21829,
+    21833,
+    21923,
+    21930,
+    21960,
+    21962,
+    21963,
+    21964,
+    21975,
+    21979,
+    21980,
+    21981,
+    22020,
+    22021,
+    22022,
+    22023,
+    22024,
+    22025,
+    22026,
+    22027,
+    22028,
+    22029,
+    22030,
+    22031,
+    22032,
+    22033,
+    22034,
+    22035,
+    22036,
+    22037,
+    22038,
+    22039,
+    22040,
+    22041,
+    22042,
+    22043,
+    22058,
+    22117,
+    22119,
+    22120,
+    22121,
+    22122,
+    22123,
+    22140,
+    22141,
+    22142,
+    22143,
+    22144,
+    22145,
+    22154,
+    22155,
+    22156,
+    22157,
+    22158,
+    22159,
+    22160,
+    22161,
+    22162,
+    22163,
+    22164,
+    22165,
+    22166,
+    22167,
+    22168,
+    22169,
+    22170,
+    22171,
+    22172,
+    22173,
+    22174,
+    22175,
+    22176,
+    22177,
+    22178,
+    22192,
+    22193,
+    22218,
+    22236,
+    22237,
+    22238,
+    22239,
+    22259,
+    22260,
+    22283,
+    22284,
+    22285,
+    22286,
+    22287,
+    22288,
+    22289,
+    22290,
+    22291,
+    22292,
+    22293,
+    22294,
+    22295,
+    22296,
+    22297,
+    22298,
+    22299,
+    22300,
+    22584,
+    22585,
+    22586,
+    22587,
+    22588,
+    22743,
+    22765,
+    23086,
+    23163,
+    23164,
+    23175,
+    23194,
+    23195,
+    23196,
+    23211,
+    23215,
+    23224,
+    23245,
+    23246,
+    23326,
+    23327,
+    23379,
+    23435,
+    23656,
+    23696,
+    23698,
+    23699,
+    23700,
+    23701,
+    23715,
+    23718,
+    23719,
+    23721,
+    23722,
+    23725,
+    23727,
+    23728,
+    23794,
+    23795,
+    23796,
+    184937,
+    184938
+  ],
+  "failures": {},
+  "familyOnlyRestoration": {},
+  "fetched": 992,
+  "included": 316,
+  "legacyRecoveryExclusions": [],
+  "runtimeRestorationPreferred": [],
+  "runtimeRestorationRequired": {},
+  "unavailable": {
+    "20857": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=20857&xml"
+    },
+    "21990": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=21990&xml"
+    },
+    "21991": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=21991&xml"
+    },
+    "22018": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22018&xml"
+    },
+    "22019": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22019&xml"
+    },
+    "22044": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22044&xml"
+    },
+    "22103": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22103&xml"
+    },
+    "22104": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22104&xml"
+    },
+    "22105": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22105&xml"
+    },
+    "22116": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22116&xml"
+    },
+    "22645": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22645&xml"
+    },
+    "22829": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22829&xml"
+    },
+    "22832": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=22832&xml"
+    },
+    "23495": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=23495&xml"
+    },
+    "23585": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=23585&xml"
+    },
+    "23756": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=23756&xml"
+    },
+    "23822": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=23822&xml"
+    },
+    "23823": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=23823&xml"
+    },
+    "24006": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24006&xml"
+    },
+    "24007": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24007&xml"
+    },
+    "24008": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24008&xml"
+    },
+    "24009": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24009&xml"
+    },
+    "24072": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24072&xml"
+    },
+    "24105": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24105&xml"
+    },
+    "24338": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24338&xml"
+    },
+    "24408": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24408&xml"
+    },
+    "24539": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24539&xml"
+    },
+    "24540": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=24540&xml"
+    },
+    "27635": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27635&xml"
+    },
+    "27636": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27636&xml"
+    },
+    "27651": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27651&xml"
+    },
+    "27655": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27655&xml"
+    },
+    "27657": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27657&xml"
+    },
+    "27658": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27658&xml"
+    },
+    "27659": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27659&xml"
+    },
+    "27660": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27660&xml"
+    },
+    "27661": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27661&xml"
+    },
+    "27662": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27662&xml"
+    },
+    "27663": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27663&xml"
+    },
+    "27664": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27664&xml"
+    },
+    "27665": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27665&xml"
+    },
+    "27666": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27666&xml"
+    },
+    "27667": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27667&xml"
+    },
+    "27854": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27854&xml"
+    },
+    "27855": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27855&xml"
+    },
+    "27856": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27856&xml"
+    },
+    "27857": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27857&xml"
+    },
+    "27858": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27858&xml"
+    },
+    "27859": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27859&xml"
+    },
+    "27860": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=27860&xml"
+    },
+    "28100": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=28100&xml"
+    },
+    "28101": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=28101&xml"
+    },
+    "28112": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=28112&xml"
+    },
+    "28399": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=28399&xml"
+    },
+    "28486": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=28486&xml"
+    },
+    "28501": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=28501&xml"
+    },
+    "29292": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29292&xml"
+    },
+    "29293": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29293&xml"
+    },
+    "29393": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29393&xml"
+    },
+    "29394": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29394&xml"
+    },
+    "29395": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29395&xml"
+    },
+    "29401": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29401&xml"
+    },
+    "29402": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29402&xml"
+    },
+    "29412": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29412&xml"
+    },
+    "29448": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29448&xml"
+    },
+    "29449": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29449&xml"
+    },
+    "29450": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29450&xml"
+    },
+    "29451": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29451&xml"
+    },
+    "29452": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29452&xml"
+    },
+    "29453": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29453&xml"
+    },
+    "29454": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=29454&xml"
+    },
+    "30155": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30155&xml"
+    },
+    "30355": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30355&xml"
+    },
+    "30357": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30357&xml"
+    },
+    "30358": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30358&xml"
+    },
+    "30359": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30359&xml"
+    },
+    "30361": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30361&xml"
+    },
+    "30457": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30457&xml"
+    },
+    "30458": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30458&xml"
+    },
+    "30610": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30610&xml"
+    },
+    "30703": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30703&xml"
+    },
+    "30816": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=30816&xml"
+    },
+    "31672": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31672&xml"
+    },
+    "31673": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31673&xml"
+    },
+    "31676": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31676&xml"
+    },
+    "31677": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31677&xml"
+    },
+    "31838": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31838&xml"
+    },
+    "31839": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31839&xml"
+    },
+    "31840": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31840&xml"
+    },
+    "31841": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31841&xml"
+    },
+    "31852": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31852&xml"
+    },
+    "31853": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31853&xml"
+    },
+    "31854": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31854&xml"
+    },
+    "31855": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=31855&xml"
+    },
+    "32453": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32453&xml"
+    },
+    "32455": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32455&xml"
+    },
+    "32668": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32668&xml"
+    },
+    "32685": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32685&xml"
+    },
+    "32686": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32686&xml"
+    },
+    "32721": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32721&xml"
+    },
+    "32722": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32722&xml"
+    },
+    "32763": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32763&xml"
+    },
+    "32947": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32947&xml"
+    },
+    "32948": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=32948&xml"
+    },
+    "33004": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33004&xml"
+    },
+    "33023": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33023&xml"
+    },
+    "33024": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33024&xml"
+    },
+    "33025": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33025&xml"
+    },
+    "33026": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33026&xml"
+    },
+    "33028": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33028&xml"
+    },
+    "33029": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33029&xml"
+    },
+    "33030": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33030&xml"
+    },
+    "33031": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33031&xml"
+    },
+    "33032": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33032&xml"
+    },
+    "33033": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33033&xml"
+    },
+    "33036": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33036&xml"
+    },
+    "33042": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33042&xml"
+    },
+    "33043": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33043&xml"
+    },
+    "33048": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33048&xml"
+    },
+    "33052": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33052&xml"
+    },
+    "33053": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33053&xml"
+    },
+    "33092": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33092&xml"
+    },
+    "33093": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33093&xml"
+    },
+    "33234": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33234&xml"
+    },
+    "33236": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33236&xml"
+    },
+    "33246": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33246&xml"
+    },
+    "33254": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33254&xml"
+    },
+    "33825": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33825&xml"
+    },
+    "33867": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33867&xml"
+    },
+    "33872": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33872&xml"
+    },
+    "33934": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33934&xml"
+    },
+    "33935": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=33935&xml"
+    },
+    "34017": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34017&xml"
+    },
+    "34018": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34018&xml"
+    },
+    "34019": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34019&xml"
+    },
+    "34020": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34020&xml"
+    },
+    "34021": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34021&xml"
+    },
+    "34022": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34022&xml"
+    },
+    "34062": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34062&xml"
+    },
+    "34063": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34063&xml"
+    },
+    "34064": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34064&xml"
+    },
+    "34065": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34065&xml"
+    },
+    "34411": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34411&xml"
+    },
+    "34412": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34412&xml"
+    },
+    "34780": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=34780&xml"
+    },
+    "35287": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=35287&xml"
+    },
+    "35563": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=35563&xml"
+    },
+    "35565": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=35565&xml"
+    },
+    "35710": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=35710&xml"
+    },
+    "38427": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=38427&xml"
+    },
+    "38428": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=38428&xml"
+    },
+    "38429": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=38429&xml"
+    },
+    "38430": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=38430&xml"
+    },
+    "38431": {
+      "reason": "Wowhead has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
+      "url": "https://www.wowhead.com/classic/item=38431&xml"
+    }
+  },
+  "unresolved": {},
+  "version": "era",
+  "warnings": {
+    "20516": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "21254": [
+      "Well Fed buff has no known numeric stats in this source"
+    ]
+  }
+}

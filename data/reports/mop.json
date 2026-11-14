@@ -1,0 +1,584 @@
+{
+  "categories": {
+    "bandage": 40,
+    "both": 51,
+    "buff": 285,
+    "drink": 98,
+    "food": 318,
+    "healthpotion": 59,
+    "healthstone": 1,
+    "managem": 8,
+    "manapotion": 40,
+    "placedfood": 28,
+    "recoverypotion": 6,
+    "soulstone": 1
+  },
+  "discovery": {
+    "coverage": "partial",
+    "errors": {},
+    "sources": [
+      {
+        "provenance": {
+          "archiveSha256": "852b091101bf709f54026369abe240cd3060b8fe20b601f3a457209740693afa",
+          "core": "ItemDB/Data/Mists/_core/Consumable.lua",
+          "coreSha256": "13da5895bea39ee4782368d7ebc3f90491513c036cf663cd8ca4994ef7ec283b",
+          "coverage": "Food/drink, potion and bandage entries, plus named stone and mana-gem families. When the source has only generic subclass 0, the entire consumable core is included. Not proof of complete game coverage.",
+          "license": "MIT",
+          "names": "ItemDB/Data/Mists/enUS/Names.lua",
+          "namesSha256": "f562488606248be731aca6bb7829440e76ef00749bdcc9f48208a6b2b03b4b71",
+          "provider": "LibItemDB",
+          "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
+          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+        },
+        "seed": "mop.json"
+      },
+      {
+        "provenance": "Candidate IDs from the currently shipped FoodDrinkDB.lua and PotionBandageDB.lua at ec046a1868f5eed68427c48562738e596e46dbc4. Values are never imported from these files; candidates must be fetched separately for each target client.",
+        "seed": "legacy.json"
+      },
+      {
+        "provenance": {
+          "archiveSha256": "852b091101bf709f54026369abe240cd3060b8fe20b601f3a457209740693afa",
+          "candidateCore": "ItemDB/Data/Mists/_core/Consumable.lua",
+          "coreSha256": "13da5895bea39ee4782368d7ebc3f90491513c036cf663cd8ca4994ef7ec283b",
+          "coverage": "Supplementary name-based candidates in generic subclasses 0/8; not an existence or completeness claim. Effects and eligibility come only from the client-specific source.",
+          "license": "MIT",
+          "names": "ItemDB/Data/Mists/enUS/Names.lua",
+          "namesSha256": "f562488606248be731aca6bb7829440e76ef00749bdcc9f48208a6b2b03b4b71",
+          "provider": "LibItemDB",
+          "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
+          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+        },
+        "seed": "mop-generic.json"
+      }
+    ]
+  },
+  "excluded": [
+    761,
+    1199,
+    1450,
+    1649,
+    1851,
+    2071,
+    2459,
+    2461,
+    2462,
+    2593,
+    2594,
+    2595,
+    2596,
+    2686,
+    2723,
+    2894,
+    3386,
+    3387,
+    3703,
+    3768,
+    3823,
+    4418,
+    4595,
+    4600,
+    4623,
+    4953,
+    5223,
+    5265,
+    5342,
+    5509,
+    5510,
+    5511,
+    5631,
+    5632,
+    5633,
+    5634,
+    5816,
+    6048,
+    6049,
+    6050,
+    6051,
+    6052,
+    6372,
+    6522,
+    6533,
+    6637,
+    6657,
+    6811,
+    7676,
+    8243,
+    8411,
+    9030,
+    9172,
+    9260,
+    9360,
+    9361,
+    9421,
+    11846,
+    12003,
+    12217,
+    13442,
+    13455,
+    13456,
+    13457,
+    13458,
+    13459,
+    13460,
+    13461,
+    13462,
+    13506,
+    16892,
+    16893,
+    16895,
+    16896,
+    17196,
+    17402,
+    17403,
+    18287,
+    18288,
+    19004,
+    19005,
+    19006,
+    19007,
+    19008,
+    19009,
+    19010,
+    19011,
+    19012,
+    19013,
+    19221,
+    19222,
+    20008,
+    20709,
+    21114,
+    21151,
+    21238,
+    21721,
+    22103,
+    22104,
+    22105,
+    22116,
+    22779,
+    22826,
+    22828,
+    22837,
+    22838,
+    22839,
+    22841,
+    22842,
+    22844,
+    22845,
+    22846,
+    22847,
+    22849,
+    22871,
+    23246,
+    23326,
+    23435,
+    23684,
+    23696,
+    23698,
+    23704,
+    23715,
+    23848,
+    28284,
+    29112,
+    29443,
+    30309,
+    30347,
+    30793,
+    30858,
+    32424,
+    32667,
+    32840,
+    32844,
+    32845,
+    32846,
+    32847,
+    32971,
+    33866,
+    33874,
+    33924,
+    33929,
+    34076,
+    34646,
+    34832,
+    34861,
+    35223,
+    35720,
+    36748,
+    36770,
+    36889,
+    36890,
+    36891,
+    36892,
+    36893,
+    36894,
+    36895,
+    37490,
+    37494,
+    37496,
+    37498,
+    37584,
+    37661,
+    37900,
+    37904,
+    37906,
+    37908,
+    38320,
+    38350,
+    38351,
+    38432,
+    38466,
+    38518,
+    38626,
+    38641,
+    38691,
+    39878,
+    39883,
+    40035,
+    40036,
+    40042,
+    40093,
+    40211,
+    40212,
+    40213,
+    40214,
+    40215,
+    40216,
+    40217,
+    41374,
+    42436,
+    42438,
+    42439,
+    42548,
+    43004,
+    43005,
+    43088,
+    43488,
+    43490,
+    43491,
+    43492,
+    43695,
+    43696,
+    44114,
+    44228,
+    44570,
+    44571,
+    44573,
+    44574,
+    44575,
+    44610,
+    44616,
+    44617,
+    44618,
+    44619,
+    44620,
+    44716,
+    44728,
+    44818,
+    46319,
+    49756,
+    50218,
+    50236,
+    50430,
+    53009,
+    54213,
+    54641,
+    54642,
+    54643,
+    54961,
+    55178,
+    55828,
+    57543,
+    58090,
+    58091,
+    58145,
+    58146,
+    58487,
+    58488,
+    58489,
+    58933,
+    60265,
+    61381,
+    61384,
+    61982,
+    61983,
+    61984,
+    61985,
+    61986,
+    62674,
+    62678,
+    62679,
+    62680,
+    62790,
+    62908,
+    63275,
+    63291,
+    63292,
+    63293,
+    63296,
+    63299,
+    64639,
+    67944,
+    69027,
+    69233,
+    71153,
+    72987,
+    74633,
+    75275,
+    75276,
+    76089,
+    76090,
+    76091,
+    76093,
+    76095,
+    76096,
+    76356,
+    80313,
+    81054,
+    81177,
+    81407,
+    81415,
+    82343,
+    82344,
+    83094,
+    83095,
+    85869,
+    86432,
+    86569,
+    87264,
+    88382,
+    88490,
+    88492,
+    88529,
+    88530,
+    88531,
+    88579,
+    89641,
+    89683,
+    90428,
+    90917,
+    91803,
+    92941,
+    92942,
+    92943,
+    92964,
+    92965,
+    93043,
+    93158,
+    93208,
+    93351,
+    94295,
+    94296,
+    95054,
+    95055,
+    97156,
+    97157,
+    98061,
+    98062,
+    98063,
+    98157,
+    103641,
+    103642,
+    103643,
+    103644,
+    103645,
+    103646,
+    103647,
+    104277,
+    104314,
+    104316,
+    231997,
+    231998
+  ],
+  "failures": {},
+  "familyOnlyRestoration": {
+    "5512": "Glyph-dependent healing; use the usable healthstone without adding alternative effects"
+  },
+  "fetched": 1269,
+  "included": 935,
+  "legacyRecoveryExclusions": [],
+  "runtimeRestorationPreferred": [],
+  "runtimeRestorationRequired": {},
+  "unavailable": {},
+  "unresolved": {},
+  "version": "mop",
+  "warnings": {
+    "101616": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101617": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101618": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101630": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101661": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101662": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101727": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101729": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "101740": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "22238": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "32783": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "32784": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "32902": [
+      "Unresolved use restriction: Only works inside Tempest Keep: The Eye, The Arcatraz, The Botanica, The Mechanar"
+    ],
+    "32903": [
+      "Unresolved use restriction: Only works inside Coilfang: The Serpentshrine, The Underbog, The Steamvaults, The Slave Pens"
+    ],
+    "32904": [
+      "Unresolved use restriction: Only works inside Coilfang: The Serpentshrine, The Underbog, The Steamvaults, The Slave Pens"
+    ],
+    "32905": [
+      "Unresolved use restriction: Only works inside Tempest Keep: The Eye, The Arcatraz, The Botanica, The Mechanar"
+    ],
+    "32909": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "32910": [
+      "Unresolved use restriction: Only works in the Blade's Edge Plateaus"
+    ],
+    "39971": [
+      "Unresolved use restriction: Can only be used in battlegrounds and arenas"
+    ],
+    "42997": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "43001": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44791": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44836": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44837": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44838": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44839": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "44840": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "46887": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "63144": [
+      "Unresolved use restriction: Only works in Tol Barad"
+    ],
+    "63145": [
+      "Unresolved use restriction: Only works in Tol Barad"
+    ],
+    "63391": [
+      "Unresolved use restriction: Only works in Tol Barad"
+    ],
+    "64993": [
+      "Unresolved use restriction: Only works in Tol Barad"
+    ],
+    "64994": [
+      "Unresolved use restriction: Only works in Tol Barad"
+    ],
+    "64995": [
+      "Unresolved use restriction: Only works in Tol Barad"
+    ],
+    "67415": [
+      "Unresolved use restriction: Can only be used in non-rated battlegrounds"
+    ],
+    "67416": [
+      "Unresolved use restriction: Can only be used in battlegrounds"
+    ],
+    "70924": [
+      "Unresolved use restriction: Only usable in the Molten Front"
+    ],
+    "70925": [
+      "Unresolved use restriction: Only usable in the Molten Front"
+    ],
+    "70926": [
+      "Unresolved use restriction: Only usable in the Molten Front"
+    ],
+    "70927": [
+      "Unresolved use restriction: Only usable in the Molten Front"
+    ],
+    "74919": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "75016": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87226": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87228": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87230": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87232": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87234": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87236": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87238": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87240": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87242": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87244": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87246": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "87248": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "88379": [
+      "Well Fed buff has no known numeric stats in this source",
+      "Unresolved use restriction: Only usable in Kun-Lai Summit"
+    ],
+    "88388": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "88586": [
+      "Well Fed buff has no known numeric stats in this source"
+    ],
+    "92954": [
+      "Unresolved use restriction: Only usable in a Brawl arena"
+    ],
+    "92979": [
+      "Unresolved use restriction: Only usable in a Brawl arena"
+    ]
+  }
+}

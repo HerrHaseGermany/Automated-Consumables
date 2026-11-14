@@ -1,4 +1,5 @@
-## Interface: 16001, 11508, 20505
+## Interface: 16001, 11508, 11509, 20505, 20506, 30405, 40402, 50504
+## X-Supported-Clients: Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic
 ## Version: 1.3.6
 ## Title: Automated-Consumables
 ## Author: Hase
@@ -7,4 +8,8 @@
 ## IconTexture: Interface/AddOns/Automated-Consumables/Media/logo.blp
 FoodDrinkDB.lua
 PotionBandageDB.lua
+Database.lua
+RuntimeValues.lua
+Databases.xml
+DatabaseInit.lua
 Automated-Consumables.lua
