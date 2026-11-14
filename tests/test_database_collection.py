@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-SPEC = importlib.util.spec_from_file_location("collect_wowhead", Path(__file__).resolve().parents[1] / "tools/collect_wowhead.py")
+SPEC = importlib.util.spec_from_file_location("collect_databases", Path(__file__).resolve().parents[1] / "tools/collect_databases.py")
 queue = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(queue)
 
@@ -37,7 +37,7 @@ class CollectionTests(unittest.TestCase):
                 command = run.call_args.args[0]
                 self.assertNotIn("--activate", command)
                 self.assertIn(str(root / "data/seeds/wrath-generic.json"), command)
-                state = json.loads((root / ".cache/wowhead/collection.json").read_text())
+                state = json.loads((root / ".cache/catalog/collection.json").read_text())
                 self.assertEqual(state["state"], "blocked")
                 self.assertEqual(state["profiles"]["cata"]["state"], "queued")
 
@@ -51,7 +51,7 @@ class CollectionTests(unittest.TestCase):
                 self.assertEqual(queue.collect_profiles(["wrath", "cata"], 2), 0)
             self.assertEqual(run.call_count, 2)
             self.assertFalse((root / "data/published").exists())
-            state = json.loads((root / ".cache/wowhead/collection.json").read_text())
+            state = json.loads((root / ".cache/catalog/collection.json").read_text())
             self.assertEqual(state["profiles"]["wrath"]["unresolved"], 1)
 
     def test_failed_import_does_not_read_an_old_success_report(self):
@@ -62,7 +62,7 @@ class CollectionTests(unittest.TestCase):
             with patch.object(queue, "ROOT", root), patch.object(queue, "run_import", return_value=1) as run, contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(queue.collect_profiles(["wrath", "cata"], 2), 1)
             self.assertEqual(run.call_count, 1)
-            state = json.loads((root / ".cache/wowhead/collection.json").read_text())
+            state = json.loads((root / ".cache/catalog/collection.json").read_text())
             self.assertEqual(state["profiles"]["wrath"]["state"], "error")
 
     def test_interruption_checkpoints_the_queue_and_stops(self):
@@ -72,7 +72,7 @@ class CollectionTests(unittest.TestCase):
             with patch.object(queue, "ROOT", root), patch.object(queue, "run_import", side_effect=KeyboardInterrupt) as run, contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(queue.collect_profiles(["wrath", "cata"], 2), 130)
             self.assertEqual(run.call_count, 1)
-            state = json.loads((root / ".cache/wowhead/collection.json").read_text())
+            state = json.loads((root / ".cache/catalog/collection.json").read_text())
             self.assertEqual(state["state"], "interrupted")
             self.assertEqual(state["profiles"]["cata"]["state"], "queued")
 
@@ -80,11 +80,11 @@ class CollectionTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             self.fixture(root)
-            lock_path = root / ".cache/wowhead/collection.lock"
+            lock_path = root / ".cache/catalog/collection.lock"
             lock_path.parent.mkdir(parents=True)
             with lock_path.open("a+") as lock:
                 fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
-                with patch.object(queue, "ROOT", root), patch("sys.argv", ["collect_wowhead.py", "wrath"]), patch.object(queue, "run_import") as run, contextlib.redirect_stderr(io.StringIO()):
+                with patch.object(queue, "ROOT", root), patch("sys.argv", ["collect_databases.py", "wrath"]), patch.object(queue, "run_import") as run, contextlib.redirect_stderr(io.StringIO()):
                     with self.assertRaises(SystemExit):
                         queue.main()
                     run.assert_not_called()

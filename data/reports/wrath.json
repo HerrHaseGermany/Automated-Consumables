@@ -28,7 +28,7 @@
           "namesSha256": "f7d661c3ac90645e8ebe25a61b5b48360e3ed2fc43d34225d90b37d04056569f",
           "provider": "LibItemDB",
           "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+          "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
         },
         "seed": "wrath.json"
       },
@@ -47,7 +47,7 @@
           "namesSha256": "f7d661c3ac90645e8ebe25a61b5b48360e3ed2fc43d34225d90b37d04056569f",
           "provider": "LibItemDB",
           "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+          "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
         },
         "seed": "wrath-generic.json"
       }

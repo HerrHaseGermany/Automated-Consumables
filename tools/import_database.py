@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build version-specific consumable data from cached Wowhead XML exports.
+"""Build version-specific consumable data from cached Source XML exports.
 
 Fetching and publishing are separate: an incomplete discovery or an unparsed
 effect must never silently replace the addon's working database.
@@ -11,6 +11,7 @@ import hashlib
 import html
 import json
 import math
+import os
 import re
 import time
 import urllib.error
@@ -45,8 +46,16 @@ class ItemUnavailable(ValueError):
     """The requested client's source explicitly reports no item record."""
 
 
+def source_base_url():
+    """Network source selection belongs to the caller, not the addon."""
+    base = os.environ.get("AC_DATABASE_SOURCE_URL", "").rstrip("/")
+    if not re.fullmatch(r"https?://[^/\s?#]+(?:/[^\s?#]*)?", base):
+        raise ValueError("Set AC_DATABASE_SOURCE_URL to a compatible XML catalog base URL; --rebuild needs no source URL")
+    return base
+
+
 def item_url(version, item_id):
-    return f"https://www.wowhead.com/{VERSIONS[version]}item={item_id}&xml"
+    return f"{source_base_url()}/{VERSIONS[version]}item={item_id}&xml"
 
 
 def fetch(url, cache, offline=False, interval=0.5, refresh=False):
@@ -93,12 +102,12 @@ def fragment(text):
 def read_xml(body, expected_id, version=None):
     root = ET.fromstring(body)
     if root.findtext("error") == "Item not found!":
-        raise ItemUnavailable("Wowhead has no item record for this client")
+        raise ItemUnavailable("Source has no item record for this client")
     item = root.find("item")
     if item is None or int(item.get("id", "0")) != expected_id:
         raise ValueError("Missing item or mismatched item ID")
     if version is not None:
-        expected_link = f"https://www.wowhead.com/{VERSIONS[version]}item={expected_id}"
+        expected_link = f"{source_base_url()}/{VERSIONS[version]}item={expected_id}"
         link = item.findtext("link") or ""
         if link != expected_link and not link.startswith(expected_link + "/"):
             raise ValueError("Source link does not match the requested client and item")
@@ -633,7 +642,7 @@ def validate_activation(snapshot, report):
         if catalog in supplements:
             covered = available | {int(item_id) for item_id in snapshot.get("unavailable", {})}
         if set(seed["ids"]) - covered:
-            raise ValueError("Not every catalog candidate has a Wowhead source record")
+            raise ValueError("Not every catalog candidate has a Source source record")
 
 
 def collect_items(version, ids, discovery, cache, previous=None, offline=False, interval=0.5, refresh=False):
@@ -706,7 +715,12 @@ def main():
         parser.error("Use an interval of at least 0.5 seconds")
     if args.refresh and (args.offline or args.rebuild):
         parser.error("--refresh requires a network import; do not combine it with --offline or --rebuild")
-    cache = ROOT / ".cache" / "wowhead" / args.version
+    if not args.rebuild:
+        try:
+            source_base_url()
+        except ValueError as error:
+            parser.error(str(error))
+    cache = ROOT / ".cache" / "catalog" / args.version
     snapshot_path = ROOT / "data" / "sources" / (args.version + ".json")
     if args.rebuild:
         snapshot = json.loads(snapshot_path.read_text())
@@ -724,7 +738,7 @@ def main():
                                               "provenance": seed.get("source") if isinstance(seed, dict) else None})
         if not args.seed or args.discover:
             for category in CATEGORIES:
-                url = f"https://www.wowhead.com/{VERSIONS[args.version]}items/consumables/{category}"
+                url = f"{source_base_url()}/{VERSIONS[args.version]}items/consumables/{category}"
                 try:
                     body = fetch(url, cache / (category + ".html"), args.offline, args.interval, args.refresh)
                     found = discover(body.decode())

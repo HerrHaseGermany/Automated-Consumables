@@ -4,10 +4,11 @@ import tempfile
 import contextlib
 import io
 import json
+import os
 from unittest.mock import patch
 from pathlib import Path
 
-SPEC = importlib.util.spec_from_file_location("import_wowhead", Path(__file__).resolve().parents[1] / "tools/import_wowhead.py")
+SPEC = importlib.util.spec_from_file_location("import_database", Path(__file__).resolve().parents[1] / "tools/import_database.py")
 db = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(db)
 
@@ -17,6 +18,7 @@ def raw(text, subclass=5, name="Test Food", use=None, item_id=117):
             "tooltip": text, "item": {"reqlevel": 5}, "use": use or {}}
 
 
+@patch.dict(os.environ, {"AC_DATABASE_SOURCE_URL": "https://catalog.example"})
 class ImportTests(unittest.TestCase):
     def assert_client_deferred(self, record, issues):
         self.assertEqual(issues, [])
@@ -407,16 +409,36 @@ class ImportTests(unittest.TestCase):
 
     def test_xml_id_mismatch_is_rejected(self):
         with self.assertRaises(ValueError):
-            db.read_xml(b'<wowhead><item id="159"/></wowhead>', 117)
+            db.read_xml(b'<catalog><item id="159"/></catalog>', 117)
 
     def test_explicit_item_not_found_is_distinct_from_transport_failure(self):
         with self.assertRaises(db.ItemUnavailable):
-            db.read_xml(b'<wowhead><error>Item not found!</error></wowhead>', 21990, "forever")
+            db.read_xml(b'<catalog><error>Item not found!</error></catalog>', 21990, "forever")
 
     def test_source_cannot_silently_switch_clients(self):
-        body = b'<wowhead><item id="117"><link>https://www.wowhead.com/classic/item=117/tough-jerky</link></item></wowhead>'
+        body = b'<catalog><item id="117"><link>https://catalog.example/classic/item=117/tough-jerky</link></item></catalog>'
         with self.assertRaises(ValueError):
             db.read_xml(body, 117, "forever")
+
+    def test_missing_source_configuration_is_rejected(self):
+        with patch.dict(os.environ, {}, clear=True), self.assertRaisesRegex(ValueError, "AC_DATABASE_SOURCE_URL"):
+            db.item_url("forever", 117)
+
+    def test_source_configuration_requires_an_http_url(self):
+        for base in ("file:///tmp/export", "https://", "https://catalog.example/?token=x"):
+            with self.subTest(base=base), patch.dict(os.environ, {"AC_DATABASE_SOURCE_URL": base}):
+                with self.assertRaises(ValueError):
+                    db.source_base_url()
+
+    def test_configured_source_validates_returned_host(self):
+        body = b'<catalog><item id="117"><link>https://other.example/forever/item=117/test</link></item></catalog>'
+        with self.assertRaisesRegex(ValueError, "Source link"):
+            db.read_xml(body, 117, "forever")
+
+    def test_configured_source_supports_a_base_path(self):
+        with patch.dict(os.environ, {"AC_DATABASE_SOURCE_URL": "https://catalog.example/database/"}):
+            self.assertEqual(db.item_url("forever", 117),
+                             "https://catalog.example/database/forever/item=117&xml")
 
     def test_source_profiles_do_not_share_urls(self):
         self.assertEqual(len({db.item_url(version, 8077) for version in db.VERSIONS}), 7)
@@ -486,10 +508,10 @@ class ImportTests(unittest.TestCase):
             runtime.write_text("-- previous enabled dataset\n")
             seed = root / "seed.json"
             seed.write_text(json.dumps([117]))
-            cache = root / ".cache/wowhead/forever/117.xml"
+            cache = root / ".cache/catalog/forever/117.xml"
             cache.parent.mkdir(parents=True)
-            cache.write_text('<wowhead><item id="117"><name>Tough Jerky</name><class id="0"/><subclass id="5"/><htmlTooltip>Restores 59 health over 18 sec.</htmlTooltip><link>https://www.wowhead.com/forever/item=117/tough-jerky</link></item></wowhead>')
-            with patch.object(db, "ROOT", root), patch("sys.argv", ["import_wowhead.py", "forever", "--seed", str(seed), "--offline"]), contextlib.redirect_stdout(io.StringIO()):
+            cache.write_text('<catalog><item id="117"><name>Tough Jerky</name><class id="0"/><subclass id="5"/><htmlTooltip>Restores 59 health over 18 sec.</htmlTooltip><link>https://catalog.example/forever/item=117/tough-jerky</link></item></catalog>')
+            with patch.object(db, "ROOT", root), patch("sys.argv", ["import_database.py", "forever", "--seed", str(seed), "--offline"]), contextlib.redirect_stdout(io.StringIO()):
                 db.main()
             self.assertEqual(runtime.read_text(), "-- previous enabled dataset\n")
             self.assertIn("enabled = false", (root / "data/staged/forever.lua").read_text())

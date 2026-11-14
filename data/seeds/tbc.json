@@ -518,6 +518,6 @@
     "namesSha256": "433bf5f02ed74ac20045df63b761c518b8fe7f13a50721dabd98ea52dcef2703",
     "provider": "LibItemDB",
     "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-    "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+    "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
   }
 }

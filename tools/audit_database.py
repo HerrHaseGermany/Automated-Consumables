@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compare a staged Wowhead dataset to the currently shipped Lua database."""
+"""Compare a staged Source dataset to the currently shipped Lua database."""
 
 import argparse
 import importlib.util
@@ -8,7 +8,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("import_wowhead", ROOT / "tools/import_wowhead.py")
+spec = importlib.util.spec_from_file_location("import_database", ROOT / "tools/import_database.py")
 importer = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(importer)
 
@@ -67,7 +67,7 @@ def main():
             continue
         if record is None:
             changes.append({"id": raw["id"], "name": raw["name"], "legacy": old,
-                            "wowhead": None, "note": "Source does not classify this item as a supported consumable"})
+                            "imported": None, "note": "Source does not classify this item as a supported consumable"})
             continue
         new = {key: record[key] for key in ("kind", "h", "m")}
         new["bs"] = record.get("bs", {})
@@ -78,7 +78,7 @@ def main():
         # The old potion/stone/bandage sets contain no amounts to compare.
         compare = ("kind", "h", "m", "bs") if old["kind"] in ("food", "drink", "both", "buff") else ("kind",)
         if any(old[key] != new[key] for key in compare):
-            changes.append({"id": raw["id"], "name": raw["name"], "legacy": old, "wowhead": new})
+            changes.append({"id": raw["id"], "name": raw["name"], "legacy": old, "imported": new})
     report = {"version": args.version, "note": "Differences include intentional client-specific changes; they are not all manual-entry errors.",
               "changes": sorted(changes, key=lambda row: row["id"]),
               "additions": sorted(additions, key=lambda row: row["id"]),

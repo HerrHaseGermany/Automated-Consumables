@@ -28,7 +28,7 @@
           "namesSha256": "f562488606248be731aca6bb7829440e76ef00749bdcc9f48208a6b2b03b4b71",
           "provider": "LibItemDB",
           "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+          "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
         },
         "seed": "mop.json"
       },
@@ -47,7 +47,7 @@
           "namesSha256": "f562488606248be731aca6bb7829440e76ef00749bdcc9f48208a6b2b03b4b71",
           "provider": "LibItemDB",
           "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+          "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
         },
         "seed": "mop-generic.json"
       }

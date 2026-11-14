@@ -82,7 +82,7 @@ def main():
                            "license": "MIT", "archiveSha256": archive_hash,
                            "core": core_path, "coreSha256": hashlib.sha256(core).hexdigest(),
                            "names": names_path, "namesSha256": hashlib.sha256(names).hexdigest(),
-                           "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era.",
+                           "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era.",
                            "coverage": "Food/drink, potion and bandage entries, plus named stone and mana-gem families. When the source has only generic subclass 0, the entire consumable core is included. Not proof of complete game coverage."},
                 "ids": ids,
             }

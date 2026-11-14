@@ -27,7 +27,7 @@ def seed_paths(version):
 
 def write_status(state):
     state["updatedAt"] = datetime.now(timezone.utc).isoformat()
-    path = ROOT / ".cache/wowhead/collection.json"
+    path = ROOT / ".cache/catalog/collection.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(state, indent=2, sort_keys=True) + "\n")
@@ -35,7 +35,7 @@ def write_status(state):
 
 
 def run_import(command):
-    path = ROOT / ".cache/wowhead/collection.log"
+    path = ROOT / ".cache/catalog/collection.log"
     with path.open("a") as log:
         child = subprocess.Popen(command, cwd=ROOT, stdout=subprocess.PIPE,
                                  stderr=subprocess.STDOUT, text=True, start_new_session=True)
@@ -64,7 +64,7 @@ def collect_profiles(versions, interval):
             state["current"] = version
             state["profiles"][version] = {"state": "running"}
             write_status(state)
-            command = [sys.executable, str(ROOT / "tools/import_wowhead.py"), version,
+            command = [sys.executable, str(ROOT / "tools/import_database.py"), version,
                        "--interval", str(interval)]
             for path in seed_paths(version):
                 command.extend(["--seed", str(path)])
@@ -109,7 +109,7 @@ def collect_profiles(versions, interval):
 
 
 def show_status():
-    path = ROOT / ".cache/wowhead/collection.json"
+    path = ROOT / ".cache/catalog/collection.json"
     state = json.loads(path.read_text()) if path.exists() else {"state": "not-started", "profiles": {}}
     if state["state"] == "running":
         try:
@@ -136,7 +136,7 @@ def show_status():
             ids.update(json.loads(seed.read_text())["ids"])
         profile["candidates"] = len(ids)
         profile["cachedResponses"] = sum(
-            (ROOT / ".cache/wowhead" / version / (str(item_id) + ".xml")).exists() for item_id in ids)
+            (ROOT / ".cache/catalog" / version / (str(item_id) + ".xml")).exists() for item_id in ids)
     print(json.dumps(state, indent=2, sort_keys=True))
 
 
@@ -158,7 +158,7 @@ def main():
         for path in seed_paths(version):
             if not path.is_file():
                 parser.error("Missing seed: " + str(path))
-    path = ROOT / ".cache/wowhead/collection.lock"
+    path = ROOT / ".cache/catalog/collection.lock"
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a+") as lock:
         try:

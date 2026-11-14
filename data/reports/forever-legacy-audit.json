@@ -729,70 +729,79 @@
   "changes": [
     {
       "id": 117,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Tough Jerky",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Tough Jerky"
     },
     {
       "id": 159,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 151.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 151.2
       },
-      "name": "Refreshing Spring Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 151.0
-      }
+      "name": "Refreshing Spring Water"
     },
     {
       "id": 414,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Dalaran Sharp",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Dalaran Sharp"
     },
     {
       "id": 422,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Dwarven Mild",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Dwarven Mild"
     },
     {
       "id": 724,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Strength": 3.0
+        },
+        "h": 234.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 4.0,
@@ -802,27 +811,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Goretusk Liver Pie",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Strength": 3.0
-        },
-        "h": 234.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Goretusk Liver Pie"
     },
     {
       "id": 733,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Westfall Stew",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "MovementSpeedPercent": 15.0
@@ -830,18 +823,18 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 787,
+      },
       "legacy": {
         "bs": {},
-        "h": 61.2,
+        "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Slitherskin Mackerel",
-      "wowhead": {
+      "name": "Westfall Stew"
+    },
+    {
+      "id": 787,
+      "imported": {
         "bs": {
           "AttackPower": 6.0,
           "ExperienceFromKillsPercent": 5.0
@@ -849,37 +842,34 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 961,
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Healing Herb",
-      "wowhead": {
+      "name": "Slitherskin Mackerel"
+    },
+    {
+      "id": 961,
+      "imported": {
         "bs": {},
         "h": 59.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Healing Herb"
     },
     {
       "id": 1017,
-      "legacy": {
-        "bs": {
-          "Spirit": 6.0,
-          "Stamina": 6.0
-        },
-        "h": 552.0,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Seasoned Wolf Kabob",
-      "wowhead": {
+      "imported": {
         "bs": {
           "Agility": 5.0,
           "ExperienceFromKillsPercent": 5.0
@@ -887,26 +877,7 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 1072,
-      "legacy": {
-        "bs": {},
-        "h": 0.0,
-        "kind": "manapotion",
-        "m": 0.0
       },
-      "name": "Full Moonshine",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 320.0
-      }
-    },
-    {
-      "id": 1082,
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -916,8 +887,27 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Redridge Goulash",
-      "wowhead": {
+      "name": "Seasoned Wolf Kabob"
+    },
+    {
+      "id": 1072,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 320.0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "manapotion",
+        "m": 0.0
+      },
+      "name": "Full Moonshine"
+    },
+    {
+      "id": 1082,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 3.0
@@ -925,261 +915,261 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 552.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Redridge Goulash"
     },
     {
       "id": 1113,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Bread"
     },
     {
       "id": 1114,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Rye",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Rye"
     },
     {
       "id": 1119,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Bottled Spirits",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Bottled Spirits"
     },
     {
       "id": 1179,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 437.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 436.8
       },
-      "name": "Ice Cold Milk",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 437.0
-      }
+      "name": "Ice Cold Milk"
     },
     {
       "id": 1205,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 835.2
       },
-      "name": "Melon Juice",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 835.0
-      }
+      "name": "Melon Juice"
     },
     {
       "id": 1326,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Sauteed Sunfish",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Sauteed Sunfish"
     },
     {
       "id": 1487,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Pumpernickel",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Pumpernickel"
     },
     {
       "id": 1645,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1915.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 1992.0
       },
-      "name": "Moonberry Juice",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 1915.0
-      }
+      "name": "Moonberry Juice"
     },
     {
       "id": 1707,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Stormwind Brie",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Stormwind Brie"
     },
     {
       "id": 1708,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 1344.6
       },
-      "name": "Sweet Nectar",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 1345.0
-      }
+      "name": "Sweet Nectar"
     },
     {
       "id": 2070,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Darnassian Bleu",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Darnassian Bleu"
     },
     {
       "id": 2136,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 835.2
       },
-      "name": "Conjured Purified Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 835.0
-      }
+      "name": "Conjured Purified Water"
     },
     {
       "id": 2287,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Haunch of Meat",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Haunch of Meat"
     },
     {
       "id": 2288,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 437.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 436.8
       },
-      "name": "Conjured Fresh Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 437.0
-      }
+      "name": "Conjured Fresh Water"
     },
     {
       "id": 2679,
-      "legacy": {
-        "bs": {},
-        "h": 61.2,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Charred Wolf Meat",
-      "wowhead": {
+      "imported": {
         "bs": {},
         "h": 59.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Charred Wolf Meat"
     },
     {
       "id": 2680,
-      "legacy": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 61.2,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Spiced Wolf Meat",
-      "wowhead": {
+      "imported": {
         "bs": {
           "Agility": 1.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1187,18 +1177,21 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 61.2,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Spiced Wolf Meat"
     },
     {
       "id": 2681,
-      "legacy": {
-        "bs": {},
-        "h": 61.2,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Roasted Boar Meat",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Strength": 1.0
@@ -1206,18 +1199,18 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Roasted Boar Meat"
     },
     {
       "id": 2682,
-      "legacy": {
-        "bs": {},
-        "h": 294.0,
-        "kind": "both",
-        "m": 294.0
-      },
-      "name": "Cooked Crab Claw",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 1.0
@@ -1225,21 +1218,18 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 294.0,
+        "kind": "both",
+        "m": 294.0
+      },
+      "name": "Cooked Crab Claw"
     },
     {
       "id": 2683,
-      "legacy": {
-        "bs": {
-          "Spirit": 4.0,
-          "Stamina": 4.0
-        },
-        "h": 243.6,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Crab Cake",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 3.0
@@ -1247,10 +1237,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 2684,
+      },
       "legacy": {
         "bs": {
           "Spirit": 4.0,
@@ -1260,8 +1247,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Coyote Steak",
-      "wowhead": {
+      "name": "Crab Cake"
+    },
+    {
+      "id": 2684,
+      "imported": {
         "bs": {
           "Agility": 3.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1269,29 +1259,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 2685,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
       },
-      "name": "Succulent Pork Ribs",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Strength": 5.0
-        },
-        "h": 531.0,
-        "kind": "buff",
-        "m": 0
-      }
-    },
-    {
-      "id": 2687,
       "legacy": {
         "bs": {
           "Spirit": 4.0,
@@ -1301,8 +1269,30 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Dry Pork Ribs",
-      "wowhead": {
+      "name": "Coyote Steak"
+    },
+    {
+      "id": 2685,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Strength": 5.0
+        },
+        "h": 531.0,
+        "kind": "buff",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Succulent Pork Ribs"
+    },
+    {
+      "id": 2687,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Strength": 3.0
@@ -1310,10 +1300,29 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 4.0,
+          "Stamina": 4.0
+        },
+        "h": 243.6,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Dry Pork Ribs"
     },
     {
       "id": 2888,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Strength": 1.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -1323,30 +1332,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Beer Basted Boar Ribs",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Strength": 1.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Beer Basted Boar Ribs"
     },
     {
       "id": 3220,
-      "legacy": {
-        "bs": {
-          "Spirit": 4.0,
-          "Stamina": 4.0
-        },
-        "h": 243.6,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Blood Sausage",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Strength": 3.0
@@ -1354,26 +1344,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3448,
-      "legacy": {
-        "bs": {},
-        "h": 294.0,
-        "kind": "both",
-        "m": 294.0
       },
-      "name": "Senggin Root",
-      "wowhead": {
-        "bs": {},
-        "h": 283.0,
-        "kind": "both",
-        "m": 283.0
-      }
-    },
-    {
-      "id": 3662,
       "legacy": {
         "bs": {
           "Spirit": 4.0,
@@ -1383,8 +1354,27 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Crocolisk Steak",
-      "wowhead": {
+      "name": "Blood Sausage"
+    },
+    {
+      "id": 3448,
+      "imported": {
+        "bs": {},
+        "h": 283.0,
+        "kind": "both",
+        "m": 283.0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 294.0,
+        "kind": "both",
+        "m": 294.0
+      },
+      "name": "Senggin Root"
+    },
+    {
+      "id": 3662,
+      "imported": {
         "bs": {
           "Agility": 3.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1392,21 +1382,21 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3663,
+      },
       "legacy": {
         "bs": {
-          "Spirit": 6.0,
-          "Stamina": 6.0
+          "Spirit": 4.0,
+          "Stamina": 4.0
         },
-        "h": 552.0,
+        "h": 243.6,
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Murloc Fin Soup",
-      "wowhead": {
+      "name": "Crocolisk Steak"
+    },
+    {
+      "id": 3663,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 1.0
@@ -1414,10 +1404,7 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3664,
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -1427,8 +1414,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Crocolisk Gumbo",
-      "wowhead": {
+      "name": "Murloc Fin Soup"
+    },
+    {
+      "id": 3664,
+      "imported": {
         "bs": {
           "Agility": 5.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1436,10 +1426,29 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 552.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Crocolisk Gumbo"
     },
     {
       "id": 3665,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Stamina": 5.0
+        },
+        "h": 531.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -1449,30 +1458,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Curiously Tasty Omelet",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Stamina": 5.0
-        },
-        "h": 531.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Curiously Tasty Omelet"
     },
     {
       "id": 3666,
-      "legacy": {
-        "bs": {
-          "Spirit": 6.0,
-          "Stamina": 6.0
-        },
-        "h": 552.0,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Gooey Spider Cake",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 5.0
@@ -1480,10 +1470,7 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3726,
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -1493,8 +1480,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Big Bear Steak",
-      "wowhead": {
+      "name": "Gooey Spider Cake"
+    },
+    {
+      "id": 3726,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Strength": 3.0
@@ -1502,10 +1492,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3727,
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -1515,8 +1502,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Hot Lion Chops",
-      "wowhead": {
+      "name": "Big Bear Steak"
+    },
+    {
+      "id": 3727,
+      "imported": {
         "bs": {
           "Agility": 5.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1524,21 +1514,21 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3728,
+      },
       "legacy": {
         "bs": {
-          "Spirit": 8.0,
-          "Stamina": 8.0
+          "Spirit": 6.0,
+          "Stamina": 6.0
         },
-        "h": 874.8,
+        "h": 552.0,
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Tasty Lion Steak",
-      "wowhead": {
+      "name": "Hot Lion Chops"
+    },
+    {
+      "id": 3728,
+      "imported": {
         "bs": {
           "Agility": 10.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1546,10 +1536,7 @@
         "h": 841.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3729,
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -1559,8 +1546,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Soothing Turtle Bisque",
-      "wowhead": {
+      "name": "Tasty Lion Steak"
+    },
+    {
+      "id": 3729,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 5.0
@@ -1568,74 +1558,7 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 3770,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
       },
-      "name": "Mutton Chop",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 3771,
-      "legacy": {
-        "bs": {},
-        "h": 874.8,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Wild Hog Shank",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 3772,
-      "legacy": {
-        "bs": {},
-        "h": 0.0,
-        "kind": "drink",
-        "m": 1344.6
-      },
-      "name": "Conjured Spring Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 1345.0
-      }
-    },
-    {
-      "id": 3927,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Fine Aged Cheddar",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4457,
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -1645,8 +1568,75 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Barbecued Buzzard Wing",
-      "wowhead": {
+      "name": "Soothing Turtle Bisque"
+    },
+    {
+      "id": 3770,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Mutton Chop"
+    },
+    {
+      "id": 3771,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Wild Hog Shank"
+    },
+    {
+      "id": 3772,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 1344.6
+      },
+      "name": "Conjured Spring Water"
+    },
+    {
+      "id": 3927,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Fine Aged Cheddar"
+    },
+    {
+      "id": 4457,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 10.0
@@ -1654,146 +1644,149 @@
         "h": 841.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 8.0,
+          "Stamina": 8.0
+        },
+        "h": 874.8,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Barbecued Buzzard Wing"
     },
     {
       "id": 4536,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Shiny Red Apple",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Shiny Red Apple"
     },
     {
       "id": 4537,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Tel'Abim Banana",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Tel'Abim Banana"
     },
     {
       "id": 4538,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Snapvine Watermelon",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Snapvine Watermelon"
     },
     {
       "id": 4539,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Goldenbark Apple",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Goldenbark Apple"
     },
     {
       "id": 4540,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Tough Hunk of Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Tough Hunk of Bread"
     },
     {
       "id": 4541,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Freshly Baked Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Freshly Baked Bread"
     },
     {
       "id": 4542,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Moist Cornbread",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Moist Cornbread"
     },
     {
       "id": 4544,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Mulgore Spice Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Mulgore Spice Bread"
     },
     {
       "id": 4592,
-      "legacy": {
-        "bs": {},
-        "h": 243.6,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Longjaw Mud Snapper",
-      "wowhead": {
+      "imported": {
         "bs": {
           "AttackPower": 10.0,
           "ExperienceFromKillsPercent": 5.0
@@ -1801,18 +1794,18 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 4593,
+      },
       "legacy": {
         "bs": {},
-        "h": 552.0,
+        "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Bristle Whisker Catfish",
-      "wowhead": {
+      "name": "Longjaw Mud Snapper"
+    },
+    {
+      "id": 4593,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Fishing": 8.0
@@ -1820,18 +1813,18 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 4594,
+      },
       "legacy": {
         "bs": {},
-        "h": 874.8,
+        "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Rockscale Cod",
-      "wowhead": {
+      "name": "Bristle Whisker Catfish"
+    },
+    {
+      "id": 4594,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Fishing": 12.0
@@ -1839,210 +1832,210 @@
         "h": 841.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 4599,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
       },
-      "name": "Cured Ham Steak",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4601,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Soft Banana Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4602,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Moon Harvest Pumpkin",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4604,
-      "legacy": {
-        "bs": {},
-        "h": 61.2,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Forest Mushroom Cap",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4605,
-      "legacy": {
-        "bs": {},
-        "h": 243.6,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Red-speckled Mushroom",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4606,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Spongy Morel",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 4607,
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Delicious Cave Mold",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Rockscale Cod"
     },
     {
-      "id": 4608,
+      "id": 4599,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Raw Black Truffle",
-      "wowhead": {
+      "name": "Cured Ham Steak"
+    },
+    {
+      "id": 4601,
+      "imported": {
         "bs": {},
         "h": 1338.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Soft Banana Bread"
     },
     {
-      "id": 4656,
+      "id": 4602,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Moon Harvest Pumpkin"
+    },
+    {
+      "id": 4604,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Small Pumpkin",
-      "wowhead": {
+      "name": "Forest Mushroom Cap"
+    },
+    {
+      "id": 4605,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 243.6,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Red-speckled Mushroom"
+    },
+    {
+      "id": 4606,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Spongy Morel"
+    },
+    {
+      "id": 4607,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Delicious Cave Mold"
+    },
+    {
+      "id": 4608,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Raw Black Truffle"
+    },
+    {
+      "id": 4656,
+      "imported": {
         "bs": {},
         "h": 59.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Small Pumpkin"
     },
     {
       "id": 4791,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1345.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 1344.6
       },
-      "name": "Enchanted Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 1345.0
-      }
+      "name": "Enchanted Water"
     },
     {
       "id": 5057,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Ripe Watermelon",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Ripe Watermelon"
     },
     {
       "id": 5066,
-      "legacy": {
-        "bs": {},
-        "h": 243.6,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Fissure Plant",
-      "wowhead": {
+      "imported": {
         "bs": {},
         "h": 234.0,
         "kind": "food",
         "m": 0
-      }
-    },
-    {
-      "id": 5095,
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Rainbow Fin Albacore",
-      "wowhead": {
+      "name": "Fissure Plant"
+    },
+    {
+      "id": 5095,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 1.0
@@ -2050,42 +2043,58 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 243.6,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Rainbow Fin Albacore"
     },
     {
       "id": 5349,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Muffin",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Muffin"
     },
     {
       "id": 5350,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 151.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 151.2
       },
-      "name": "Conjured Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 151.0
-      }
+      "name": "Conjured Water"
     },
     {
       "id": 5472,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Stamina": 1.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -2095,35 +2104,35 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Kaldorei Spider Kabob",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Stamina": 1.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Kaldorei Spider Kabob"
     },
     {
       "id": 5473,
+      "imported": {
+        "bs": {},
+        "h": 283.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 294.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Scorpid Surprise",
-      "wowhead": {
-        "bs": {},
-        "h": 283.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Scorpid Surprise"
     },
     {
       "id": 5474,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Stamina": 1.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -2133,30 +2142,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Roasted Kodo Meat",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Stamina": 1.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Roasted Kodo Meat"
     },
     {
       "id": 5476,
-      "legacy": {
-        "bs": {
-          "Spirit": 4.0,
-          "Stamina": 4.0
-        },
-        "h": 243.6,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Fillet of Frenzy",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Fishing": 5.0
@@ -2164,10 +2154,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 5477,
+      },
       "legacy": {
         "bs": {
           "Spirit": 4.0,
@@ -2177,8 +2164,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Strider Stew",
-      "wowhead": {
+      "name": "Fillet of Frenzy"
+    },
+    {
+      "id": 5477,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 1.0
@@ -2186,37 +2176,37 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 4.0,
+          "Stamina": 4.0
+        },
+        "h": 243.6,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Strider Stew"
     },
     {
       "id": 5478,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Dig Rat Stew",
-      "wowhead": {
+      "imported": {
         "bs": {},
         "h": 531.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Dig Rat Stew"
     },
     {
       "id": 5479,
-      "legacy": {
-        "bs": {
-          "Spirit": 6.0,
-          "Stamina": 6.0
-        },
-        "h": 552.0,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Crispy Lizard Tail",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 3.0
@@ -2224,10 +2214,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 5480,
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -2237,8 +2224,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Lean Venison",
-      "wowhead": {
+      "name": "Crispy Lizard Tail"
+    },
+    {
+      "id": 5480,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Strength": 5.0
@@ -2246,10 +2236,26 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 552.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Lean Venison"
     },
     {
       "id": 5525,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 4.0,
@@ -2259,32 +2265,35 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Boiled Clams",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Boiled Clams"
     },
     {
       "id": 5526,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Clam Chowder",
-      "wowhead": {
+      "imported": {
         "bs": {},
         "h": 234.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Clam Chowder"
     },
     {
       "id": 5527,
+      "imported": {
+        "bs": {
+          "Spirit": 6.0,
+          "Stamina": 6.0
+        },
+        "h": 531.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -2294,35 +2303,35 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Goblin Deviled Clams",
-      "wowhead": {
-        "bs": {
-          "Spirit": 6.0,
-          "Stamina": 6.0
-        },
-        "h": 531.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Goblin Deviled Clams"
     },
     {
       "id": 5845,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Flank of Meat",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Flank of Meat"
     },
     {
       "id": 6038,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Stamina": 10.0
+        },
+        "h": 841.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -2332,27 +2341,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Giant Clam Scorcho",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Stamina": 10.0
-        },
-        "h": 841.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Giant Clam Scorcho"
     },
     {
       "id": 6290,
-      "legacy": {
-        "bs": {},
-        "h": 61.2,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Brilliant Smallfish",
-      "wowhead": {
+      "imported": {
         "bs": {
           "AttackPower": 2.0,
           "ExperienceFromKillsPercent": 5.0
@@ -2360,34 +2353,34 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Brilliant Smallfish"
     },
     {
       "id": 6299,
+      "imported": {
+        "bs": {},
+        "h": 29.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 30.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Sickly Looking Fish",
-      "wowhead": {
-        "bs": {},
-        "h": 29.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Sickly Looking Fish"
     },
     {
       "id": 6316,
-      "legacy": {
-        "bs": {},
-        "h": 243.6,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Loch Frenzy Delight",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Fishing": 3.0
@@ -2395,50 +2388,50 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 243.6,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Loch Frenzy Delight"
     },
     {
       "id": 6458,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Oil Covered Fish",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Oil Covered Fish"
     },
     {
       "id": 6807,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Frog Leg Stew",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Frog Leg Stew"
     },
     {
       "id": 6887,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Spotted Yellowtail",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 22.0
@@ -2446,18 +2439,18 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 6888,
+      },
       "legacy": {
         "bs": {},
-        "h": 61.2,
+        "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Herb Baked Egg",
-      "wowhead": {
+      "name": "Spotted Yellowtail"
+    },
+    {
+      "id": 6888,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 1.0
@@ -2465,18 +2458,18 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 6890,
+      },
       "legacy": {
         "bs": {},
-        "h": 243.6,
+        "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Smoked Bear Meat",
-      "wowhead": {
+      "name": "Herb Baked Egg"
+    },
+    {
+      "id": 6890,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Strength": 1.0
@@ -2484,26 +2477,39 @@
         "h": 59.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 243.6,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Smoked Bear Meat"
     },
     {
       "id": 7097,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Leg Meat",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Leg Meat"
     },
     {
       "id": 7228,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -2513,16 +2519,19 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Tigule's Strawberry Ice Cream",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Tigule's Strawberry Ice Cream"
     },
     {
       "id": 7806,
+      "imported": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -2532,19 +2541,19 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Lollipop",
-      "wowhead": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Lollipop"
     },
     {
       "id": 7807,
+      "imported": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -2554,19 +2563,19 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Candy Bar",
-      "wowhead": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Candy Bar"
     },
     {
       "id": 7808,
+      "imported": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -2576,107 +2585,91 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Chocolate Square",
-      "wowhead": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Chocolate Square"
     },
     {
       "id": 8075,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Sourdough",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Sourdough"
     },
     {
       "id": 8076,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Sweet Roll",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Sweet Roll"
     },
     {
       "id": 8077,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1915.0
+      },
       "legacy": {
         "bs": {},
         "h": 1992.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Mineral Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 1915.0
-      }
+      "name": "Conjured Mineral Water"
     },
     {
       "id": 8078,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 2821.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 2934.0
       },
-      "name": "Conjured Sparkling Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 2821.0
-      }
+      "name": "Conjured Sparkling Water"
     },
     {
       "id": 8079,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 4038.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 4200.0
       },
-      "name": "Conjured Crystal Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 4038.0
-      }
+      "name": "Conjured Crystal Water"
     },
     {
       "id": 8364,
-      "legacy": {
-        "bs": {},
-        "h": 874.8,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Mithril Head Trout",
-      "wowhead": {
+      "imported": {
         "bs": {
           "AttackPower": 20.0,
           "ExperienceFromKillsPercent": 5.0
@@ -2684,130 +2677,130 @@
         "h": 841.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 8543,
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Underwater Mushroom Cap",
-      "wowhead": {
+      "name": "Mithril Head Trout"
+    },
+    {
+      "id": 8543,
+      "imported": {
         "bs": {},
         "h": 841.0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Underwater Mushroom Cap"
     },
     {
       "id": 8766,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 2821.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 2934.0
       },
-      "name": "Morning Glory Dew",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 2821.0
-      }
+      "name": "Morning Glory Dew"
     },
     {
       "id": 8932,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Alterac Swiss",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Alterac Swiss"
     },
     {
       "id": 8948,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Dried King Bolete",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Dried King Bolete"
     },
     {
       "id": 8950,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Homemade Cherry Pie",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Homemade Cherry Pie"
     },
     {
       "id": 8952,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Roasted Quail",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Roasted Quail"
     },
     {
       "id": 8953,
-      "legacy": {
-        "bs": {},
-        "h": 2148.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Deep Fried Plantains",
-      "wowhead": {
+      "imported": {
         "bs": {},
         "h": 2065.0,
         "kind": "food",
         "m": 0
-      }
-    },
-    {
-      "id": 8957,
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Spinefin Halibut",
-      "wowhead": {
+      "name": "Deep Fried Plantains"
+    },
+    {
+      "id": 8957,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Fishing": 18.0
@@ -2815,50 +2808,50 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 2148.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Spinefin Halibut"
     },
     {
       "id": 9451,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 835.2
       },
-      "name": "Bubbling Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 835.0
-      }
+      "name": "Bubbling Water"
     },
     {
       "id": 9681,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Grilled King Crawler Legs",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Grilled King Crawler Legs"
     },
     {
       "id": 10841,
-      "legacy": {
-        "bs": {},
-        "h": 0.0,
-        "kind": "drink",
-        "m": 1344.6
-      },
-      "name": "Goldthorn Tea",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Herbalism": 15.0
@@ -2866,58 +2859,74 @@
         "h": 0,
         "kind": "buff",
         "m": 1344.6
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 1344.6
+      },
+      "name": "Goldthorn Tea"
     },
     {
       "id": 11109,
+      "imported": {
+        "bs": {},
+        "h": 29.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 30.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Special Chicken Feed",
-      "wowhead": {
-        "bs": {},
-        "h": 29.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Special Chicken Feed"
     },
     {
       "id": 11415,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Mixed Berries",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Mixed Berries"
     },
     {
       "id": 11444,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Grim Guzzler Boar",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Grim Guzzler Boar"
     },
     {
       "id": 11584,
+      "imported": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -2927,19 +2936,18 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Cactus Apple Surprise",
-      "wowhead": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Cactus Apple Surprise"
     },
     {
       "id": 11950,
+      "imported": {
+        "bs": {
+          "Stamina": 10.0
+        },
+        "h": 1859.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Stamina": 10.0
@@ -2948,34 +2956,35 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Windblossom Berries",
-      "wowhead": {
-        "bs": {
-          "Stamina": 10.0
-        },
-        "h": 1859.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Windblossom Berries"
     },
     {
       "id": 11951,
+      "imported": {
+        "bs": {},
+        "h": 800.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 700.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Whipper Root Tuber",
-      "wowhead": {
-        "bs": {},
-        "h": 800.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Whipper Root Tuber"
     },
     {
       "id": 12209,
+      "imported": {
+        "bs": {
+          "Agility": 5.0,
+          "ExperienceFromKillsPercent": 5.0
+        },
+        "h": 531.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 6.0,
@@ -2985,30 +2994,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Lean Wolf Steak",
-      "wowhead": {
-        "bs": {
-          "Agility": 5.0,
-          "ExperienceFromKillsPercent": 5.0
-        },
-        "h": 531.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Lean Wolf Steak"
     },
     {
       "id": 12210,
-      "legacy": {
-        "bs": {
-          "Spirit": 8.0,
-          "Stamina": 8.0
-        },
-        "h": 874.8,
-        "kind": "buff",
-        "m": 0.0
-      },
-      "name": "Roast Raptor",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 5.0
@@ -3016,10 +3006,7 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 12212,
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -3029,8 +3016,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Jungle Stew",
-      "wowhead": {
+      "name": "Roast Raptor"
+    },
+    {
+      "id": 12212,
+      "imported": {
         "bs": {
           "Agility": 15.0,
           "ExperienceFromKillsPercent": 5.0
@@ -3038,10 +3028,7 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 12213,
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -3051,8 +3038,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Carrion Surprise",
-      "wowhead": {
+      "name": "Jungle Stew"
+    },
+    {
+      "id": 12213,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 3.0
@@ -3060,10 +3050,7 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 12214,
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -3073,8 +3060,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Mystery Stew",
-      "wowhead": {
+      "name": "Carrion Surprise"
+    },
+    {
+      "id": 12214,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 5.0
@@ -3082,21 +3072,21 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 12215,
+      },
       "legacy": {
         "bs": {
-          "Spirit": 12.0,
-          "Stamina": 12.0
+          "Spirit": 8.0,
+          "Stamina": 8.0
         },
-        "h": 1392.0,
+        "h": 874.8,
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Heavy Kodo Stew",
-      "wowhead": {
+      "name": "Mystery Stew"
+    },
+    {
+      "id": 12215,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 10.0
@@ -3104,10 +3094,7 @@
         "h": 841.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 12216,
+      },
       "legacy": {
         "bs": {
           "Spirit": 12.0,
@@ -3117,8 +3104,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Spiced Chili Crab",
-      "wowhead": {
+      "name": "Heavy Kodo Stew"
+    },
+    {
+      "id": 12216,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Intellect": 10.0
@@ -3126,10 +3116,7 @@
         "h": 841.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 12218,
+      },
       "legacy": {
         "bs": {
           "Spirit": 12.0,
@@ -3139,8 +3126,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Monster Omelet",
-      "wowhead": {
+      "name": "Spiced Chili Crab"
+    },
+    {
+      "id": 12218,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 15.0
@@ -3148,10 +3138,29 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 12.0,
+          "Stamina": 12.0
+        },
+        "h": 1392.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Monster Omelet"
     },
     {
       "id": 12224,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Intellect": 1.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 2.0,
@@ -3161,99 +3170,98 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Crispy Bat Wing",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Intellect": 1.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Crispy Bat Wing"
     },
     {
       "id": 12238,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Darkshore Grouper",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Darkshore Grouper"
     },
     {
       "id": 12763,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Un'Goro Etherfruit",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Un'Goro Etherfruit"
     },
     {
       "id": 13546,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Bloodbelly Fish",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Bloodbelly Fish"
     },
     {
       "id": 13724,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "both",
+        "m": 4240.0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "both",
         "m": 4410.0
       },
-      "name": "Enriched Manna Biscuit",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "both",
-        "m": 4240.0
-      }
+      "name": "Enriched Manna Biscuit"
     },
     {
       "id": 13755,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Raw Winter Squid",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Raw Winter Squid"
     },
     {
       "id": 13810,
+      "imported": {
+        "bs": {
+          "Strength": 10.0
+        },
+        "h": 1859.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Strength": 10.0
@@ -3262,18 +3270,19 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Blessed Sunfruit",
-      "wowhead": {
-        "bs": {
-          "Strength": 10.0
-        },
-        "h": 1859.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Blessed Sunfruit"
     },
     {
       "id": 13851,
+      "imported": {
+        "bs": {
+          "Agility": 10.0,
+          "ExperienceFromKillsPercent": 5.0
+        },
+        "h": 841.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -3283,35 +3292,35 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Hot Wolf Ribs",
-      "wowhead": {
-        "bs": {
-          "Agility": 10.0,
-          "ExperienceFromKillsPercent": 5.0
-        },
-        "h": 841.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Hot Wolf Ribs"
     },
     {
       "id": 13893,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Large Raw Mightfish",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Large Raw Mightfish"
     },
     {
       "id": 13927,
+      "imported": {
+        "bs": {
+          "AttackPower": 30.0,
+          "ExperienceFromKillsPercent": 5.0
+        },
+        "h": 1338.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Stamina": 10.0
@@ -3320,19 +3329,19 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Cooked Glossy Mightfish",
-      "wowhead": {
-        "bs": {
-          "AttackPower": 30.0,
-          "ExperienceFromKillsPercent": 5.0
-        },
-        "h": 1338.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Cooked Glossy Mightfish"
     },
     {
       "id": 13928,
+      "imported": {
+        "bs": {
+          "CritPercent": 1.0,
+          "ExperienceFromKillsPercent": 5.0
+        },
+        "h": 2065.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Agility": 10.0
@@ -3341,8 +3350,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Grilled Squid",
-      "wowhead": {
+      "name": "Grilled Squid"
+    },
+    {
+      "id": 13929,
+      "imported": {
         "bs": {
           "CritPercent": 1.0,
           "ExperienceFromKillsPercent": 5.0
@@ -3350,10 +3362,7 @@
         "h": 2065.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 13929,
+      },
       "legacy": {
         "bs": {
           "Spirit": 10.0
@@ -3362,27 +3371,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Hot Smoked Bass",
-      "wowhead": {
-        "bs": {
-          "CritPercent": 1.0,
-          "ExperienceFromKillsPercent": 5.0
-        },
-        "h": 2065.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Hot Smoked Bass"
     },
     {
       "id": 13930,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Filet of Redgill",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Fishing": 18.0
@@ -3390,18 +3383,18 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Filet of Redgill"
     },
     {
       "id": 13931,
-      "legacy": {
-        "bs": {},
-        "h": 874.8,
-        "kind": "both",
-        "m": 8.0
-      },
-      "name": "Nightfin Soup",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 22.0
@@ -3409,18 +3402,18 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 13932,
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "both",
-        "m": 6.0
+        "m": 8.0
       },
-      "name": "Poached Sunscale Salmon",
-      "wowhead": {
+      "name": "Nightfin Soup"
+    },
+    {
+      "id": 13932,
+      "imported": {
         "bs": {
           "AttackPower": 40.0,
           "ExperienceFromKillsPercent": 5.0
@@ -3428,18 +3421,18 @@
         "h": 2065.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "both",
+        "m": 6.0
+      },
+      "name": "Poached Sunscale Salmon"
     },
     {
       "id": 13933,
-      "legacy": {
-        "bs": {},
-        "h": 2148.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Lobster Stew",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 28.0
@@ -3447,10 +3440,26 @@
         "h": 2065.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 2148.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Lobster Stew"
     },
     {
       "id": 13934,
+      "imported": {
+        "bs": {
+          "AttackPower": 40.0,
+          "ExperienceFromKillsPercent": 5.0
+        },
+        "h": 2065.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Stamina": 10.0
@@ -3459,27 +3468,11 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Mightfish Steak",
-      "wowhead": {
-        "bs": {
-          "AttackPower": 40.0,
-          "ExperienceFromKillsPercent": 5.0
-        },
-        "h": 2065.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Mightfish Steak"
     },
     {
       "id": 13935,
-      "legacy": {
-        "bs": {},
-        "h": 2148.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Baked Salmon",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 28.0
@@ -3487,204 +3480,138 @@
         "h": 2065.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 16166,
-      "legacy": {
-        "bs": {},
-        "h": 61.2,
-        "kind": "food",
-        "m": 0.0
       },
-      "name": "Bean Soup",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 16167,
-      "legacy": {
-        "bs": {},
-        "h": 243.6,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Versicolor Treat",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 16168,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Heaven Peach",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 16169,
-      "legacy": {
-        "bs": {},
-        "h": 874.8,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Wild Ricecake",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 16170,
-      "legacy": {
-        "bs": {},
-        "h": 552.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Steamed Mandu",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 16171,
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Shinsollo",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Baked Salmon"
     },
     {
-      "id": 16766,
+      "id": 16166,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
-        "h": 1392.0,
+        "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Undermine Clam Chowder",
-      "wowhead": {
+      "name": "Bean Soup"
+    },
+    {
+      "id": 16167,
+      "imported": {
         "bs": {},
-        "h": 1338.0,
+        "h": 234.0,
         "kind": "food",
         "m": 0
-      }
-    },
-    {
-      "id": 16971,
-      "legacy": {
-        "bs": {
-          "Spirit": 12.0,
-          "Stamina": 12.0
-        },
-        "h": 1392.0,
-        "kind": "buff",
-        "m": 0.0
       },
-      "name": "Clamlette Surprise",
-      "wowhead": {
-        "bs": {
-          "Spirit": 12.0,
-          "Stamina": 12.0
-        },
-        "h": 1338.0,
-        "kind": "buff",
-        "m": 0
-      }
-    },
-    {
-      "id": 17119,
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Deeprun Rat Kabob",
-      "wowhead": {
+      "name": "Versicolor Treat"
+    },
+    {
+      "id": 16168,
+      "imported": {
         "bs": {},
-        "h": 234.0,
+        "h": 1338.0,
         "kind": "food",
         "m": 0
-      }
-    },
-    {
-      "id": 17197,
+      },
       "legacy": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 61.2,
-        "kind": "buff",
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
         "m": 0.0
       },
-      "name": "Gingerbread Cookie",
-      "wowhead": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Heaven Peach"
     },
     {
-      "id": 17198,
+      "id": 16169,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 61.2,
-        "kind": "buff",
+        "bs": {},
+        "h": 874.8,
+        "kind": "food",
         "m": 0.0
       },
-      "name": "Egg Nog",
-      "wowhead": {
-        "bs": {
-          "Spirit": 2.0,
-          "Stamina": 2.0
-        },
-        "h": 59.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Wild Ricecake"
     },
     {
-      "id": 17222,
+      "id": 16170,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 552.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Steamed Mandu"
+    },
+    {
+      "id": 16171,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 2148.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Shinsollo"
+    },
+    {
+      "id": 16766,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Undermine Clam Chowder"
+    },
+    {
+      "id": 16971,
+      "imported": {
+        "bs": {
+          "Spirit": 12.0,
+          "Stamina": 12.0
+        },
+        "h": 1338.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 12.0,
@@ -3694,8 +3621,71 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Spider Sausage",
-      "wowhead": {
+      "name": "Clamlette Surprise"
+    },
+    {
+      "id": 17119,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 243.6,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Deeprun Rat Kabob"
+    },
+    {
+      "id": 17197,
+      "imported": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 61.2,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Gingerbread Cookie"
+    },
+    {
+      "id": 17198,
+      "imported": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 59.0,
+        "kind": "buff",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 2.0,
+          "Stamina": 2.0
+        },
+        "h": 61.2,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Egg Nog"
+    },
+    {
+      "id": 17222,
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "Stamina": 15.0
@@ -3703,90 +3693,7 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
-    },
-    {
-      "id": 17344,
-      "legacy": {
-        "bs": {},
-        "h": 61.2,
-        "kind": "food",
-        "m": 0.0
       },
-      "name": "Candy Cane",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 17404,
-      "legacy": {
-        "bs": {},
-        "h": 0.0,
-        "kind": "drink",
-        "m": 436.8
-      },
-      "name": "Blended Bean Brew",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 437.0
-      }
-    },
-    {
-      "id": 17406,
-      "legacy": {
-        "bs": {},
-        "h": 243.6,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Holiday Cheesewheel",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 17407,
-      "legacy": {
-        "bs": {},
-        "h": 874.8,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Graccu's Homemade Meat Pie",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 17408,
-      "legacy": {
-        "bs": {},
-        "h": 1392.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Spicy Beefstick",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
-    },
-    {
-      "id": 18045,
       "legacy": {
         "bs": {
           "Spirit": 12.0,
@@ -3796,8 +3703,91 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Tender Wolf Steak",
-      "wowhead": {
+      "name": "Spider Sausage"
+    },
+    {
+      "id": 17344,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 61.2,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Candy Cane"
+    },
+    {
+      "id": 17404,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 437.0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 0.0,
+        "kind": "drink",
+        "m": 436.8
+      },
+      "name": "Blended Bean Brew"
+    },
+    {
+      "id": 17406,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 243.6,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Holiday Cheesewheel"
+    },
+    {
+      "id": 17407,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 874.8,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Graccu's Homemade Meat Pie"
+    },
+    {
+      "id": 17408,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
+      "legacy": {
+        "bs": {},
+        "h": 1392.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Spicy Beefstick"
+    },
+    {
+      "id": 18045,
+      "imported": {
         "bs": {
           "Agility": 15.0,
           "ExperienceFromKillsPercent": 5.0
@@ -3805,10 +3795,29 @@
         "h": 1338.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {
+          "Spirit": 12.0,
+          "Stamina": 12.0
+        },
+        "h": 1392.0,
+        "kind": "buff",
+        "m": 0.0
+      },
+      "name": "Tender Wolf Steak"
     },
     {
       "id": 18254,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Intellect": 15.0
+        },
+        "h": 1338.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Intellect": 10.0
@@ -3817,323 +3826,323 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Runn Tum Tuber Surprise",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Intellect": 15.0
-        },
-        "h": 1338.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Runn Tum Tuber Surprise"
     },
     {
       "id": 18255,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Runn Tum Tuber",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Runn Tum Tuber"
     },
     {
       "id": 18300,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 4038.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 4200.0
       },
-      "name": "Hyjal Nectar",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 4038.0
-      }
+      "name": "Hyjal Nectar"
     },
     {
       "id": 18632,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Moonbrook Riot Taffy",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Moonbrook Riot Taffy"
     },
     {
       "id": 18633,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Styleen's Sour Suckerpop",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Styleen's Sour Suckerpop"
     },
     {
       "id": 18635,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Bellara's Nutterbar",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Bellara's Nutterbar"
     },
     {
       "id": 19223,
+      "imported": {
+        "bs": {},
+        "h": 59.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 61.2,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Darkmoon Dog",
-      "wowhead": {
-        "bs": {},
-        "h": 59.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Darkmoon Dog"
     },
     {
       "id": 19224,
+      "imported": {
+        "bs": {},
+        "h": 841.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 874.8,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Red Hot Wings",
-      "wowhead": {
-        "bs": {},
-        "h": 841.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Red Hot Wings"
     },
     {
       "id": 19225,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Deep Fried Candybar",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Deep Fried Candybar"
     },
     {
       "id": 19299,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 835.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 835.2
       },
-      "name": "Fizzy Faire Drink",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 835.0
-      }
+      "name": "Fizzy Faire Drink"
     },
     {
       "id": 19300,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 1915.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 1992.0
       },
-      "name": "Bottled Winterspring Water",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 1915.0
-      }
+      "name": "Bottled Winterspring Water"
     },
     {
       "id": 19301,
+      "imported": {
+        "bs": {},
+        "h": 4240.0,
+        "kind": "both",
+        "m": 4240.0
+      },
       "legacy": {
         "bs": {},
         "h": 4410.0,
         "kind": "both",
         "m": 4410.0
       },
-      "name": "Alterac Manna Biscuit",
-      "wowhead": {
-        "bs": {},
-        "h": 4240.0,
-        "kind": "both",
-        "m": 4240.0
-      }
+      "name": "Alterac Manna Biscuit"
     },
     {
       "id": 19304,
+      "imported": {
+        "bs": {},
+        "h": 234.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 243.6,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Spiced Beef Jerky",
-      "wowhead": {
-        "bs": {},
-        "h": 234.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Spiced Beef Jerky"
     },
     {
       "id": 19305,
+      "imported": {
+        "bs": {},
+        "h": 531.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 552.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Pickled Kodo Foot",
-      "wowhead": {
-        "bs": {},
-        "h": 531.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Pickled Kodo Foot"
     },
     {
       "id": 19306,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Crunchy Frog",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Crunchy Frog"
     },
     {
       "id": 19696,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Harvest Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Harvest Bread"
     },
     {
       "id": 19994,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Harvest Fruit",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Harvest Fruit"
     },
     {
       "id": 19995,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Harvest Boar",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Harvest Boar"
     },
     {
       "id": 19996,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Harvest Fish",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Harvest Fish"
     },
     {
       "id": 20031,
+      "imported": {
+        "bs": {},
+        "h": 2452.0,
+        "kind": "both",
+        "m": 4240.0
+      },
       "legacy": {
         "bs": {},
         "h": 2550.0,
         "kind": "both",
         "m": 4410.0
       },
-      "name": "Essence Mango",
-      "wowhead": {
-        "bs": {},
-        "h": 2452.0,
-        "kind": "both",
-        "m": 4240.0
-      }
+      "name": "Essence Mango"
     },
     {
       "id": 20074,
+      "imported": {
+        "bs": {
+          "Agility": 10.0,
+          "ExperienceFromKillsPercent": 5.0
+        },
+        "h": 841.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 8.0,
@@ -4143,19 +4152,19 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Heavy Crocolisk Stew",
-      "wowhead": {
-        "bs": {
-          "Agility": 10.0,
-          "ExperienceFromKillsPercent": 5.0
-        },
-        "h": 841.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Heavy Crocolisk Stew"
     },
     {
       "id": 20452,
+      "imported": {
+        "bs": {
+          "ExperienceFromKillsPercent": 5.0,
+          "Strength": 20.0
+        },
+        "h": 2065.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Strength": 20.0
@@ -4164,19 +4173,16 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Smoked Desert Dumplings",
-      "wowhead": {
-        "bs": {
-          "ExperienceFromKillsPercent": 5.0,
-          "Strength": 20.0
-        },
-        "h": 2065.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Smoked Desert Dumplings"
     },
     {
       "id": 20516,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 15.0,
@@ -4186,16 +4192,18 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Bobbing Apple",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Bobbing Apple"
     },
     {
       "id": 21023,
+      "imported": {
+        "bs": {
+          "Stamina": 25.0
+        },
+        "h": 2452.0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Stamina": 25.0
@@ -4204,74 +4212,59 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Dirge's Kickin' Chimaerok Chops",
-      "wowhead": {
-        "bs": {
-          "Stamina": 25.0
-        },
-        "h": 2452.0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Dirge's Kickin' Chimaerok Chops"
     },
     {
       "id": 21030,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Darnassus Kimchi Pie",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Darnassus Kimchi Pie"
     },
     {
       "id": 21031,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Cabbage Kimchi",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Cabbage Kimchi"
     },
     {
       "id": 21033,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Radish Kimchi",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Radish Kimchi"
     },
     {
       "id": 21072,
-      "legacy": {
-        "bs": {},
-        "h": 378.0,
-        "kind": "both",
-        "m": 567.0
-      },
-      "name": "Smoked Sagefish",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 4.0
@@ -4279,34 +4272,34 @@
         "h": 234.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 378.0,
+        "kind": "both",
+        "m": 567.0
+      },
+      "name": "Smoked Sagefish"
     },
     {
       "id": 21215,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "both",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 5.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Graccu's Mince Meat Fruitcake",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "both",
-        "m": 0
-      }
+      "name": "Graccu's Mince Meat Fruitcake"
     },
     {
       "id": 21217,
-      "legacy": {
-        "bs": {},
-        "h": 840.0,
-        "kind": "both",
-        "m": 1260.0
-      },
-      "name": "Sagefish Delight",
-      "wowhead": {
+      "imported": {
         "bs": {
           "ExperienceFromKillsPercent": 5.0,
           "SpellPower": 7.0
@@ -4314,26 +4307,34 @@
         "h": 531.0,
         "kind": "buff",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 840.0,
+        "kind": "both",
+        "m": 1260.0
+      },
+      "name": "Sagefish Delight"
     },
     {
       "id": 21235,
-      "legacy": {
-        "bs": {},
-        "h": 2.0,
-        "kind": "food",
-        "m": 0.0
-      },
-      "name": "Winter Veil Roast",
-      "wowhead": {
+      "imported": {
         "bs": {},
         "h": 0,
         "kind": "food",
         "m": 0
-      }
+      },
+      "legacy": {
+        "bs": {},
+        "h": 2.0,
+        "kind": "food",
+        "m": 0.0
+      },
+      "name": "Winter Veil Roast"
     },
     {
       "id": 21236,
+      "imported": null,
       "legacy": {
         "bs": {},
         "h": 2.0,
@@ -4341,11 +4342,11 @@
         "m": 0.0
       },
       "name": "UNUSED ITEM",
-      "note": "Source does not classify this item as a supported consumable",
-      "wowhead": null
+      "note": "Source does not classify this item as a supported consumable"
     },
     {
       "id": 21240,
+      "imported": null,
       "legacy": {
         "bs": {},
         "h": 2.0,
@@ -4353,11 +4354,16 @@
         "m": 0.0
       },
       "name": "UNUSED ITEM",
-      "note": "Source does not classify this item as a supported consumable",
-      "wowhead": null
+      "note": "Source does not classify this item as a supported consumable"
     },
     {
       "id": 21254,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "buff",
+        "m": 0
+      },
       "legacy": {
         "bs": {
           "Spirit": 15.0,
@@ -4367,112 +4373,114 @@
         "kind": "buff",
         "m": 0.0
       },
-      "name": "Winter Veil Cookie",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "buff",
-        "m": 0
-      }
+      "name": "Winter Veil Cookie"
     },
     {
       "id": 21552,
+      "imported": {
+        "bs": {},
+        "h": 1338.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 1392.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Striped Yellowtail",
-      "wowhead": {
-        "bs": {},
-        "h": 1338.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Striped Yellowtail"
     },
     {
       "id": 22324,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Winter Kimchi",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Winter Kimchi"
     },
     {
       "id": 22895,
+      "imported": {
+        "bs": {},
+        "h": 3058.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 3180.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Conjured Cinnamon Roll",
-      "wowhead": {
-        "bs": {},
-        "h": 3058.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Conjured Cinnamon Roll"
     },
     {
       "id": 23160,
+      "imported": {
+        "bs": {},
+        "h": 2065.0,
+        "kind": "food",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 2148.0,
         "kind": "food",
         "m": 0.0
       },
-      "name": "Friendship Bread",
-      "wowhead": {
-        "bs": {},
-        "h": 2065.0,
-        "kind": "food",
-        "m": 0
-      }
+      "name": "Friendship Bread"
     },
     {
       "id": 23161,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "drink",
+        "m": 2821.0
+      },
       "legacy": {
         "bs": {},
         "h": 0.0,
         "kind": "drink",
         "m": 2934.0
       },
-      "name": "Freshly-Squeezed Lemonade",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "drink",
-        "m": 2821.0
-      }
+      "name": "Freshly-Squeezed Lemonade"
     },
     {
       "id": 23172,
+      "imported": {
+        "bs": {},
+        "h": 0,
+        "kind": "both",
+        "m": 0
+      },
       "legacy": {
         "bs": {},
         "h": 4.0,
         "kind": "both",
         "m": 4.0
       },
-      "name": "Refreshing Red Apple",
-      "wowhead": {
-        "bs": {},
-        "h": 0,
-        "kind": "both",
-        "m": 0
-      }
+      "name": "Refreshing Red Apple"
     },
     {
       "id": 23176,
+      "imported": {
+        "bs": {
+          "MP5": 6.0
+        },
+        "h": 808.0,
+        "kind": "buff",
+        "m": 1212.0
+      },
       "legacy": {
         "bs": {
           "MP5": 8.0
@@ -4481,15 +4489,7 @@
         "kind": "buff",
         "m": 1260.0
       },
-      "name": "Fizzy Energy Drink",
-      "wowhead": {
-        "bs": {
-          "MP5": 6.0
-        },
-        "h": 808.0,
-        "kind": "buff",
-        "m": 1212.0
-      }
+      "name": "Fizzy Energy Drink"
     }
   ],
   "legacyNotFetched": [

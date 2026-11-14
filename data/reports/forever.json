@@ -28,7 +28,7 @@
           "namesSha256": "b0b316d398b130d96bf97fe9e1a899d77fd1aa76f2288f6e8fb59eb63f0831fe",
           "provider": "LibItemDB",
           "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+          "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
         },
         "seed": "forever.json"
       },
@@ -47,7 +47,7 @@
           "namesSha256": "b0b316d398b130d96bf97fe9e1a899d77fd1aa76f2288f6e8fb59eb63f0831fe",
           "provider": "LibItemDB",
           "release": "https://www.curseforge.com/wow/addons/libitemdb/files/9580874",
-          "scope": "Candidate IDs only; values must be fetched from this client's Wowhead export. Core data only; no seasonal data is mixed into Era."
+          "scope": "Candidate IDs only; values must be fetched from this client's source export. Core data only; no seasonal data is mixed into Era."
         },
         "seed": "forever-generic.json"
       }
@@ -216,784 +216,628 @@
   "runtimeRestorationRequired": {},
   "unavailable": {
     "12211": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=12211&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "17199": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=17199&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "20857": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=20857&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "21990": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=21990&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "21991": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=21991&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22018": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22018&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22019": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22019&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22044": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22044&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22103": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22103&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22104": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22104&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22105": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22105&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22116": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22116&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22645": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22645&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22829": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22829&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "22832": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=22832&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "23495": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=23495&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "23585": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=23585&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "23756": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=23756&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "23822": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=23822&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "23823": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=23823&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24006": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24006&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24007": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24007&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24008": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24008&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24009": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24009&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24072": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24072&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24105": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24105&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24338": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24338&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24408": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24408&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24539": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24539&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "24540": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=24540&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27635": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27635&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27636": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27636&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27651": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27651&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27655": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27655&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27657": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27657&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27658": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27658&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27659": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27659&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27660": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27660&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27661": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27661&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27662": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27662&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27663": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27663&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27664": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27664&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27665": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27665&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27666": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27666&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27667": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27667&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27854": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27854&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27855": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27855&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27856": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27856&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27857": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27857&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27858": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27858&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27859": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27859&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "27860": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=27860&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "28100": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=28100&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "28101": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=28101&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "28112": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=28112&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "28399": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=28399&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "28486": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=28486&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "28501": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=28501&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29292": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29292&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29293": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29293&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29393": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29393&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29394": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29394&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29395": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29395&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29401": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29401&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29402": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29402&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29412": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29412&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29448": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29448&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29449": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29449&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29450": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29450&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29451": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29451&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29452": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29452&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29453": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29453&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "29454": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=29454&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30155": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30155&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30355": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30355&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30357": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30357&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30358": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30358&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30359": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30359&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30361": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30361&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30457": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30457&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30458": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30458&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30610": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30610&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30703": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30703&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "30816": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=30816&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31672": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31672&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31673": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31673&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31676": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31676&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31677": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31677&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31838": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31838&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31839": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31839&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31840": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31840&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31841": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31841&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31852": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31852&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31853": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31853&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31854": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31854&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "31855": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=31855&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32453": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32453&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32455": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32455&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32668": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32668&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32685": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32685&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32686": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32686&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32721": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32721&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32722": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32722&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32763": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32763&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32947": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32947&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "32948": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=32948&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33004": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33004&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33023": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33023&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33024": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33024&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33025": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33025&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33026": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33026&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33028": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33028&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33029": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33029&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33030": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33030&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33031": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33031&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33032": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33032&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33033": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33033&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33036": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33036&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33042": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33042&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33043": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33043&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33048": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33048&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33052": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33052&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33053": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33053&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33092": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33092&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33093": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33093&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33234": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33234&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33236": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33236&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33246": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33246&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33254": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33254&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33825": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33825&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33867": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33867&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33872": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33872&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33934": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33934&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "33935": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=33935&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34017": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34017&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34018": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34018&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34019": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34019&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34020": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34020&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34021": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34021&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34022": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34022&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34062": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34062&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34063": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34063&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34064": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34064&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34065": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34065&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34411": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34411&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34412": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34412&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "34780": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=34780&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "35287": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=35287&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "35563": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=35563&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "35565": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=35565&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "35710": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=35710&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "38427": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=38427&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "38428": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=38428&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "38429": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=38429&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "38430": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=38430&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     },
     "38431": {
-      "reason": "Wowhead has no item record for this client",
-      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140",
-      "url": "https://www.wowhead.com/forever/item=38431&xml"
+      "reason": "Source has no item record for this client",
+      "sha256": "84a24daa298dac6c6bf27576a86a48954dfe201b54f1004fcab3cc7d1120c140"
     }
   },
   "unresolved": {},

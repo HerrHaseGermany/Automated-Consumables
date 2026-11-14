@@ -1,6 +1,6 @@
 # Version-specific consumable databases
 
-Version 2.0.0 uses reproducible, version-specific Wowhead imports for Forever,
+Version 2.0.0 uses reproducible, version-specific source imports for Forever,
 Classic Era, TBC, Wrath, Cataclysm, MoP Classic, and Retail. Each source profile
 and dataset is separate; declarations and automated tests do not establish
 full in-game compatibility.
@@ -50,7 +50,7 @@ undiscovered or future game items are covered. In-game validation is pending.
 Successfully fetched records are saved in `sources/<version>.json`. The first
 Forever attempt encountered repeated HTTP 403 responses; later attempts resume
 from the saved snapshot and HTTP cache. A denied request stops further network
-access while still preserving later cached records. An explicit Wowhead
+access while still preserving later cached records. An explicit source
 "Item not found!" response is recorded separately under `unavailable`, never
 silently replaced with another client's item.
 
@@ -64,35 +64,42 @@ anew. These seeds are not proof of an exhaustive game catalog. Additional `*-gen
 food names. Names supply candidate IDs only; a candidate can turn out to be an
 unrelated quest item or unavailable in the requested client. This search is
 heuristic and is not proof that the generic subclasses are fully covered.
-Only Wowhead XML
+Source XML
 supplies the imported names, requirements, restoration, and buff data.
 
 ## Import and rebuild
 
 Run from the repository root with Python 3.9 or later:
 
+Offline `--rebuild` uses committed snapshots and needs no network configuration.
+For new network imports, set `AC_DATABASE_SOURCE_URL` to a compatible XML
+catalog base URL. The configured catalog must provide the profile paths in
+`VERSIONS`, `item=<id>&xml` exports and consumable category lists. The importer
+validates returned client/item links against that base URL. No default provider
+is configured. Fixture tests use the reserved `catalog.example` domain.
+
 ```sh
-# Discover candidate IDs from this client's Wowhead category lists.
-python3 tools/import_wowhead.py forever
+# Discover candidate IDs from this client's source category lists.
+python3 tools/import_database.py forever
 
 # Alternatively, fetch a documented partial set of candidate IDs.
-python3 tools/import_wowhead.py forever --seed data/seeds/forever.json --seed data/seeds/legacy.json --seed data/seeds/forever-generic.json
+python3 tools/import_database.py forever --seed data/seeds/forever.json --seed data/seeds/legacy.json --seed data/seeds/forever-generic.json
 
 # Try the client's category lists as well as the candidate seeds.
-python3 tools/import_wowhead.py forever --seed data/seeds/forever.json --discover
+python3 tools/import_database.py forever --seed data/seeds/forever.json --discover
 
 # Rebuild staging and any published runtime dataset offline.
-python3 tools/import_wowhead.py forever --rebuild
+python3 tools/import_database.py forever --rebuild
 
 # Explicitly refresh source responses instead of reusing cached XML.
-python3 tools/import_wowhead.py forever --seed data/seeds/forever.json --seed data/seeds/legacy.json --seed data/seeds/forever-generic.json --refresh
+python3 tools/import_database.py forever --seed data/seeds/forever.json --seed data/seeds/legacy.json --seed data/seeds/forever-generic.json --refresh
 
 # Compare against the shipped hand-maintained databases (requires Lua).
-python3 tools/audit_wowhead.py forever
+python3 tools/audit_database.py forever
 
 # After reviewing the report and testing, promote the complete known catalog.
 # Failed fetches, unresolved restoration, or missing catalog items block this.
-python3 tools/import_wowhead.py forever --rebuild --activate
+python3 tools/import_database.py forever --rebuild --activate
 
 python3 -m unittest discover -s tests -v
 lua tests/database_runtime.lua 16001
@@ -114,13 +121,13 @@ python3 tools/seed_from_itemdb.py /path/to/ItemDB-ItemDB-v1.9.0.zip --release-ur
 On macOS or Linux, collect the supported clients with one resumable command:
 
 ```sh
-python3 tools/collect_wowhead.py
+python3 tools/collect_databases.py
 
 # Read the queue state and live per-client cache counts from another terminal.
-python3 tools/collect_wowhead.py --status
+python3 tools/collect_databases.py --status
 
 # Alternatively, collect only explicitly named profiles.
-python3 tools/collect_wowhead.py wrath cata
+python3 tools/collect_databases.py wrath cata
 ```
 
 The default order is Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic,
@@ -131,7 +138,7 @@ queue can run at a time; do not start independent network imports alongside it.
 
 The queue stops entirely after HTTP 403/429, without trying another client or
 automatically retrying. An interrupted run checkpoints progress. The state and
-log are in `.cache/wowhead/collection.json` and `collection.log`; `--status`
+log are in `.cache/catalog/collection.json` and `collection.log`; `--status`
 also counts raw cached responses, including progress not yet in a snapshot.
 Collection errors and unresolved effects stay in each client's report. The
 queue never passes `--activate`, and does not modify published runtime data.
@@ -147,7 +154,7 @@ Soup MP5 and Poached Sunscale Salmon HP5 are distinct from direct restoration.
 Battleground-specific bandages and TBC Nethergon/Cenarion recovery items are
 selected only in their allowed instances. Unknown use restrictions cause an item to be skipped.
 
-HTTP responses are cached under `.cache/wowhead/<version>/`, which Git ignores.
+HTTP responses are cached under `.cache/catalog/<version>/`, which Git ignores.
 Requests are sequential, with a default delay of 2 seconds and a minimum of
 0.5 seconds. The slower default reduces request volume; it does not establish
 or guarantee compliance with an undocumented provider limit. A denied or
@@ -184,10 +191,10 @@ unattempted. No proxy, challenge bypass, or alternate-host retry is used.
   The Lua harness checks selection and data separation with mocked APIs; it does
   not establish compatibility with protected in-game execution or the full UI.
 
-Wowhead source URLs and response SHA-256 hashes are retained per item. English
-source text keeps parsing independent of the player's locale; the addon should
-continue using localized names supplied by the game at runtime. Data provenance
-does not imply that Wowhead endorses this addon or guarantees the export format.
+Response SHA-256 hashes and client-specific records are retained per item.
+Provider URLs are omitted from committed snapshots. English source text keeps
+parsing independent of the player's locale; the addon uses localized names
+supplied by the game at runtime. No provider endpoint is built into the tools.
 
 ## Validation and release package
 
@@ -273,7 +280,7 @@ with the full addon setup remains necessary.
 Run the published runtime tests or rebuild staging for isolated comparison:
 
 ```sh
-python3 tools/import_wowhead.py retail --rebuild
+python3 tools/import_database.py retail --rebuild
 python3 -m unittest discover -s tests
 lua tests/runtime_values.lua
 lua tests/database_runtime.lua 120105
