@@ -1,6 +1,6 @@
-## Interface: 16001, 11508, 11509, 20505, 20506, 30405, 40402, 50504
-## X-Supported-Clients: Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic
-## Version: 1.3.6
+## Interface: 16001, 11508, 11509, 20505, 20506, 30405, 40402, 50504, 120105
+## X-Supported-Clients: Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic, Retail
+## Version: 2.0.0
 ## Title: Automated-Consumables
 ## Author: Hase
 ## Notes: Automatically updates macros for food, drinks and Potions.

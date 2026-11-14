@@ -11,11 +11,11 @@
 
 ## Consumable databases
 
-- Current supported targets are Forever, Classic Era, TBC, Wrath, Cataclysm,
-  and MoP Classic; prioritize Forever first.
-- Retail source and runtime preparation is back in scope at the user's request.
-  Keep it staged: do not add a Retail TOC declaration or activate its dataset
-  as part of preparation. Default collection still targets the six clients above.
+- Version 2.0.0 supports Forever, Classic Era, TBC, Wrath, Cataclysm,
+  MoP Classic, and Retail; prioritize Forever first.
+- Retail is declared in the TOC and uses its own published dataset. Retain
+  runtime-dependent source metadata and never replace it with another client's
+  fixed amounts.
 - Generate separate datasets for Forever, Classic Era, TBC, Wrath, Cataclysm,
   MoP Classic, and Retail. Never reuse another client's values silently.
 - Rebuild the existing hand-maintained data from version-specific sources too.

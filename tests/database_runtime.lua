@@ -37,11 +37,13 @@ if not (AC_WOWHEAD_DATABASES and AC_WOWHEAD_DATABASES[version]) then
 end
 local stagedRetail = version == "retail" and arg[2] == "--staged"
 if stagedRetail then
+    dofile("data/staged/retail.lua")
     assert(AC_WOWHEAD_DATABASES.retail.enabled == false, "Retail staging must stay disabled on disk")
     AC_WOWHEAD_DATABASES.retail.enabled = true -- test process only; never publish
-    UnitLevel = function() return 90 end
 end
 dofile("DatabaseInit.lua")
+local activeRetail = version == "retail" and AC_Database.activeVersion == "retail"
+UnitLevel = function() return ({forever=60, era=60, tbc=70, wrath=80, cata=85, mop=90, retail=90})[version] or 60 end
 assert(AC_Database.ClientVersion(11509) == "era")
 assert(AC_Database.ClientVersion(16001) == "forever")
 assert(AC_Database.ClientVersion(20506) == "tbc")
@@ -50,12 +52,12 @@ assert(AC_Database.ClientVersion(40402) == "cata")
 assert(AC_Database.ClientVersion(50504) == "mop")
 assert(AC_Database.ClientVersion(120105) == "retail")
 
-local activeTBC = interface == 20506 and AC_Database.activeVersion == "tbc"
-local activeEra = interface == 11509 and AC_Database.activeVersion == "era"
-local activeWrath = interface == 30405 and AC_Database.activeVersion == "wrath"
-local activeCata = interface == 40402 and AC_Database.activeVersion == "cata"
-local activeMoP = interface == 50504 and AC_Database.activeVersion == "mop"
-if stagedRetail then
+local activeTBC = AC_Database.activeVersion == "tbc"
+local activeEra = AC_Database.activeVersion == "era"
+local activeWrath = AC_Database.activeVersion == "wrath"
+local activeCata = AC_Database.activeVersion == "cata"
+local activeMoP = AC_Database.activeVersion == "mop"
+if activeRetail then
     assert(AC_Database.activeVersion == "retail")
     assert(AC_CONSUMABLE_ITEM_STATS[117].runtimeRestorationRequired)
     assert(AC_HEALTH_POTION_ITEM_IDS[109223])
@@ -171,7 +173,7 @@ local function uses(name, id)
 end
 
 local liveAmounts, tooltipQueries, dataLoads, missing = {}, {}, {}, {}
-if stagedRetail then
+if activeRetail then
     HEALTH, MANA, DAMAGE = "Health", "Mana", "Damage"
     Enum = {TooltipDataLineType={ItemSpellTriggerOnUse=44}}
     C_Item = {RequestLoadItemDataByID=function(id) dataLoads[id] = (dataLoads[id] or 0) + 1 end}
@@ -193,7 +195,7 @@ if AC_Database.activeVersion then
     SlashCmdList.ACUPDATE()
     uses("ACSoulstone", assert(bestSoulstone))
 end
-if stagedRetail then
+if activeRetail then
     liveAmounts[117] = "Use: Restores 1000 health over 18 sec."
     liveAmounts[2455] = "Use: Restores 4000 mana."
     liveAmounts[109223] = "Use: Restores 50000 health."
@@ -260,7 +262,7 @@ if stagedRetail then
     assert(deferred)
     deferred()
     uses("ACHealthPotion", 118)
-    report("Retail staging: actual bag values, source overrides, requests, combat deferral and macros passed")
+    report("Retail: actual bag values, source overrides, requests, combat deferral and macros passed")
     return
 end
 if activeMoP then

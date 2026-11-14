@@ -14,7 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSIONS = ("forever", "era", "tbc", "wrath", "cata", "mop", "retail")
-DEFAULTS = ("forever", "era", "tbc", "wrath", "cata", "mop")
+DEFAULTS = VERSIONS
 
 
 def seed_paths(version):
@@ -142,7 +142,7 @@ def show_status():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("versions", nargs="*", help="Client profiles; default: forever era tbc wrath cata mop (Retail is deferred)")
+    parser.add_argument("versions", nargs="*", help="Client profiles; default: all seven supported clients")
     parser.add_argument("--interval", type=float, default=2)
     parser.add_argument("--status", action="store_true", help="Show queue state and live HTTP cache counts")
     args = parser.parse_args()

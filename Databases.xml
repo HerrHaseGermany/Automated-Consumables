@@ -6,4 +6,5 @@
   <Script file="data/generated/wrath.lua"/>
   <Script file="data/generated/cata.lua"/>
   <Script file="data/generated/mop.lua"/>
+  <Script file="data/generated/retail.lua"/>
 </Ui>

@@ -1,21 +1,19 @@
 # Version-specific consumable databases
 
-The goal is to replace the hand-maintained databases with reproducible,
-version-specific Wowhead imports. Forever is the first target. The import
-current supported targets also include Classic Era, TBC, Wrath, Cataclysm,
-and MoP Classic. Retail source/runtime preparation is available in staging;
-its TOC declaration and dataset activation remain deferred. Source profiles and
-TOC declarations do not establish tested client compatibility.
+Version 2.0.0 uses reproducible, version-specific Wowhead imports for Forever,
+Classic Era, TBC, Wrath, Cataclysm, MoP Classic, and Retail. Each source profile
+and dataset is separate; declarations and automated tests do not establish
+full in-game compatibility.
 
 ## Current status
 
 The reviewed known-catalog datasets for Forever, Classic Era, TBC, Wrath, Cataclysm,
-and MoP Classic are loaded through `Databases.xml`. `Database.lua` defines the adapter and
+MoP Classic, and Retail are loaded through `Databases.xml`. `Database.lua` defines the adapter and
 `DatabaseInit.lua` activates only the actual client's dataset. Foreign-client
 Lua files return before constructing their tables. Other clients keep the
 existing `FoodDrinkDB.lua` and `PotionBandageDB.lua` until their imports are ready.
 
-| Client | Catalog IDs | Unique candidates | Source records | Explicitly unavailable | Supported records |
+| Client | Catalog IDs | Unique candidates | Source records | Explicitly unavailable | Normalized records |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | Forever | 480 | 713 | 557 | 156 | 405 |
 | Classic Era | 991 | 1146 | 992 | 154 | 316 |
@@ -23,6 +21,7 @@ existing `FoodDrinkDB.lua` and `PotionBandageDB.lua` until their imports are rea
 | Wrath | 710 | 817 | 817 | 0 | 624 |
 | Cataclysm | 914 | 1031 | 1031 | 0 | 761 |
 | MoP Classic | 1137 | 1269 | 1269 | 0 | 935 |
+| Retail | 2930 | 3241 | 3241 | 0 | 2050 |
 
 All 418 legacy IDs were checked independently for each client. These snapshots
 have no fetch failures, unparsed restoration effects, or discarded legacy
@@ -101,9 +100,9 @@ lua tests/database_runtime.lua 16001
 
 Replace `forever` with `era`, `tbc`, `wrath`, `cata`, `mop`, or `retail` for
 another source profile. Never use a snapshot from another version as a fallback.
-Wrath, Cataclysm, and MoP Classic have been reviewed and enabled. Retail is
-prepared in staging. All 3,241 Retail candidates were fetched; its generated
-replacement remains disabled and is not part of the runtime manifest.
+All seven known catalogs have been collected and published. Retail's 175
+client-dependent entries are reported separately; a zero placeholder is never
+presented as a known healing/mana amount.
 To rebuild the seeds from the same ItemDB release archive:
 
 ```sh
@@ -124,8 +123,8 @@ python3 tools/collect_wowhead.py --status
 python3 tools/collect_wowhead.py wrath cata
 ```
 
-The default order is Forever, Classic Era, TBC, Wrath, Cataclysm, then MoP
-Classic. Retail is excluded from the default queue. Each profile
+The default order is Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic,
+then Retail. Each profile
 combines its primary, legacy, and supplementary generic seeds where present.
 Successful responses and snapshots are reused on subsequent runs. Only one
 queue can run at a time; do not start independent network imports alongside it.
@@ -190,7 +189,7 @@ source text keeps parsing independent of the player's locale; the addon should
 continue using localized names supplied by the game at runtime. Data provenance
 does not imply that Wowhead endorses this addon or guarantees the export format.
 
-## Validation and local preview
+## Validation and release package
 
 ```sh
 python3 -m unittest discover -s tests
@@ -206,7 +205,7 @@ python3 tools/package_addon.py
 The selection harness has also passed with an official Lua 5.1.5 interpreter
 built locally. It checks client separation, effect ranking, regeneration buffs,
 location restrictions, combat deferral, and shared food scans. It does not
-replace in-game testing. The deterministic preview ZIP includes published
+replace in-game testing. The deterministic versioned ZIP includes published
 runtime databases and excludes source snapshots, reports, staging, and tools.
 
 ## Reviewed non-flat effects
@@ -237,10 +236,10 @@ The added Wrath/Cata/MoP interface declarations (30405/40402/50504) match the
 flavor TOCs in the same LibItemDB release archive used for candidate discovery.
 They are load declarations, not proof of full UI/API compatibility.
 
-## Retail preparation (not activated)
+## Retail runtime data
 
 The complete 3,241-item source snapshot produces 2,050 normalized records in
-`staged/retail.lua`. There are no fetch failures or syntax cases discarded
+`generated/retail.lua`. There are no fetch failures or syntax cases discarded
 without a record/report. The 175 exports with missing, zero, conditional or
 formula-based amounts are explicitly listed under `runtimeRestorationRequired`
 in `reports/retail.json`; their original issues remain attached to each record.
@@ -271,20 +270,22 @@ those tested formats, not every locale or full client compatibility. Buff
 preferences still use the imported buff-stat data. Actual in-game confirmation
 with the full addon setup remains necessary.
 
-Run the isolated staging checks without publishing or changing the TOC:
+Run the published runtime tests or rebuild staging for isolated comparison:
 
 ```sh
 python3 tools/import_wowhead.py retail --rebuild
 python3 -m unittest discover -s tests
 lua tests/runtime_values.lua
+lua tests/database_runtime.lua 120105
 lua tests/database_runtime.lua 120105 --staged
 ```
 
 `--staged` exists only in the test harness: it enables the staged table in that
 Lua process, without rewriting the file or the published manifest. The normal
-Retail harness invocation continues verifying the legacy fallback. These
-checks also pass under Lua 5.1. The six supported client datasets and TOC stay
-active; Retail has no published snapshot or interface declaration.
+Retail harness invocation tests the published dataset. These checks also pass
+under Lua 5.1. All seven client datasets are active. Retail Interface 120105
+(12.1.5) was checked against the UI-source commit
+[297d7aa](https://github.com/Gethe/wow-ui-source/commit/297d7aaaa736f346b3e036f38ee088eaf7f8c07f).
 
 API definitions used for the reader:
 [TooltipInfoDocumentation](https://github.com/Gethe/wow-ui-source/blob/live/Interface/AddOns/Blizzard_APIDocumentationGenerated/TooltipInfoDocumentation.lua),
@@ -293,5 +294,15 @@ API definitions used for the reader:
 Soulstone names alone do not establish resurrection behavior. The classifier
 requires an actual usable resurrection effect, excluding inert old ranks and
 unrelated reputation items such as Demon's Soulstone. The runtime harness
-checks actual `ACSoulstone` selection for all six published clients, including
+checks actual `ACSoulstone` selection for all seven published clients, including
 Cataclysm and MoP where only the current usable Soulstone remains.
+
+## Repository and release layout
+
+Track `generated/`, `published/`, `sources/`, `seeds/` and `reports/` for
+reproducibility. `staged/` is disposable generated output and is Git-ignored;
+recreate it with `--rebuild`. Local HTTP/toolchain caches and `dist/` are ignored.
+Do not remove published/source snapshots merely to reduce the installed size:
+`tools/package_addon.py` and `.pkgmeta` exclude development data from releases.
+The release ZIP is named from the TOC version and contains only runtime assets
+plus the license, README and changelog.

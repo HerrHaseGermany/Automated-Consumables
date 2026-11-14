@@ -1,54 +1,27 @@
 ## Change log
 
-# Unreleased
-- Prepare disabled Retail staging with explicit client-dependent amounts and
-  a bag-tooltip reader that respects protected values and item variants.
-- Add per-refresh runtime caching, item-load retry/update handling and player
-  resource/level refresh events, with combat deferral and isolated staging tests.
-- Model explicit health caps and exclude all defenseless sleep recovery from
-  ordinary combat potion selection, including Potion of Nightmares.
-- Scope TOC support and default source collection to Forever, Era, TBC, Wrath,
-  Cataclysm and MoP Classic. Defer Retail while retaining its collected sources.
-- Validate Soulstones by their resurrection effect, excluding inert ranks and
-  unrelated reputation items; verify the resurrection macro on each client.
-- Parse explicit full recovery and bounded Retail percentage food, while
-  retaining unresolved zero/missing source values for review.
-- Enable separate rebuilt Forever, Classic Era, TBC, Wrath, Cataclysm and MoP
-  Classic databases after source collection, legacy comparison and automated
-  macro-selection validation. Retail is deferred and has no interface declaration.
-- Parse healthstone "life" restoration, remove empty mana gems and inert old
-  healthstones, and preserve reviewed level/glyph-dependent family selection.
-- Evaluate bounded constant tooltip arithmetic without executing source text;
-  reject unknown conditional effects and retain the MoP mana-gem rule source.
-- Keep concentration/focus channels out of combat potion selection. Expose
-  expertise, armor penetration, dodge, parry and additional food rating aliases.
-- Enable Forever Darkspear Islands rations and bandages only in the verified
-  battleground instance; reject area/UI-map IDs and other battlegrounds.
-- Add a resumable source collection queue for the remaining clients, with live
-  status, a log, duplicate-run protection and a queue-wide stop on HTTP 403/429.
-  Source collection never activates unfinished client datasets.
-- Add a version-specific, reproducible Wowhead import with saved sources,
-  candidate catalogs, comparison reports, and guarded activation.
-- Recover new Forever food buffs from tooltips when structured fields are empty.
-- Separate lasting food regeneration buffs from eating/drinking restoration.
-- Offer the supported stats present in the active food database in the existing
-  preference dropdowns, with separate labels for crit rating and crit chance.
-- Load published client datasets through a generated manifest and skip foreign
-  datasets before allocating their tables.
-- Handle percentage restoration and rank imported recovery items by effect.
-- Separate sleep potions, retain harmful after-effects and enforce battleground
-  and instance restrictions; defer location-triggered macro updates in combat.
-- Preserve source warnings about uncertain client availability and distinguish
-  deployable shared feasts from directly usable food.
-- Add supplementary name-based catalog candidates for generic-subclass food
-  and recovery items, including battleground rations.
-- Exclude explicit unused items and quest orders named after potions.
-- Preserve generic-subclass quest foods and potion injectors. Block activation
-  if the parser discards a known legacy recovery item.
-- Share food selection across the three food macro updates.
-- Add a reproducible local preview ZIP containing only published runtime data.
-- Add importer tests and a Lua harness covering actual macro selection and
-  client data separation. In-game validation is still required.
+# 2.0.0 — 2026-11-14
+- Enable separate, regenerated Wowhead databases for Forever, Classic Era,
+  TBC, Wrath, Cataclysm, MoP Classic, and Retail. Preserve source snapshots,
+  candidate provenance, coverage reports and legacy comparisons.
+- Add Retail bag-tooltip resolution for missing/scaled amounts, protected-value
+  handling, per-refresh caching and item-data/character update events.
+- Rank recovery items by restoration, including percentages and health caps;
+  prefer ordinary potions over harmful alternatives and exclude sleep channels.
+- Enforce known battleground/instance/level/outdoor restrictions. Keep items
+  with unmapped location rules out of automatic selection.
+- Expand food-stat priorities, distinguish crit chance from rating, and separate
+  lasting regeneration buffs from direct food/drink restoration.
+- Preserve generic quest food, identify Soulstones by resurrection effects,
+  and exclude empty gems, inert ranks and unrelated reputation items.
+- Defer macro changes in combat and share food scans across macro updates.
+- Add reproducible versioned release packaging and automated importer/runtime
+  checks. Development caches and staging outputs stay out of release packages.
+
+Known limits: coverage is the documented candidate catalog, not every possible
+item. Retail retains 175 entries requiring readable client tooltip values;
+68 unmapped location restrictions remain excluded. Automated checks passed,
+but full in-game validation across all seven clients is still pending.
 
 # 1.3.5
 - add missing items to database

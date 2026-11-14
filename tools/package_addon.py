@@ -1,13 +1,22 @@
 #!/usr/bin/env python3
-"""Create an unreleased test ZIP from the TOC and published runtime resources."""
+"""Create a versioned release ZIP from the TOC and published runtime resources."""
 
 import argparse
+import re
 import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ADDON = "Automated-Consumables"
+
+
+def version():
+    toc = (ROOT / (ADDON + ".toc")).read_text()
+    match = re.search(r"^## Version:\s*(\d+\.\d+\.\d+)\s*$", toc, re.M)
+    if not match:
+        raise ValueError("Missing semantic version in the addon TOC")
+    return match[1]
 
 
 def resources():
@@ -44,7 +53,7 @@ def resources():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--output", type=Path, default=ROOT / "dist" / (ADDON + "-preview.zip"))
+    parser.add_argument("--output", type=Path, default=ROOT / "dist" / (ADDON + "-" + version() + ".zip"))
     args = parser.parse_args()
     files = resources()
     args.output.parent.mkdir(parents=True, exist_ok=True)

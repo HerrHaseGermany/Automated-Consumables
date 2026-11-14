@@ -5,3 +5,5 @@ ref/
 .cache/
 __pycache__/
 dist/
+data/staged/
+*.tmp

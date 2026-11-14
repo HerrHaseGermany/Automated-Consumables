@@ -1,4 +1,4 @@
-# Automated-Consumables
+# Automated-Consumables 2.0.0
 Automatically updates macros for food, drinks and Potions.
 
 Creates/updates seven macros (best available in your bags):
@@ -10,16 +10,15 @@ Creates/updates seven macros (best available in your bags):
 - `ACBandage`: best available bandage (targets yourself)
 - `ACSoulstone`: best available soulstone
 
-Database update (unreleased):
-- Forever, Classic Era, TBC, Wrath, Cataclysm, and MoP Classic use separate
+Database update (2.0.0):
+- Forever, Classic Era, TBC, Wrath, Cataclysm, MoP Classic, and Retail use separate
   generated Wowhead datasets. All 418 legacy candidate IDs were checked against
   each client's source, alongside its LibItemDB v1.9.0 catalog.
 - Coverage is the known catalog, not a guarantee that every undiscovered or
   future item is included. Explicit source "not found" responses are reported.
-- Retail is prepared separately in staging. Its runtime reader resolves missing
-  or scaled amounts from readable bag-item tooltips. The TOC and published
-  datasets still target only the six clients above. Values are never copied
-  across clients.
+- Retail uses readable bag-item tooltips for missing or scaled amounts, with
+  item-cache retries, protected-value checks and character-resource updates.
+  Unreadable/ambiguous required values are skipped instead of guessed.
 - Generic-subclass candidates include battleground rations and recovery items.
   Shared feasts are kept separate from food that directly restores resources.
 - Percentage restoration uses the player's maximum health/mana. Imported
@@ -34,8 +33,8 @@ Database update (unreleased):
   potions. Battleground and instance restrictions are checked for the current
   location; macro updates wait until combat ends when necessary.
 - See [database generation and validation](data/README.md) for sources, reports,
-  rebuilding, known limitations, and Retail staging validation.
-- `python3 tools/collect_wowhead.py` collects the six supported client sources in
+  rebuilding, known limitations, and Retail runtime validation.
+- `python3 tools/collect_wowhead.py` collects the seven supported client sources in
   sequence without activation. Use `--status` to inspect live progress.
 
 Notes:
@@ -49,11 +48,19 @@ Debug:
 - Run `/acdebug` in-game to toggle debug prints (shows what item IDs were detected for each macro update).
 - Run `/acupdate` to force a rebuild/update, and `/acshow` to print the current macro bodies.
 
-Local test package (unreleased):
+Build the release package:
 
 ```sh
 python3 tools/package_addon.py
 ```
 
-This creates `dist/Automated-Consumables-preview.zip` with the runtime files and
+This creates `dist/Automated-Consumables-2.0.0.zip` with the runtime files and
 published databases. In-game validation with the full addon setup is pending.
+
+Installation: extract the release ZIP's `Automated-Consumables` folder into the
+client's `Interface/AddOns` directory, replacing the previous addon files.
+Existing `ACSettings` preferences are preserved. Source snapshots, reports,
+tests and build tools belong to the repository and are excluded from the ZIP.
+
+Retail is declared for Interface 120105 (12.1.5), matching the reviewed UI source
+build. Full in-game verification with the complete addon setup remains pending.

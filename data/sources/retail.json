@@ -1,4 +1,9 @@
 {
+  "activation": {
+    "coverage": "known-catalog",
+    "enabled": true,
+    "sourceCount": 3241
+  },
   "discovery": {
     "coverage": "partial",
     "errors": {},

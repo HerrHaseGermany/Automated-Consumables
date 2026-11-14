@@ -161,4 +161,3 @@ function AC_Database.Activate(interface, datasets)
     AC_Database.source = dataset.source
     return true
 end
-

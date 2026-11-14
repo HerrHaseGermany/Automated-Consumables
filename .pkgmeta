@@ -1,0 +1,21 @@
+package-as: Automated-Consumables
+manual-changelog:
+  filename: CHANGELOG.md
+  markup-type: markdown
+ignore:
+  - .cache
+  - .github
+  - .gitignore
+  - .pkgmeta
+  - .vscode
+  - AGENTS.md
+  - dist
+  - ref
+  - tests
+  - tools
+  - data/README.md
+  - data/published
+  - data/reports
+  - data/seeds
+  - data/sources
+  - data/staged

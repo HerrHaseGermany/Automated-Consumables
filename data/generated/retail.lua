@@ -4,8 +4,8 @@ if AC_Database and GetBuildInfo and AC_Database.ClientVersion(select(4, GetBuild
 AC_WOWHEAD_DATABASES = AC_WOWHEAD_DATABASES or {}
 AC_WOWHEAD_DATABASES["retail"] = {
   source = "https://www.wowhead.com/",
-  coverage = "partial",
-  enabled = false,
+  coverage = "known-catalog",
+  enabled = true,
   items = {
     [117] = {["h"]=0, ["hp"]=0, ["kind"]="food", ["m"]=0, ["mp"]=0, ["name"]="Tough Jerky", ["requiredLevel"]=1, ["runtimeHealth"]=true, ["runtimeMana"]=false, ["runtimeRestorationRequired"]=true, ["sourceIssues"]={"Zero restoration requires a client tooltip: Restores 0 health over 18 sec.", "Resource mentioned without a parsed amount: Restores 0 health over 18 sec."}, ["wf"]=false},
     [118] = {["h"]=121, ["hp"]=0, ["kind"]="healthpotion", ["m"]=0, ["mp"]=0, ["name"]="Minor Healing Potion", ["requiredLevel"]=1, ["runtimeHealth"]=true, ["runtimeMana"]=false, ["runtimeRestorationPreferred"]=true, ["wf"]=false},
